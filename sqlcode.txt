@@ -1,0 +1,3713 @@
+Creating table in T-SQL
+
+create table tblsecond
+(mynumbers int)
+go
+
+
+SELECT TOP (1000) [myColumn]
+  FROM [SelfLearning].[dbo].[Table_1]
+
+/****** Script for SelectTopNRows command from SSMS  ******/
+select * from [dbo].[Tab
+
+
+select TeamID as ID,TeamName as Name from SportTeams
+
+
+drop table [dbo].[Table_1]
+
+use [SelfLearning]
+go
+
+create table tblemployee
+(EmployNumber int, EmployName int)
+
+Declaring variable @myvar
+Tinyint,smallint,int,bigint
+Tinyint=0-255
+Smallint=-32767 to 32768
+Int= 0 to 2 billion
+Bigint
+(BITS)
+
+Here declared a variable @myvar and give it datatype int and value=2 now what it did it stored 2 value into the variable @myvar then set statement in which I used and I used select statement for @myvar and give it name Myvariable.
+
+Declare @myvar As int=2
+Set @myvar=@myvar+3
+Select @myvar As MyVariable
+Decimal and number
+In the following code I have declared a variable @myvar and give it a datatype decimal which is for float numbers and in set statement I stored value into the variable
+And select statement to display variable value and gave it name Myvariable.
+
+Declare @myvar As decimal(7,2)
+Set @myvar=12367.43
+Select @myvar as MyVariable
+
+No the the following code I used small money data type in this data type we can store float numbers and in set statement I give it values and in select statement I display as the column Myvariable.
+Small money
+Declare @myvar As smallmoney
+set @myvar=12456.345
+select @myvar As Myvariable
+
+In the following code in used float datatype we declared variable as Float now interesting  thing it that in float you don’t need to give to values like in smallmoney and decimal we only give one values to it and then in set statement we gives variable a value and in select statement we display @variable as Myvariable.
+Float variable
+Declare @myvar As Float(24)
+set @myvar=1245.356
+Select @myvar As Myvariable
+IN the following set of code we used numeric data type in this type of we can also store decimal numbers in it power clause for getting power square is uses to multiply by itself and sqrt for getting square root of a number.
+Declare @myvar as numeric(7,2)=3
+select power(@myvar,2)
+select square(@myvar)
+select power(@myvar,0.5)
+select sqrt(@myvar)
+
+
+
+Floor is used for round to decreased number and ceiling is used to get round to increased number and round were we want to round 0 
+select floor(@myvar)
+select ceiling(@myvar)
+select round(@myvar,0)
+Declare @myvar as numeric(7,2)=456
+
+
+select abs(@myvar)
+select sign(@myvar)
+In the following convert function used to convert the datatype of a number in the following syntax we converted number to different datatype.
+Converting between number type
+Declare @myvar as Decimal(5,2)
+Set @myvar=3
+Select @myvar
+Implicit
+Select convert(decimal(5,2),3)
+
+select convert(decimal(7,2),10000)
+select convert(Int,12.345)
+select convert(Int,12,57)
+select convert(Int,12.345)+convert(int,12.57)
+select convert(Int,12.345+12.563)
+
+String
+Now we should talk about string datatype  in the following syntax we declared a variable called @charmycharaacter and gave it a datatype called char and gave it value how many character we want to stored in it. Then in set statement we stored a string called ‘hello’ in it then in third statement we selecte variable and it will display the data types in that variable. 
+Declare @chrmycharacter as Char(18)
+set @chrmycharacter ='hello'
+select @chrmycharacter
+
+Now in the following syntax we done something creative in one column we display data and gave it name called mystring and in 2nd column we used len syntax and basically it would return the length of the string.in third line of code we used datalength clause it basialled would return the length of the data a variable might store.
+
+select @chrmycharacter as mystring,len(@chrmycharacter) as Mylength
+select @chrmycharacter as mystring,len(@chrmycharacter) as Mylength,datalength(@chrmycharacter) As MyDataLength
+
+In the following code we used another datatype varchar which is basically uses for strings first we declared a variable called @chrmycharacter and then give it datatype in next line of code we stored string hello in it and in 4th line we selected variable and gave it name called mystring.
+
+Declare @chrmycharacter as varchar(18)
+set @chrmycharacter='hello'
+select @chrmycharacter as mystring,len(@chrmycharacter) as Mylength, datalength(@chrmycharacter) As MyDatalength
+
+In the following code I have declared a variable called @chrAsCII and give it a variable name varchar and now I have used substring clause to get the middle letter in a string Itrim clause used to trim a variable,replace keyword is used to replace certain letter or words in a string with some other string upper keyword used to convert string in upper case lower keyword is used to convert string into lower case.
+String Function
+
+Declare @chrAsCII As varchar(10)='hello'
+
+
+Declare @charunicode As nvarchar(10)=N'hello'
+
+select left(@chrAsCII,2) as MyAsCII, right(@charunicode,2) as Myunicode
+select substring(@chrAsCII,3,2) As middleletter
+select ltrim(rtrim(@chrAsCII)) As Trim
+select replace(@chrAsCII,'l','L')
+select upper(@chrAsCII) as MyUpper, lower(@chrAsCII) as Mylower
+
+In the following code we declared three variable and give them values in next code lines.
+Declaring @firstname and @middlename and giving it values:
+Declare @firstname as nvarchar(20)
+declare @middlename as nvarchar(20)
+declare @lastname as nvarchar(20)
+set @firstname='John'
+set @middlename='walker'
+set @lastname='smith'
+
+Then in following code we concatenate those string with + sign and give them name as full name.
+
+Joining @firstname,@middlename,@lastname with + sign
+
+select @firstname+' '+@middlename+' ' +@lastname as fullname
+
+Joining @firstname,@middlename,@lastname with iif statement iif @middlename is null
+
+
+select @firstname+iif(@middlename is null,'',' '+@middlename)+' '+@lastname as fullname
+Joining @firstname,@middlename,@lastname with Case When Else statement if @middlename is null
+
+
+
+
+
+
+IN the following code we concatenate two string with case clause meaning we would case statement between the concatenate used case statement then when variable is null then empty string otherwise space plus middle name and then end.so it is the good example of using case statemnent in-between concatenate function.
+select @firstname+case when @middlename is null then '' else ' '+@middlename End+' '+@lastname as fullname
+Joining @firstname,@middlename,@lastname with Concat statement if @middlename is null
+Now in the above code we used plus sign to concatenate in the following code we used literally keyword concat to concatenate two string together into one.
+
+select concat(@firstname,' ',@middlename,' '+@lastname) as fullname
+
+Now in the following code we concatenate number with a string by converting number into a string with the help of convert code.
+
+Joining string to a number by convert function  number to a string.
+
+select 'My NUmber is '+convert(varchar(20),4567)
+Select 'My Salary is $'+ convert(varchar(20),2546.7)
+Joining string to a number by case function
+We can also used cast to convert number into a string as in the following code.
+select 'My Number is'+cast(4567 as varchar(20))
+Now we have talked about string and number variable now time about date and time variable 
+
+Date and time variables
+These are the following date and time variable dateime time date smalldatetime and datetime2 and datetimeoffset.
+'datetime
+'time
+'date
+'smalldatetime
+'datetime2
+'datetimeoffset
+In the following example we declared a variable called @mydate and gave it a datatype datetime and used select statement @mydate as Mydate.
+declare @mydate as datetime='2015-06-24 12:24:45.123'
+select @mydate as Mydate
+
+
+
+In the following code we declared a variable called @mydate defined a datatype datetime2 and stored a date in it now in the next line of code I used select statement to called the variable and give it a name Mydate
+declare @mydate as datetime2(5)='2015-06-24 12:23:45.123'
+select @mydate as Mydate
+Now in the following code we joined date month an year into one date and give it name thisdate.
+select datefromparts(2015,06,24) as thisdate
+In the following code we declared a variable called @mydate and declared a variable datetime and code date in it
+declare @mydate as datetime='2015-06-24 12:24:45.123'
+In the following code we used year clause to fetched year value from the date and month clause to retrieve month value from the date and day clause to retrieve day value from the date
+select year(@mydate) as MyYear,month(@mydate) as MyMonth, day(@mydate) as MyDay
+
+
+current_timestamp used to get current date from and we can use getdate() to achieve the same thing sysdatetime() can also be used to get current date and time.
+
+Select current_timestamp as RightNow
+Select getdate() as RightNow
+Select sysdatetime() as RightNow
+With the help of clause datadd we can add year month or day to a date.
+select dateadd(year,1,'2015-01-04 12:56:04')
+In the following code we used datepart clause to retrieve hour year month day minute second frim the getdate or we can used manually typed date to get the desired result.
+select datepart(hour,getdate()) as MyHour
+select datepart(year,getdate()) as MyYear
+select datepart(month,getdate()) as MyMonth
+Select datepart(day,getdate())   as MyDay
+Select datepart(MINUTE,getdate()) as MyMinute
+Select datepart(second,getdate()) as MySecond
+
+select DATEDIFF(hour,'2015-01-04 12:56:04', getdate()) as MySecond
+
+select DATENAME( weekday,getdate()) as MySecond
+
+Declare @Dateoffset as datetimeoffset(2)='2015-06-25 01:02:03+05:30'
+Select @dateoffset as Mydateoffset
+Declare @mydate as datetime2='2015-06-25 01:02:03.456'
+select @mydate as MyDate
+select todatetimeoffset(@mydate,'+05:30') as MyDateoffset
+select todatetimeoffset(@mydate,'+05:30') as MyDateoffset
+select datetime2fromparts(2015,06,25,1,2,3,456,3)
+select datetimeoffsetfromparts(2015,06,25,1,2,3,456,5,30,3) as MydateOffset
+select sysdatetimeoffset() as TimeNowWithOffset
+select sysutcdatetime() as TimeNowUTC
+Declare @mydateoffset as datetimeoffset='2015-06-25 01:02:03.456+05:30'
+select @mydateoffset as MyoffsetDate
+
+
+
+CREATING TABLE
+
+Create table tblEmployInformation
+(EmployNumber int NOT NULL,
+EmployFirstNme Varchar(50) Not Null,
+EmployMiddleName Varchar(50)  Null,
+EmployLastName VarChar(50)  Not Null,
+EmployGovernmentID Char(10) Null,
+DateOfBirth Date Not Null
+)
+Adding Column and inserting data
+
+select * from tblEmployInformation
+Alter Table tblEmployInformation 
+Add Department VarChar(25)
+
+
+
+Alter Table tblEmployInformation 
+Drop Column Department
+
+
+
+
+Insert Into tblEmployInformation
+Values(132,'Dylan','A','Word','HN5137770','19920214','Customer Relation')
+Insert Into tblEmployInformation
+Values(129,'Rob','H','Valovsky','UV956174P','7/29/1981','Commercial'),
+(136,'Ovidiu','V','Welcker','S471947D','5/22/1986','HR')
+
+Insert Into tblEmployInformation([EmployNumber],[EmployFirstNme],[EmployMiddleName],[EmployLastName],[EmployGovernmentID],[DateOfBirth],[Department])
+Values(132,'Dylan','A','Word','HN5137770','19920214','Customer Relation')
+
+
+
+Relieving rows with special character
+
+select * from tblEmployInformation
+where employlastname='word'
+select * from tblEmployInformation
+where employlastname<>'word'
+select * from tblEmployInformation
+where employlastname>='word'
+select * from tblEmployInformation
+where employlastname<='word'
+select * from tblEmployInformation
+where employlastname like 'w%'
+select * from tblEmployInformation
+where employlastname like '%w'
+select * from tblEmployInformation
+where employlastname like '_w%'
+
+select * from tblEmployInformation
+where employlastname like '%w%'
+
+select * from tblEmployInformation
+where employnumber>200
+select * from tblemployinformation
+where employnumber<>200
+Select * from tblEmployInformation
+where not employnumber>200
+Select * from tblEmployInformation
+where employnumber!>200
+Select * from tblEmployInformation
+where Employnumber>=200 and Employnumber<=210
+Select * from tblEmployInformation
+where Not(Employnumber>=200 and Employnumber<=210)
+
+Select * from tblEmployInformation
+where Employnumber<200 or Employnumber>210
+Select * from tblEmployInformation
+where Employnumber between 200 and 209
+Select * from tblEmployInformation
+where Employnumber Not between 200 and 209
+Select * from tblEmployInformation
+where Employnumber in(200,205,206)
+
+
+Retrieving data from table based on the date 
+select * from tblemployinformation
+select * from tblemployinformation
+where DateofBirth between '19670101' and '19861231'
+select * from tblEmployInformation
+where DateofBirth>='19760101' and DateofBirth<='19870101'
+select * from tblEmployInformation
+where year(DateofBirth) between 1976 and 1986
+select year(DateofBirth) as YearDateofBirth, count(*) as Number from tblEmployInformation
+Group By  year(DateofBirth)
+Order By year(DateofBirth)
+
+select year(DateofBirth) as YearDateofBirth, count(*) as Number from tblEmployInformation
+Group By  year(DateofBirth)
+Order By year(DateofBirth) ASC
+
+select year(DateofBirth) as YearDateofBirth, count(*) as Number from tblEmployInformation
+Group By  year(DateofBirth)
+Order By year(DateofBirth) DESC
+
+
+
+
+Retrieving date from table based o   count(*),group,order,having,desc, function
+
+select left(EmployLastName,1) as Initial from tblEmployInformation
+select left(EmployLastName,1) as Initial,
+count(*) as CountInitial from tblEmployInformation
+Group by left(EmployLastName,1)
+Order by left(EmployLastName,1)
+
+
+
+Select left(EmployLastName,1) as Initial,
+count(*) as CountInitial from tblEmployInformation
+Group by left(EmployLastName,1)
+Order by count(*) Desc
+
+
+
+
+Select top(5) left(EmployLastName,1) as Initial,
+count(*) as CountInitial from tblEmployInformation
+Group by left(EmployLastName,1)
+Order by count(*) Desc
+
+
+
+Select left(EmployLastName,1) as Initial,
+count(*) as CountInitial from tblEmployInformation
+Group by left(EmployLastName,1)
+Having count(*)>=50
+Order by count(*) Desc
+
+
+
+
+select left(EmployLastName,1) as Initial,count(*) as CountInitial from tblEmployInformation
+where DateofBirth>'19860101'
+Group by left(EmployLastName,1)
+Having count(*)>=20
+Order by count(*) DESC
+
+select datePart(month,DateofBirth) as MonthNumber,count(*) as NumberEmployee
+from tblEmployInformation
+
+
+Select datename(month,DateofBirth) as MonthName,count(*) as NumberEmployee
+From tblEmployInformation
+Group by datename(month,DateofBirth)
+Order by datename(month,DateofBirth)
+
+
+Select datename(month,DateofBirth),count(*) as NumberEmployee
+From tblEmployInformation
+Group by datename(month,DateofBirth),Year(DateofBirth)
+Order by Year(DateofBirth)
+
+
+Select Datename(month,DateofBirth) as MonthName,count(*) as NumberEmployee
+From tblEmployInformation
+Group by DateName(Month,DateofBirth),Datepart(Month,DateofBirth)
+Order by Datepart(Month,DateofBirth)
+
+Select datename(month,DateofBirth) as MonthName,count(*) as NumberEmployee,
+count(employmiddlename) as NumberOfMiddle,
+count(*)-count(employmiddlename) as NoMiddleName
+From tblemployInformation
+Group by datename(month,DateofBirth),datepart(month,DateofBirth)
+Order by datepart(month,DateofBirth)
+
+Select datename(month,dateofBirth) as MonthName, count(*) as NumberEmploy,count(EmployMiddleName) as 
+NumberOfMiddleName,min(DateofBirth) as EarliestDate,max(DateofBirth) as LatestDateOfBirth
+From tblEmployInformation
+Group by dateName(month,dateofBirth),datepart(month,dateofBirth)
+Order by datepart(month,dateofbirth)
+
+
+Joining two tables
+INSERT INTO [dbo].[tblTransaction] VALUES
+select * from tbltransaction
+select * from tblEmployInformation
+select * from tblEmployInformation 
+Join tblTransaction
+on tblEmployInformation.Employnumber=tbltransaction.Employnumber
+
+
+select tblEmployInformation.EmployNumber,EmployFirstNme,EmployLastname,sum(Amount) as SumOfAmount 
+from tblEmployInformation
+Join tblTransaction
+on tblEmployInformation.Employnumber=tbltransaction.Employnumber
+Group By tblEmployInformation.EmployNumber,EmployFirstnme,EmployLastName
+Order by EmployNumber
+Group by Department from Employinformation table
+
+Select Department, count(*) as NumberofDepartment
+from tblEmployInformation
+Group by Department
+
+Select Department,count(*) as NumberOfDepartment
+from tblEmployInformation
+Group by Department
+
+Select Department
+from (Select Department, count(*) as NumberOfDepartment
+from tblEmployInformation
+Group by Department) as NewTable
+
+
+select count(department) as NumberOfDepartment
+from
+(select department,count(*) as NumberOfDepartment
+from tblEmployInformation
+Group by Department) as NewTable
+
+Keyword Distinct
+select distinct department
+from tblEmployInformation
+select distinct department,[EmployGovernmentID]
+from tblEmployInformation
+
+Convert Keyword
+select distinct Department,convert(varchar(20), N'') as DepartmentHead
+into tblDepartment
+from tblEmployInformation
+select * from tblDepartment
+Altering Table 
+alter table tbldepartment
+alter column departmenthead varchar(30) Null
+Joining Three Table
+select * from tblDepartment
+left Join tblEmployInformation
+on tblDepartment.Department=tblEmployInformation.Department
+left join tbltransaction
+on tblEmployInformation.Employnumber=tbltransaction.Employnumber
+
+
+
+
+
+
+
+
+
+
+
+
+
+Joining three Table with amount sum
+
+select tblDepartment.Department,sum(amount) as SumOfAmount
+from tblDepartment
+left join tblEmployInformation 
+on tblDepartment.Department=tblEmployInformation.Department
+left join tbltransaction
+on tblEmployInformation.EmployNumber=tbltransaction.EmployNumber
+Group by tblDepartment.Department 
+
+FINDING ROW THAT HAVE NULL TRANSACTION
+We cannot used order by in internal table.
+select E.EmployNumber as ENumber,E.EmployFirstNme,E.EmployLastName,
+T.EmployNumber as TNumber,sum(T.Amount) as TotalAmount
+from tblEmployInformation as E
+left join tbltransaction as T
+on E.EmployNumber=T.EmployNumber
+where T.EmployNumber is Null
+Group by E.EmployNumber,T.EmployNumber,E.EmployFirstNme,E.EmployLastName
+Order by E.EmployNumber,T.EmployNumber,E.EmployFirstNme,E.EmployLastName
+
+Second way for getting row where null value
+
+select *
+from (
+select E.EmployNumber as ENumber,E.EmployFirstNme,E.EmployLastName,T.EmployNumber as TNumber, 
+sum(T.Amount) as TotalAmount 
+From tblEmployInformation as E
+left Join tblTransaction as T
+on E.EmployNumber=T.EmployNumber
+Group by
+E.EmployNumber,T.EmployNumber,E.EmployFirstNme,E.EmployLastName) as newtable
+where TNumber is NULL
+
+Order by ENumber,TNumber,EmployFirstNme,EmployLastName
+delete tbltransaction
+from tblEmployInformation as E
+right join tblTransaction as T
+on E.EmployNumber=T.EmployNumber
+where E.EmployNumber is Null
+Deleting row in where certain data is null in employ number
+Begin transaction
+select count(*) from tbltransaction
+
+Delete tblTransaction
+from tblEmployInformation as E
+right join tbltransaction as T
+on E.EmployNumber=T.EmployNumber
+where T.EmployNumber is null
+select count(*) from tblTransaction
+Rollback transaction
+select count(*) from tbltransaction
+Updating Row with different data with Update and Set statement
+
+update tblTransaction
+set EmployNumber=194
+from tblTransaction
+where EmployNumber in (308,435,832)
+select * from tblTransaction where EmployNumber=194
+select * from tblTransaction
+
+Output deleted inserted statement
+
+update tbltransaction
+set EmployNumber=193
+output inserted.*,deleted.*
+from tbltransaction
+where EmployNumber in (194)
+
+
+update tbltransaction
+set EmployNumber=194
+output inserted.Employnumber,deleted.Employnumber
+from tbltransaction
+where EmployNumber in (193)
+select E.Department, E.EmployNumber,A.AttendanceMonth,
+A.NumberAttendance 
+from tblEmployInformation as E join tblattendance as A
+on E.EmployNumber=A.EmployNumber
+Union
+select E.Department,E.EmployNumber,null,sum(A.NumberAttendance) as totalattendance
+from tblEmployInformation as E join tblattendance as A
+on E.EmployNumber=A.EmployNumber
+group by E.Department,E.EmployNumber
+order by Department,EmployNumber
+
+
+
+ 
+ 
+
+Unique Constraints 
+The UNIQUE constraint ensures that all values in a column are different. Both the UNIQUE and PRIMARY KEY constraints provide a guarantee for uniqueness for a column or set of columns. A PRIMARY KEY constraint automatically has a UNIQUE constraint.
+
+Counting row that have dublicate value in Employ GovernmentID
+
+select EmployGovernmentID,count(EmployGovernmentID) as MyCount from tblEmployInformation
+Group by EmployGovernmentID  Having count(EmployGovernmentID)>1
+
+select * from tblEmployInformation 
+where EmployGovernmentID in ('UV956174P')
+
+alter table tblEmployInformation
+Add Constraint unqGovernmentID Unique (EmployGovernmentID)
+select EmployGovernmentID,count(EmployGovernmentID) as MyCount from tblEmployInformation
+group by EmployGovernmentID
+having count(EmployGovernmentID)>1
+
+select * from tblEmployInformation where EmployGovernmentID='HN5137770'
+
+delete top(1) from tblEmployinformation
+where EmployNumber=132
+
+Adding Unique constraint key on transaction table
+
+
+alter table tblTransaction
+add constraint unqTransaction unique(Amount,DateofTransaction,EmployNumber)
+select * from tblEmployInformation where employnumber=(131)
+select * from tblTransaction where employnumber=(131)
+delete from tbltransaction
+where employnumber=(131)
+Insert into tbltransaction
+values(1,'2015-01-01',131)
+
+
+Droping unique constraint
+
+alter table tbltransaction
+Drop constraint unqTransaction
+Create table with constraint Unique Constraint
+
+
+Create Table tbltransaction2
+(Amount smallmoney not null, 
+DateofTransaction datetime not null,
+EmployNumber int not null, constraint unqtransaction2 
+unique(Amount, DateofTransaction,EmployNumber))
+select * from tbltransaction2
+Drop Table tbltransaction2
+
+
+ 
+Adding default constraint
+alter table tbltransaction
+add DateofEntry datetime
+select * from tbltransaction
+alter table tbltransaction
+add constraint defdateofEntry
+default getdate() for dateofEntry
+insert into tbltransaction(amount,dateoftransaction,employnumber)
+values(1,'2014-01-01',1)
+Insert into tbltransaction(amount,dateoftransaction,employnumber,dateofEntry)
+values(2,'2014-01-02',1,'2013-01-01')
+Creating table with constraint
+
+Create Table tbltransaction3
+(Amount smallmoney not null,
+dateofTransaction datetime not null,
+EmployNumber int not null,
+dateofentry datetime null constraint tbltransaction3_defdateofentry default getdate())
+
+insert into tbltransaction3(amount,dateoftransaction,employnumber)
+values(2,'2020-01-01',1)
+select * from tbltransaction3
+drop table tbltransaction3
+select * from tbltransaction
+
+ 
+
+
+insert into tblEmployInformation
+values(2003,'A',Null,'C','D','2014-01-01','Accounts')
+select * from tblemployinformation
+select * from tblemployinformation where employnumber=2003
+	
+
+Check constraint
+
+
+alter table tblEmployInformation with nocheck
+add constraint chmiddlename check
+(replace(employmiddlename,'.','')=employmiddlename or employmiddlename is null)
+
+
+alter table tblEmployInformation with nocheck
+add constraint chkdateofbirth check(dateofbirth between '1900-01-01' and getdate())
+
+Drop constraint
+alter table tblEmployInformation
+Drop constraint unqGovernmentID
+
+
+
+
+
+PRIMARY KEY 
+A primary key, also called a primary keyword, is a key in a relational database that is unique for each record. It is a unique identifier, such as a driver license number, telephone number (including area code), or vehicle identification number (VIN). A relational database must always have one and only one primary key. Primary keys typically appear as columns in relational database tables.
+The choice of a primary key in a relational database often depends on the preference of the administrator. It is possible to change the primary key for a given database when the specific needs of the users changes. For example, the people in a town might be uniquely identified according to their driver license numbers in one application, but in another situation it might be more convenient to identify them according to their telephone numbers.
+Selecting and deleting duplicate data particular row
+select * from tblemployInformation
+where employnumber=129
+delete top(1) from tblEmployInformation where
+employnumber=129
+
+Empting entire table
+truncate table employinformation2
+Delete and truncate both commands can be used to delete data of the table. 
+Delete is a DML command whereas truncate is DDL command. Truncate can be used to delete the entire data of the table without maintaining the integrity of the table. On the other hand , delete statement can be used for deleting the specific data. With delete command we can’t bypass the integrity enforcing mechanisms.
+
+Sr. No.	Key	Delete	Truncate
+1	Basic 	It is used to delete specific data 	It is used to delete the entire data of the table 
+2	       Where clause 	We can use with where clause 	It can’t be used with where clause 
+3	Locking 	It locks the table row before deleting the row 	It locks the entire table 
+4	Rollback 	We can rollback the changes.	We can’t rollback the changes 
+5	Performance	It is slower than truncate 	It is faster than delete 
+Example of Truncate and Delete
+//TRUNCATE Query
+TRUNCATE TABLE tableName;
+//Delete
+DELETE FROM tableName WHERE condition;
+
+
+Primary key with identity here start with 1  and increment by 1
+create table tblemploy
+(employnumber int constraint pk_tblemploy primary key identity(1,1),
+employname nvarchar(20))
+
+insert into tblemploy
+values('My Name'),('My Name')
+
+
+
+create table tblemploy
+(employnumber bigint constraint pk_tblemploy primary key identity(9876787676,1),
+employname nvarchar(20))
+
+insert into tblemploy
+values('Ramesh'),('Suresh')
+
+
+When identity insert is on it allow to enter primary key  by user when it is off it does not allow to enter primary key because it is default generated by the system
+
+
+set identity_insert employinformation2 on
+insert into employInformation2(EmployNumber,EmployName)
+values(38,'MyName'),(40,'MyName')
+set identity_insert employinformation2 off
+
+Both gives the last table used Primary Key identity
+
+select @@identity
+select scope_identity()
+
+It gives the Last used primary key of the specific table
+
+select ident_current('employinformation2')
+SQL FOREIGN KEY Constraint
+A FOREIGN KEY is a key used to link two tables together.
+A FOREIGN KEY is a field (or collection of fields) in one table that refers to the PRIMARY KEY in another table.
+The table containing the foreign key is called the child table, and the table containing the candidate key is called the referenced or parent table.
+Look at the following two tables:
+PersonID	LastName	FirstName	Age
+1	Hansen	Ola	30
+2	Svendson	Tove	23
+3	Pettersen	Kari	20
+"Persons" table:
+"Orders" table:
+OrderID	OrderNumber	PersonID
+1	77895	3
+2	44678	3
+3	22456	2
+4	24562	1
+Notice that the "PersonID" column in the "Orders" table points to the "PersonID" column in the "Persons" table.
+The "PersonID" column in the "Persons" table is the PRIMARY KEY in the "Persons" table.
+The "PersonID" column in the "Orders" table is a FOREIGN KEY in the "Orders" table.
+The FOREIGN KEY constraint is used to prevent actions that would destroy links between tables.
+The FOREIGN KEY constraint also prevents invalid data from being inserted into the foreign key column, because it has to be one of the values contained in the table it points to.
+Foreign key uses the primary key or unique constraint in other table for reference
+A foreign key can be null
+
+
+
+Its connect primary key to other table tbltransaction from tblEmployInformation
+
+select E.EmployNumber,T.*
+From tblemployinformation as E
+right join tbltransaction as T
+on E.EmployNumber=T.EmployNumber
+where T.Amount in (-964.05,-105.23,-506.80,239.55)
+
+Assigning primary key to employnumber in tblemployinformatioin but it must not have dublicate values
+
+alter table tblemployinformation
+add constraint pk_tblemploy Primary Key(employnumber)
+
+Here assigning foreign key to tbltransaction from tblemployinformation primary key
+Alter table tbltransaction with nocheck
+add constraint fk_tbltransaction_employnumber foreign key(employnumber)
+references tblemployinformation(employnumber)
+
+
+Select E.EmployNumber,T.*
+From tblemployinformation as E
+Right Join tbltransaction as T
+on E.EmployNumber=T.EmployNumber
+where T.Amount IN (-964.05,-105.23,-506.80,239.55,672.19)
+
+
+
+
+
+
+ 
+
+
+ 
+
+	 
+ 
+
+
+
+
+
+
+Create view is basically the keyword which save select statement into it. When we type keyword it gives the result of that select statement which saved into it.
+Create view viewbydepartment as 
+select D.Department,T.EmployNumber,T.DateofTransaction,T.Amount as TotalAmount
+from tblDepartment as D
+left Join tblEmployInformation as E
+on D.Department=E.Department
+left join tbltransaction as T
+on E.EmployNumber=t.Employnumber
+where T.EmployNumber between 120 and 138
+
+
+select D.Department,T.EmployNumber as EmpNum,sum(T.Amount) as TotalAmount
+from tblDepartment as D
+left join tblEmployInformation as E
+on D.Department=E.Department
+left Join tbltransaction as T
+on E.EmployNumber=T.EmployNumber
+group by D.Department,T.Employnumber
+After creating table we saved the select statement into the word viewsummary
+create view viewsummary as 
+select D.Department,T.EmployNumber as EmpNum,sum(T.Amount) as TotalAmount
+from tblDepartment as D
+left join tblEmployInformation as E
+on D.Department=E.Department
+left Join tbltransaction as T
+on E.EmployNumber=T.EmployNumber
+group by D.Department,T.Employnumber
+Droping the view
+
+drop view viewbydepartment
+
+
+This syntax gives details about the views created
+
+select * from sys.views
+
+This systax drop the view if it exists
+
+if exists (select * from sys.views where name ='viewbydepartment')
+
+
+
+drop view viewbydepartment
+go
+
+
+
+This statement encrypt view statement 
+
+alter view viewsummary with encryption as 
+select D.Department,T.EmployNumber as EmpNum,sum(T.Amount) as TotalAmount
+from tblDepartment as D
+left join tblEmployInformation as E
+on D.Department=E.Department
+left Join tbltransaction as T
+on E.EmployNumber=T.EmployNumber
+group by D.Department,T.Employnumber
+
+ 
+
+DBMS Schema
+Definition of schema: Design of a database is called the schema. Schema is of three types: Physical schema, logical schema and view schema.
+For example: In the following diagram, we have a schema that shows the relationship between three tables: Course, Student and Section. The diagram only shows the design of the database, it doesn’t show the data present in those tables. Schema is only a structural view(design) of a database as shown in the diagram below.
+
+select * from tbltransaction where employnumber in (132,142)
+One can delete table from view where tabled is created from only one base table if it is created from more than one base table then we cannot delete it
+create view viewsimple as 
+select * from tbltransaction
+select * from viewsimple
+delete from viewsimple
+where employnumber=658
+
+
+
+
+
+
+
+
+
+ 
+	
+
+
+ 
+
+Introduction to SQL Server indexed view
+Regular SQL Server views are the saved queries that provide some benefits such as query simplicity, business logic consistency, and security. However, they do not improve the underlying query performance.
+Unlike regular views, indexed views are materialized views that stores data physically like a table hence may provide some the performance benefit if they are used appropriately.
+To create an indexed view, you use the following steps:
+•	First, create a view that uses the WITH SCHEMABINDING option which binds the view to the schema of the underlying tables.
+•	Second, create a unique clustered index on the view. This materializes the view.
+Because of the WITH SCHEMABINDING option, if you want to change the structure of the underlying tables which affect the indexed view’s definition, you must drop the indexed view first before applying the changes.
+In addition, SQL Server requires all object references in an indexed view to include the two-part naming
+convention i.e., schema.object, and all referenced objects are in the same database.
+When the data of the underlying tables changes, the data in the indexed view is also automatically updated. This causes a write overhead for the referenced tables. It means that when you write to the underlying table, SQL Server also has to write to the index of the view. Therefore, you should only create an indexed view against the tables that have in-frequent data updates.
+Creating an SQL Server indexed view example
+The following statement creates an indexed view based on columns of the production.products, production.brands, and production.categories tables  from the sample database:
+
+
+
+Create view dbo.viewbydepartment with schemabinding as 
+select D.Department,T.EmployNumber,T.DateofTransaction,T.Amount as TotalAmount
+from dbo.tblDepartment as D
+inner Join dbo.tblEmployInformation as E
+on D.Department=E.Department
+inner join dbo.tbltransaction as T
+on E.EmployNumber=t.Employnumber
+where T.EmployNumber between 120 and 138
+create unique clustered index inx_viewbydeparment on dbo.viewbydepartment(EmployNumber,Department,totalAmount)
+
+
+ 
+
+ 
+DML data manipulation language
+DDL data definition language
+
+
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Creating after trigger into database
+
+
+CREATE TRIGGER tr_tbldepartment
+    ON [dbo].tbldepartment
+    FOR DELETE, INSERT, UPDATE
+    AS
+    BEGIN
+	select * from inserted
+	select * from deleted
+    SET NOCOUNT ON
+    END
+
+
+
+insert into tbldepartment(department,departmentHead)
+values('SV','Nishant')
+
+select * from tbldepartment
+
+Here we created a trigger instead of in viewsummary and after creating the trigger since in view we cannot delete row because view is created from multiple table
+So instead of deleting it show what we wanted  to delete and other thing 
+
+
+CREATE TRIGGER tr_viewsummary
+    ON [dbo].viewsummary
+Instead of  DELETE
+    AS
+    BEGIN
+	select *,'viewsummary' from deleted 
+    SET NOCOUNT ON
+    END
+	select * from viewsummary where
+	EmpNum=131 and TotalAmount=1.00
+	delete from viewsummary where
+	empnum=131 and TotalAmount=1.00
+	select * from viewsummary
+	where empnum=131 and totalamount=1.00
+
+ 
+
+	Nested Triggers in SQL Server are actions that automatically execute when a certain database operation is performed, for example, INSERT, DROP, UPDATE etc.
+They execute as a result of DML (Data Manipulation Language) operations e.g. INSERT, UPDATE, DELETE or DDL (Data Definition Language) operations such as CREATE, ALTER, DROP.
+Nested Triggers in SQL Server can be broadly categorized into two types: AFTER triggers and INSTEAD OF triggers. AFTER triggers execute after a DML or DDL operation is performed. INSTEAD OF triggers execute in place of a DML or DDL operation.
+In addition to being triggered by DML and DDL operations, triggers in SQL Server can also be triggered by other triggers. This type trigger is called a nested trigger in SQL or a recursive trigger.
+In this article we will see how nested triggers in SQL Server work.
+Nested Triggers in SQL Server sometimes get a bad press. For those of you who are wondering if using triggers is a good idea, as with most things used in the right place and in the right way they work very well.
+Note: Used in the wrong place or in the wrong way (see Query optimization techniques in SQL Server: Database Design and Architecture article) they can lead to many problems as Are SQL Server database triggers evil? article lays out. If you’re unsure as always make sure that your database is properly backed up first.
+Creating Dummy Data
+Before actually looking at an example of a nested trigger, let’s create some dummy data. Execute the following script:
+CREATE DATABASE Showroom
+ 
+GO
+ 
+Use Showroom
+CREATE TABLE Car  
+(  
+   CarId int identity(1,1) primary key,  
+   Name varchar(100),  
+   Make varchar(100),  
+   Model int ,  
+   Price int ,  
+   Type varchar(20)  
+)  
+ 
+insert into Car( Name, Make,  Model , Price, Type)
+VALUES ('Corrolla','Toyota',2015, 20000,'Sedan'),
+('Civic','Honda',2018, 25000,'Sedan'),
+('Passo','Toyota',2012, 18000,'Hatchback'),
+('Land Cruiser','Toyota',2017, 40000,'SUV'),
+('Corrolla','Toyota',2011, 17000,'Sedan')
+ 
+ 
+CREATE TABLE CarLog  
+(  
+   LogId int identity(1,1) primary key,
+   CarId int , 
+   CarName varchar(100),  
+)
+In the script above, we create a database called Showroom with two tables: Car and CarLog.
+The Car table has five attributes: CarId, Name, Make, Model, Price and Type.
+Next, we added 12 dummy records to the Car table.
+The CarLog table has three columns: LogId, CarId and the CarName.
+Understanding Nested Triggers in SQL Server
+Suppose we want to ensure that no one can enter data directly into the CarLog table. Rather, that we want to be sure that when data is entered in the Car table, a subset of that data is entered into the CarLog table.
+To do this, we need to write two triggers. The first trigger will be specified on the CarLog table and it will prevent direct insertion of data into the table. The second trigger will be written on the Car table and will insert data into CarLog table after inserting data into the Car table.
+Let’s first write a Nested trigger in SQL that prevents the insertion of data into the CarLog table.
+The trigger type will be INSTEAD OF because instead of inserting data into the table we want the trigger to display an error message to the user that direct insertion is not possible.
+Execute the following script:
+CREATE TRIGGER [dbo].[CarLOG_INSERT]
+       ON [dbo].[CarLog]
+INSTEAD OF INSERT
+AS
+BEGIN
+PRINT('DATA CANNOT BE INSERTED DIRECTLY IN CarLog TABLE')
+      
+END
+In the script above, we create a triggered named “CarLog_INSERT” which is an INSTEAD OF type trigger. The trigger executes whenever someone tries to directly insert records into the CarLog table. The trigger simply displays a message to the user that direct insertion is not possible.
+Let’s now try to insert a record into the CarLog table and see if our trigger actually works. Execute the following script:
+INSERT INTO CarLog(  CarId , CarName)
+VALUES (2, 'Civic')
+In the output, you will see the following message:
+ 
+The trigger has executed and instead of inserting a record into the CarLog table, it has displayed the message that direct insertion is not possible.
+Let’s try to SELECT all the records from the CarLog table to verify that no record has been inserted into the CarLog table. Run the following script:
+SELECT * FROM CarLog
+In the output, you will see that the CarLog table is empty.
+Now, let’s create our second trigger on the Car table. This will execute after some records have been inserted into the Car table.
+The Nested trigger in SQL will insert records into the CarLog table. Run the following script:
+CREATE TRIGGER [dbo].[CAR_INSERT]
+       ON [dbo].[Car]
+AFTER INSERT
+AS
+BEGIN
+       SET NOCOUNT ON;
+ 
+       DECLARE @car_id INT, @car_name VARCHAR(50)
+ 
+       SELECT @car_id = INSERTED.CarId,  @car_name = INSERTED.name       
+       FROM INSERTED
+ 
+  
+ 
+       INSERT INTO CarLog
+       VALUES(@car_id, @car_name)
+END
+The Car_INSERT trigger is of the AFTER INSERT type, and inserts records into the CarLog table after inserting records into the Car table.
+Now, let’s try and test our Car_INSERT trigger.
+Execute the following script to insert some data in Car table.
+insert into Car( Name, Make,  Model , Price, Type)
+VALUES ('Mustang','Ford',2014, 25000,'Sedan')
+When you execute the script above, you will again see the following message output:
+ 
+Let’s see if our data has been inserted into both the Car and CarLog table, or not. Let’s first we need to select the Car table records.
+SELECT * FROM Car
+The output looks like this:
+
+In the output, at the bottom, you can see the newly inserted record where the name of the car is “Mustang”.
+Now let’s see if the new record has been inserted into the CarLog table. Execute the following script:
+SELECT * FROM CarLog
+Output:
+
+You can see an empty table in the output. This means that the record was inserted into the Car table, then the Car_INSERT nested trigger in SQL executed which tried to insert the data into the CarLog table. However, when the Car_INSERT trigger tried to insert data into the CarLog table, the nested CarLog_INSERT trigger also executed which prevented data from being inserted into the CarLog table. This shows how a trigger can be used to make another trigger to execute.
+Coming back to our use case. We want to prevent direct insertion of data into the CarLog table. We want data to be inserted via the Car_INSERT trigger. However, currently the CarLog_INSERT trigger is preventing both direct insertion and the insertion of data via the Car_INSERT trigger.
+We need to update the CarLog_INSERT trigger so that when someone tries to directly insert data into the CarLog table, the insertion is prevented, but when the insertion is performed via the Car_INSERT trigger, it is allowed.
+Before we update our trigger we need to know that each trigger is assigned an integer value called @@NESTLEVEL depending upon the source of the trigger’s execution, If the trigger is executed directly, the value for the @@NESTLEVEL for that trigger is set to 1. However, if a trigger is triggered by another trigger, the @@NESTLEVEL value is set to 2. Similarly, if the trigger is executed as a result of another trigger which is executed as a result of another trigger, the @@NESTLEVEL of the innermost trigger will be set to 3. The maximum number of nested triggers allowed by SQL Server is 32.
+Now that we understand the @@NESTLEVEL value, we will update the CarLog_INSERT trigger so that when it has a @@NESTLEVEL value of 1 (direct insertion), the record will not be inserted into the CarLog table, but so that if the @@NESTLEVEL value is not equal to 1 ( insertion through another trigger which gives an @@NESTLEVEL of 2), the record will be inserted.
+The following script deletes the CarLog_INSERT nested trigger in SQL Server:
+DROP TRIGGER [dbo].[CarLOG_INSERT]
+And the following script creates the updated version of the CarLog_INSERT trigger we discussed above:
+CREATE TRIGGER [dbo].[CarLOG_INSERT] ON [dbo].[CarLog]
+INSTEAD OF INSERT
+AS
+BEGIN
+  IF @@NESTLEVEL = 1
+
+
+    PRINT('DATA CANNOT BE INSERTED DIRECTLY IN CarLog TABLE')
+  ELSE
+    BEGIN
+       DECLARE @car_id INT, @car_name VARCHAR(50)
+ 
+       SELECT @car_id = INSERTED.CarId,  @car_name = INSERTED.CarName      
+       FROM INSERTED
+       INSERT INTO CarLog
+       VALUES(@car_id, @car_name)
+    END
+    
+END
+Now let’s first try to insert a record directly into the CarLog table.
+INSERT INTO CarLog(  CarId , CarName)
+VALUES (2, 'Civic')
+If you SELECT all the records from the CarLog table, you will see that no record has inserted since direct insertion is prevented by the CarLog_INSERT trigger.
+Now let’s try to insert records via the Car table.
+insert into Car( Name, Make,  Model , Price, Type)
+VALUES ('Clio','Renault',2012, 5000,'Sedan')
+When you insert the above record into the Car table, the Car_INSERT trigger executes and will try to insert a record into the CarLog table. This will in turn trigger the nested CarLog_INSERT trigger.
+Inside the CarLog_INSERT trigger the @@NESTLEVEL value of the nested trigger will be checked and since the insertion is not direct, the record will be inserted into the CarLog table as well. You can verify this by issuing the following command.
+SELECT * FROM CarLog
+In the output, you will see the newly inserted record:
+
+
+
+
+UNION
+The UNION command combines the result set of two or more SELECT statements (only distinct values)
+The following SQL statement returns the cities (only distinct values) from both the "Customers" and the "Suppliers" table:
+Example
+SELECT City FROM Customers
+UNION
+SELECT City FROM Suppliers
+ORDER BY City
+UNION ALL
+The UNION ALL command combines the result set of two or more SELECT statements (allows duplicate values).
+The following SQL statement returns the cities (duplicate values also) from both the "Customers" and the "Suppliers" table:
+Example
+SELECT City FROM Customers
+UNION ALL
+SELECT City FROM Suppliers
+ORDER BY City;
+
+select convert(char(5),'hi')
+	--union
+select convert(char(14),'hello there')
+
+hi            
+hello         
+
+
+
+
+
+select convert(char(5),'hi') as Greeting
+union
+select convert(char(14),'hi') as Greeting
+
+
+     hi    
+
+select convert(char(5),'hi') as Greeting
+union
+select convert(char(14),'hello') as Greeting
+union
+select convert(char(23),'benjor') as Greeting        
+
+
+
+
+
+
+
+EXCEPT returns any distinct values from the left query that are not also found on the right query.
+
+INTERSECT returns any distinct values that are returned by both the query on the left and right sides of the INTERSECT operand.
+The basic rules for combining the result sets of two queries that use EXCEPT or INTERSECT are the following:
+•	The number and the order of the columns must be the same in all queries.
+ 
+•	The data types must be compatible.
+
+	
+
+
+
+Here it creates a new table tbltransactionnew and copy from tbltransaction and creates a new column shoulddelete in which row number divides by 3 and remainder comes into that column
+So the return would be in 0,1,2
+
+select * from tbltransaction
+select *, row_number() over(order by (select null)) % 3 as shouldDelete
+into tbltransactionnew
+from tbltransaction
+233.00		2015-01-01 	00:00:00	123	1
+-105.23	2015-09-14	00:00:00	987	2
+-506.80	2015-05-05 	00:00:00	695	0
+239.55		2014-12-24	00:00:00	766	1
+672.19		2015-10-31 	00:00:00	629	2
+
+delete from tbltransactionnew
+where shoulddelete=1
+Here in this syntax those rows would be delete where shoulddelete column would have 1 value
+-105.23	2015-09-14 00:00:00	987		2
+-506.80	2015-05-05 00:00:00	695		0
+672.19	2015-10-31 00:00:00	629		2
+1.00	2015-01-01 00:00:00	131		0
+72.03	2015-10-07 00:00:00	804		2
+-283.63	2015-05-06 00:00:00	245		0
+
+update tbltransactionnew
+set dateoftransaction=dateadd(day,1,dateoftransaction)
+where shoulddelete=2
+
+Here in tbltransaction in dateoftransaction column 1 day would be add where in shoulddelete column is number 2
+alter table tbltransactionnew
+drop column shoulddelete
+In this syntax entire column shoulddelete would be drop
+
+select * from tbltransaction
+ union all 
+ select * from tbltransactionnew
+Here with union all both the row would be add even dublicates one
+select * from tbltransaction
+ union 
+ select * from tbltransactionnew
+in this union only those row would show which are distinct i.e. there would be no dublicate rows
+select * from tbltransaction
+ except
+ select * from tbltransactionnew
+In except only those rows would be add which are common in both the table
+
+select * from tbltransaction
+ intersect 
+ select * from tbltransactionnew
+In intersect only those rows would be add which are common in both the tables
+select * from tbltransaction
+ intersect 
+ select * from tbltransactionnew
+ order by employnumber
+Here in union union all except or intersect we cannot write order by clause in the middle we have to write it at the end.
+
+CASE STATEMENT
+
+The case statement in SQL returns a value on a specified condition. We can use a Case statement in select queries along with Where, Order By and Group By clause. It can be used in Insert statement as well. In this article, we would explore CASE statement and its various use cases.
+declare @myoption as varchar(50)='Option B'
+ Select case when @myoption='Option A' then 'First Option'
+ when  @myoption='Option B' then 'Second Option'
+else 'no option' end as MyOption
+Second Option
+declare @myoption as varchar(50)='Option A'
+ Select case when @myoption='Option A' then 'First Option'
+ when  @myoption='Option B' then 'Second Option'
+else 'no option' end as MyOption
+First Option
+
+Here I have declare a variable called @myoption and its variable type is varchar and the value given to this variable is option is
+After that select statement write which case would be fulfilled output would be in that criteria
+select case @myoption when 'Option A' then 'first option'
+					 when 'Option B' then 'Second Option'
+					 else  'No Option' end as MyOption
+
+It is the second way we can write the case statement
+
+SELECT TOP (1000) [EmployNumber]
+      ,[EmployFirstNme]
+      ,[EmployMiddleName]
+      ,[EmployLastName]
+      ,[EmployGovernmentID]
+      ,[DateOfBirth]
+      ,[Department],
+	  case  when left(EmployGovernmentID,1)='A' then 'Letter A'
+			when left(EmployGovernmentID,1)='B' then 'Letter B'
+			else 'Neither Letter' End+’.’
+
+  FROM [70-461].[dbo].[tblEmployInformation]
+Here I we have selected to 1000 rows with certain criteria we have added to it. We can also have something with it like full stop or anything which would be common to all
+
+case  when left(EmployGovernmentID,1)='A' then 'Letter A'
+	when Employnumber<200 then 'Less than 200'
+			else 'Neither Letter' End+'.'
+We don’t need to specify same variable again and again in above case we can filter out on different criteria on column.
+
+1.	COALESCE and ISNULL 
+
+2.	are the two functions that will return a NON-NULL value instead of a NULL
+3.	The data type of the output returned by COALESCE will be the data type with highest precedence, whereas data type of the ISNULL output will be the data type of the first input.
+4.	COALESCE is ANSI-SQL Standard and can accept multiple parameters
+5.	As far as the performance of the query is concerned, ISNULL is the preferable choice in subqueries
+6.	I am going to write my second article on the same which will give you an insight into the impact of COALESCE and ISNULL in transactions.
+
+declare @myoption as varchar(30)=NUll
+select isnull(@myoption,'No Option') as MyOptions
+
+coalesce can accept multiple parameters. Here there are more than one parameters 
+declare @myfirstoption as varchar(30)=Null
+declare @mysecondoption as varchar(30)=Null
+select coalesce(@myfirstoption,@mysecondoption,'No Option') as MyOption
+Merge Statement
+The two tables are compared using a merge Condition.  This condition specifies how rows from the sourceTable are matched to the targetTable.  If your familiar with INNER JOINS, you can think of this as the join condition used to match rows.
+Typically, you would match a unique identifier, such as a primary key.  If the source table was NewProduct and target ProductMaster and the primary key for both ProductID, then a good merge condition to use would be:
+NewProduct.ProductID = ProductMaster.ProductID
+
+ 
+Here Select then count them from then group by then having
+Here we selected column from employnumber and dateoftransaction  from after then the number of row then we group them which have repeated more than once in the table.
+select employnumber,dateoftransaction, count(*) as numberofrow
+from tbltransaction
+group by employnumber,dateoftransaction
+having count(*)>1
+Here we get two table employnumber and dateoftransaction byf sumimg the amount who have more then one row by merging and getting total in amount so it is basically could be works as summary report
+
+select employnumber,dateoftransaction,sum(amount) as totalamount
+from tbltransactionnew
+group by employnumber,dateoftransaction
+having count(*)>1
+
+select employnumber,dateoftransaction,sum(amount) as totalamount,count(*) as Mycount
+from tbltransactionnew
+group by employnumber,dateoftransaction
+
+Here we started with merge statement then we used using clause here that table comes which need to be merged then comes on clause here we would write those column name that are equal to each other then comes when matched and when not matched statement these are statement where we add those clause when these statement matched then what need to do and when not matched what to do. Alias is compulsory in merge statement.
+merge into tbltransaction as T
+using (select employnumber,dateoftransaction,sum(amount) as amount
+from tbltransactionnew
+group by employnumber,dateoftransaction) as S
+On T.EmployNumber=S.EmployNumber And T.DateofTransaction=S.Dateoftransaction
+When Matched then
+update set Amount=T.Amount+S.Amount
+When not matched  by target then
+Insert(Amount,DateofTransaction,employnumber)
+values(S.Amount,S.DateofTransaction,S.EmployNumber);
+
+
+
+Here I created a table sales and also created another table salesnews in salesnew some news product with existing product what I wanted to do was merge those product into original table such that same product price would add and new product would add into new column and I did exactly like that.I used merged statement to do that.
+Create table tblsales
+(Product Varchar(50) Not Null,
+Cost int NOT NULL)
+drop table tblsales
+
+insert into tblsales
+values('soap',250),('paste', 400),('pulses',340),('Oil',200),('Coffee',100)
+select * from tblsales
+create table tblsalesnew
+(Product Varchar(50) Not Null,
+Cost int Not Null)
+insert into tblsalesnew
+values('soap',400),('Paste',140),('milk',50)
+
+select * from tblsalesnew
+merge into tblsales as S
+using tblsalesnew  as N
+On S.Product=N.Product and S.Cost=S.Cost
+when matched then
+Update set cost=S.cost+N.cost
+When not matched by target then
+insert(product,cost)
+values(N.product,N.Cost);
+
+Merge with additional column
+Here we added new column comments and in this column we added comments on conditional basis when criteria matched which is on clause then comments would be updated row and when comments don’t match then comments would be something else.
+
+alter table tblsales
+add comments varchar(20) Null
+merge into tblsales as S
+using tblsalesnew  as N
+On S.Product=N.Product and S.Cost=S.Cost
+when matched then
+Update set cost=S.cost+N.cost,comments='Updated Row'
+When not matched by target then
+insert(product,cost,comments)
+values(N.product,N.Cost,'Added new row');
+
+Here target table is that table in which we need to update our data and source table is that table from which we would update our data.
+merge into tblsales as T
+using tblsalesnew  as S
+On S.Product=N.Product and S.Cost=S.Cost
+when matched then
+Update set cost=S.cost+N.cost,comments='Updated Row'
+When not matched by target then
+insert(product,cost,comments)
+values(N.product,N.Cost,'Added new row')
+when not matched by source then
+update set comments='unchanged';
+Here we tested new condition here we added cell and 
+insert into tblsales
+values('cell',2,null)
+select * from tblsales
+create table tblsalesnew
+(Product Varchar(50) Not Null,
+Cost int Not Null)
+insert into tblsalesnew
+values('cell',1)
+Here I added one more when condition when sum of cost is greater than 10 then and then only update the row if its less than 10 then delete the entire then and I mentioned that in other when clause.
+select * from tblsalesnew
+alter table tblsales
+add comments varchar(20) Null
+merge into tblsales as S
+using tblsalesnew  as N
+On S.Product=N.Product and S.Cost=S.Cost
+when matched and S.cost+N.Cost>10then
+Update set cost=S.cost+N.cost,comments='Updated Row'
+when matched then
+delete
+When not matched by target then
+insert(product,cost,comments)
+values(N.product,N.Cost,'Added new row')
+when not matched by source then
+update set comments='unchanged';
+
+ 
+
+	A procedure in SQL (often referred to as stored procedure), is a reusable unit that encapsulates the specific business logic of the application. A SQL procedure is a group of SQL statements and logic, compiled and stored together to perform a specific task.
+	SQL procedures can be used to create simple scripts for quickly querying transforming, updating data, generating basic reports, improve application performance, modularizing applications, and improve overall database design, and database security.
+	Stored procedures provide improved performance because fewer calls need to be sent to the database. For example, if a stored procedure has four SQL statements in the code, then there only needs to be a single call to the database instead of four calls for each individual SQL statement.
+	The function always returns a value. Stored Procedure will not return a value, but the procedure can return “0” or n values. Functions have only input parameters for it. Whereas, Procedures can have output or input parameters.
+	Stored Procedures can be fast, very fast, as they are pre-compiled. The optimiser does not have to work out the execution plan each time. A Stored Procedure will return results in a table form. Functions can be Scalar (returning a single result) or return Tabular data.D
+
+
+
+
+
+In simple words, VIEW can only read data while procedure can alter the data.\
+Views are generally created when you don’t want to expose the full table view to some user.
+Similarly stored procedures are created when you want to limit the columns which a user can update.
+
+Working principle of procedures
+Its basically a middle man between server and programme its can modify data alter data and then send it to programme.
+
+ 
+
+Here I created a procedure with the keyword proc and the name of the procedure is ‘Nameemploy’ I selected column employnumber,employfirstnam,employlastname for this procedure 
+
+create proc Nameemploy as 
+begin
+select employnumber,employfirstnme,employlastname
+from tblemployinformation
+end
+Here is following syntax is used to execute the procedure which we have created named nameemploy
+
+execute nameemploy
+exec nameemploy
+Here we can drop procedure with the following statement
+drop proc nameemploy
+In the following syntax we can see the list of procedures and we can specifically find a particular procedure
+select * from sys.procedures where name='nameemploy'
+In the following syntax we can drop the procedure if it exist.
+if exists(select * from sys.procedures where name='NameEmploy')
+drop proc Nameemploy
+
+In the following syntax we can drop the procedure.
+if object_id('NameEmploy','P') is not null
+drop proc nameemploy
+Here we created a procedure named nameemploy and give it a columnname of origin table from where data is to be fetched it would be unique constraint or primary key from the table after that we wrote begin end statement inside that statement mentioned those column which we want to fetched in the output here we fetched employnumber,employfirstname,employlastname from where we want to fetch that information and that is tblemployinformation and after that we mentioned with the from clause and after that in that table which row we want to fetch and we mentioned it in where clause  where employnumber=@emplynumber 
+create proc nameemploy(@employnumber int) as
+begin
+select employnumber,employfirstnme,employlastname
+from tblemployinformation
+where employnumber=@employnumber
+end
+
+In the following syntax we fetched the information for the particular employ number
+We can fetch from three ways as mentioned in the following.
+
+
+nameemploy 123
+execute nameemploy 223
+exec nameemploy 323
+Here we added one syntax if exists then give following information what if does not exist thing about it?
+
+create proc nameemploy(@employnumber int) as
+begin
+if exists(select * from tblemployinformation where employnumber=@employnumber)
+select employnumber,employfirstnme,employlastname
+from tblemployinformation
+where employnumber=@employnumber
+end
+Here we have created code using multiple if statement like if first condition was if employnumber entered is exist in the table in the second if statement we said if employnumber which we have entered is less than 300 then give detail in column of employnumber employfirstname, employlastname, else retrieve statement in the column of employnumber, employfirstname employlastname department and also retrieve the row of that particular employnumber number from the tbltransaction.
+
+create proc nameemploy(@employnumber int) as
+begin
+if exists(select * from tblemployinformation where employnumber=@employnumber)
+begin
+if @employnumber<300
+select employnumber,employfirstnme,employlastname
+from tblemployinformation
+where employnumber=@employnumber
+end
+else
+begin
+select employnumber,employfirstnme,employlastname,department
+from tblemployinformation
+where @employnumber=employnumber
+select * from tbltransaction where @employnumber=employnumber
+end
+end
+
+Here I write procedure in another creative way where I want to retrieve information between the numbers which user has entered for that I write (where between and) clause after (select from ) clause
+For that I also mentioned inside the (begin end) from where I want to retrieve information
+(where between and )clause
+
+create proc nameemploy(@employnumberfrom int, @employnumberto int) as
+begin
+if exists(select * from tblemployinformation where employnumber between @employnumberfrom and @employnumberto)
+begin
+select employnumber,employfirstnme,employlastname
+from tblemployinformation
+where employnumber between @employnumberfrom and @employnumberto
+end
+end
+when we want to retrieve information between two number we can write in following ways
+execute nameemploy @employnumberfrom=223,@employnumberto=324
+execute nameemploy 223,324
+we can write in following way also to execute the querty to retrieve data between two arguments.
+
+execute nameemploy 223,@employnumberto=324
+We can also write in following way larger argument first than smaller argument
+
+execute nameemploy @employnumberto=324,@employnumberfrom=223
+
+
+
+
+
+
+
+
+Here we have write this procedure with while loop we have declared variable called @employnumber and its data type is int and give it value @employnumberfrom, means (from whichever value user would want to retrieve data from) then we started our while loop means while variable data is less than the value of the number to which user want to get data which is @employnumberto till then keep looping then we entered condition inside (begin end ) and then at last increased the variable data i.e @emplynumber to 1 and this would keep looping till the while condition is filled.
+
+create proc nameemploy(@employnumberfrom int, @employnumberto int) as
+begin
+if exists(select * from tblemployinformation where employnumber between @employnumberfrom and @employnumberto)
+begin
+declare @employnumber int=@employnumberfrom
+while @employnumber<=@employnumberto
+begin
+select employnumber,employfirstnme,employlastname
+from tblemployinformation
+where employnumber=@employnumber
+set @employnumber=@employnumber+1
+
+end
+end
+end
+
+
+In MySQL, the RETURN statement is used when you are want to exit a function and return the result of the function. It can also be used to terminate a LOOP and then exit with the result.
+In following code we have declared a third variable called @numberrow which is integer type and after that we wrote output after int and then at last we set that variable @numberrow to @@rowcount this variable count the rows and gives the output put this is in the create procedure in execution code we declare a variable which is integer and after in execution code we wrote the variable after the input parameters and wrote ouput and then in third life we select that parameter which is used as output.
+create proc nameemploy(@employnumberfrom int, @employnumberto int,@numberrow int output) as
+begin
+if exists(select * from tblemployinformation where employnumber between @employnumberfrom and @employnumberto)
+begin
+select employnumber,employfirstnme,employlastname
+from tblemployinformation
+where employnumber between @employnumberfrom and @employnumberto
+set @numberrow=@@rowcount
+
+end
+end
+drop proc nameemploy
+
+Declare @numberrow int 
+execute nameemploy 300,324, @numberrow output
+select @numberrow
+
+
+
+Here in the following code we retrieve data by (select,where, between, and )statement.
+select * from tbltransaction
+where employnumber between 600 and 700
+In the following code we calculated the total amount based on the criteria where employnumber is between 3 and 500 basically we used here (select, where, between, and) keywords.
+
+select sum(amount) from tbltransaction
+where employnumber between 3 and 500
+
+Here we counted total number of employnumber between 3 and 500 here we used (select,count,from,where,between,and) keyword
+select count(employnumber) from tbltransaction
+where employnumber between 3 and 500
+
+In the following code we count distinct employnumber number meaning no dublicate value in above code there is dublicate value one employnumber can repeated manytimes here we used (select,count,distinct,from,where,between,and) keywords.
+
+select count(distinct employnumber) from tbltransaction
+where employnumber between 3 and 500
+
+
+
+
+
+
+
+
+Here we created procedure named averagebalance. In it we declared three variables called @employnumberfrom,@employberto and @averagebalance all are integer datatype. We declared @averagebalance variable as ouput by writing output after it. After declaring variable in next line if exists has been write into it (select,from,where,between,and)keyword used.In next line we declared two variable after begin @totalamount,@numberofemploy one is money data type and other is int type variable.After it (select,where,between and) keywords used to @totalamount variable we gave sum amount between two criteria which user would input. In another variable @numberofemploy we input count statement inside it. In @averagebalance variable we divided two data type which we declared inside the begin statement.
+create proc Averagebalance(@employnumberfrom int, @employnumberto int,@averagebalance int output) as
+begin
+if exists(select * from tblemployinformation where employnumber between @employnumberfrom and @employnumberto)
+begin
+declare @totalamount as money
+declare @numberofemploy as int
+select @totalamount=sum(amount) from tbltransaction
+where employnumber between @employnumberfrom and @employnumberto
+select @numberofemploy=count(distinct employnumber) from tbltransaction
+where employnumber between @employnumberfrom and @employnumberto
+set @averagebalance=@totalamount/@numberofemploy
+end
+end
+Here in following output procedure we declared two variable @avgbalance and @returnstatus in second statement in @returnstatus variable we write name of the procedure and input parameters and in second @avgbalance variable we gave output.Note we above variable @averagebalance only work in that statement so that why we needed to declare another variable in this statement and gave the output value to it. In 3rd line we gave output values  and we gave variable frontend name to @avgbalance we gave average_balance and to @returnstatus variable we gave return_status name.
+
+Declare @Avgbalance int, @ReturnStatus int
+execute @Returnstatus=AverageBalance 223,227,@avgbalance output
+select @Avgbalance as average_balance,@returnstatus as Return_Status
+In following procedure we added if statement after we gave values to both the variable in if statement we mentioned that if @numberofemploy is 0 then set Averagebalance would be 0 and otherwise in else statement we gave variable values of division to both the parameters.
+
+create proc Averagebalance(@employnumberfrom int, @employnumberto int,@averagebalance int output) as
+begin
+if exists(select * from tblemployinformation where employnumber between @employnumberfrom and @employnumberto)
+begin
+declare @totalamount as money
+declare @numberofemploy as int
+select @totalamount=sum(amount) from tbltransaction
+where employnumber between @employnumberfrom and @employnumberto
+select @numberofemploy=count(distinct employnumber) from tbltransaction
+where employnumber between @employnumberfrom and @employnumberto
+if @numberofemploy=0
+set @averagebalance=0
+else
+set @averagebalance=@totalamount/@numberofemploy
+end
+end
+
+The TRY CATCH construct allows you to gracefully handle exceptions in SQL Server. To use the TRY CATCH construct, you first place a group of Transact-SQL statements that could cause an exception in a BEGIN TRY...END TRY block as follows:
+BEGIN TRY  
+   -- statements that may cause exceptions
+END TRY  
+Then you use a BEGIN CATCH...END CATCH block immediately after the TRY block:
+BEGIN CATCH  
+   -- statements that handle exception
+END CATCH  
+
+
+BEGIN TRY  
+   -- statements that may cause exceptions
+END TRY 
+BEGIN CATCH  
+   -- statements that handle exception
+END CATCH
+•	ERROR_LINE() returns the line number on which the exception occurred.
+•	ERROR_MESSAGE() returns the complete text of the generated error message.
+•	ERROR_PROCEDURE() returns the name of the stored procedure or trigger where the error occurred.
+•	ERROR_NUMBER() returns the number of the error that occurred.
+•	ERROR_SEVERITY() returns the severity level of the error that occurred.
+•	ERROR_STATE() returns the state number of the error that occurred.
+•	create proc Averagebalance(@employnumberfrom int, @employnumberto int,@averagebalance int output) as
+•	begin
+•	if exists(select * from tblemployinformation where employnumber between @employnumberfrom and @employnumberto)
+•	begin try
+•	declare @totalamount as money
+•	declare @numberofemploy as int
+•	select @totalamount=sum(amount) from tbltransaction
+•	where employnumber between @employnumberfrom and @employnumberto
+•	select @numberofemploy=count(distinct employnumber) from tbltransaction
+•	where employnumber between @employnumberfrom and @employnumberto
+•	set @averagebalance=@totalamount/@numberofemploy
+•	end try
+•	begin catch
+•	set @averagebalance=0
+•	select error_message()
+•	
+•	end catch
+•	end
+
+
+ 
+Here we created table by adding  both primary and foreign constraint into the table and we also created primary key by adding two column  
+create table tblAttendance
+(EmployNumber int,
+AttendanceMonth date,
+NumberAttendance smallint,
+CONSTRAINT PK_Attendance PRIMARY KEY(EmployNumber,AttendanceMonth),
+CONSTRAINT FK_Attendance_EmployeeNumber FOREIGN KEY(EmployNumber)
+    REFERENCES tblEmployInformation(EmployNumber))
+Here I joined table attendance to table employinformation with join statement (select,join,on) keyword.
+
+select * from tblemployinformation as E 
+join tblattendance as A
+on E.Employnumber=A.Employnumber
+Here he have got selected column we want from joined table which we joined through join statement
+
+select E.Department,E.Employnumber,A.Attendancemonth,A.Numberattendance from tblemployinformation as E 
+join tblattendance as A
+on E.Employnumber=A.Employnumber
+Here we add the total attendance which was grouped by employnumber and year
+
+select E.EmployNumber,year(A.Attendancemonth),sum(A.Numberattendance) as totalattendance
+from tblemployinformation as E 
+join tblattendance as A
+on E.Employnumber=A.Employnumber
+Group by  E.EmployNumber,year(A.Attendancemonth)
+order by E.EmployNumber,year(A.Attendancemonth)
+
+Now in the following code I year removed year now thing how data would be sum it now will condense based on employnumber because we have used group by and its will also summarize it in order because we have added order by statement. 
+select E.EmployNumber,sum(A.Numberattendance) as totalattendance
+from tblemployinformation as E 
+join tblattendance as A
+on E.Employnumber=A.Employnumber
+Group by  E.EmployNumber
+order by E.EmployNumber
+
+
+Here I Simply summed the table numberattendance in the below syntax.
+select sum(numberattendance) from tblattendance
+Now we added another column in last row by entering convert function now we can change any data type into some other data type by convert function. 
+
+select E.EmployNumber,sum(A.Numberattendance) over() as totalattendance,
+convert(decimal(7,2),A.Numberattendance)/sum(A.Numberattendance) over()* 100 as percentageofattendance
+from tblemployinformation as E 
+join tblattendance as A
+on E.Employnumber=A.Employnumber
+Here in below code we have added where statement to filter the data in particular group we can als used between and to get information between two particular year.
+select E.EmployNumber,sum(A.Numberattendance) over() as totalattendance,
+convert(decimal(7,2),A.Numberattendance)/sum(A.Numberattendance) over()* 100 as percentageofattendance
+from tblemployinformation as E 
+join tblattendance as A
+on E.Employnumber=A.Employnumber
+where year(attendancemonth)=2014
+
+
+Here we grouped the data between two year in following case it is 2014 and 2016
+
+select E.EmployNumber,year(attendancemonth),sum(A.Numberattendance) over() as totalattendance,
+convert(decimal(7,2),A.Numberattendance)/sum(A.Numberattendance) over()* 100 as percentageofattendance
+from tblemployinformation as E 
+join tblattendance as A
+on E.Employnumber=A.Employnumber
+where year(attendancemonth) between 2014 and 2016
+In following case we have alter the where statement by less than 
+select E.EmployNumber,year(attendancemonth),sum(A.Numberattendance) over() as totalattendance,
+convert(decimal(7,2),A.Numberattendance)/sum(A.Numberattendance) over()* 100 as percentageofattendance
+from tblemployinformation as E 
+join tblattendance as A
+on E.Employnumber=A.Employnumber
+where year(attendancemonth) < 20150101
+Partition by
+In the following code I have added partition by inside over and what it does it partition the over() clause into partition in which way we want to get partition here we want to get partition in he form of employ number we can also do partition by in the year group or 
+
+select E.EmployNumber,year(attendancemonth),sum(A.Numberattendance) over(partition by E.Employnumber) as totalattendance,
+convert(decimal(7,2),A.Numberattendance)/sum(A.Numberattendance) over(partition by E.Employnumber)* 100 as percentageofattendance
+from tblemployinformation as E 
+join tblattendance as A
+on E.Employnumber=A.Employnumber
+where year(attendancemonth) < 20150101
+
+Now in the following peace of code I have order by in the over statement.
+select E.EmployNumber,year(attendancemonth),sum(A.Numberattendance) over(partition by E.Employnumber order by A.attendancemonth) as totalattendance,
+convert(decimal(7,2),A.Numberattendance)/sum(A.Numberattendance) over(partition by E.Employnumber)* 100 as percentageofattendance
+from tblemployinformation as E 
+join tblattendance as A
+on E.Employnumber=A.Employnumber
+where year(attendancemonth) < 20150101
+
+
+
+
+here I used word keyword preceding and following clause to get 
+
+select E.EmployNumber,year(attendancemonth),A.numberattendance, sum(A.Numberattendance) over(partition by E.Employnumber 
+order by A.attendancemonth rows between 1 preceding and 1 following) 
+as totalattendance,
+convert(decimal(7,2),A.Numberattendance)/sum(A.Numberattendance) over(partition by E.Employnumber)* 100 as percentageofattendance
+from tblemployinformation as E 
+join tblattendance as A
+on E.Employnumber=A.Employnumber
+where year(attendancemonth) < 20150101
+
+Unbounded clause in unbounded clause in the following rows between statement if be write unbounded preceding and 0 following it means that sql will sum all the preceding row the to current row and not and following row
+In the same way if we write row 0 preceding and unbounding following then it will sum all the following row to the current row but the the preceding row.
+select E.EmployNumber,year(attendancemonth),A.numberattendance, sum(A.Numberattendance) over(partition by E.Employnumber 
+order by A.attendancemonth rows between unbounded preceding and 0 following) 
+as totalattendance,
+convert(decimal(7,2),A.Numberattendance)/sum(A.Numberattendance) over(partition by E.Employnumber)* 100 as percentageofattendance
+from tblemployinformation as E 
+join tblattendance as A
+on E.Employnumber=A.Employnumber
+where year(attendancemonth) < 20150101
+
+
+
+
+
+
+
+
+
+
+
+Returns a table containing a list of count integers. The first number is start, and the following numbers are produced by successively incrementing by step (1 by default). This function is used in the FROM clause of a SELECT statement and can participate in JOINs as if it were a table.
+
+•	SELECT number FROM RANGE(1, 10);
+Returns a 10-row table containing the numbers 1 through 10 in ascending order.
+ROW_NUMBER is an analytic function. It assigns a unique number to each row to which it is applied (either each row in the partition or each row returned by the query), in the ordered sequence of rows specified in the order_by_clause , beginning with 1.
+Row_Number() will generate a unique number for every row, even if one or more rows has the same value.
+RANK() will assign the same number for the row which contains the same value and skips the next number.
+DENSE_RANK () will assign the same number for the row which contains the same value without skipping the next number.
+
+Here I joined the tblEmployInformation with tblattendance then and enter row_number what rownumber basically does it gives a unique number to each row inside the partition
+With row_number clause.
+
+select A.EmployNumber,A.AttendanceMonth,A.NumberAttendance,
+Row_Number() Over(Partition by A.Employnumber order by A.EmployNumber,A.AttendanceMonth) as TheRowNumber
+from tblEmployInformation as E join tblattendance as A
+on E.EmployNumber=A.Employnumber
+
+
+
+
+
+
+
+In following code we write rank(),row_number(),dense_rank() and here the code to be noted is that union all .In union all we selected all the row from one table and combines all the row with other table. on is basically on which point you want to join the tables.
+Join is basically joining the table we want to join.
+select A.EmployNumber,A.AttendanceMonth,A.NumberAttendance,
+Rank() Over(Partition by A.Employnumber order by A.EmployNumber,A.AttendanceMonth) as TheRowNumber,
+Row_Number() Over(Partition by A.Employnumber order by A.EmployNumber,A.AttendanceMonth) as TheRowNumber1,
+Dense_Rank() Over(Partition by A.Employnumber order by A.EmployNumber,A.AttendanceMonth) as TheRowNumber2
+from tblEmployInformation as E join (select * from tblattendance union all select * from tblattendance) as A
+on E.EmployNumber=A.Employnumber
+Here what I have done it is the short form of above code in following code we selected all and then mentioned row_number it it * means all the table then row_number
+select *, row_number() over(order by (select null)) from tblattendance
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The SQL Server NTILE() is a window function that distributes rows of an ordered partition into a specified number of approximately equal groups, or buckets. It assigns each group a bucket number starting from one. For each row in a group, the NTILE() function assigns a bucket number representing the group to which the row belongs.
+The syntax of the NTILE() function is as follows:
+NTILE(buckets) OVER (
+    [PARTITION BY partition_expression, ... ]
+    ORDER BY sort_expression [ASC | DESC], ...
+)
+SELECT 
+	v, 
+	NTILE (3) OVER (
+		ORDER BY v
+	) buckets
+FROM 
+	sales.ntile_demo;
+ 
+ 
+Here what I have done in following code is in the partition I find the first value and last value clause in partition by inside over clause. Here employnumber partition by and order by in attendance month. Her first value is first value in the partition and last value is last value in the partition. After that from and in from I joined two column on EmployNumber column.
+select A.EmployNumber,A.attendancemonth,A.numberattendance,
+First_value(Numberattendance)
+over(partition by E.EmployNumber order by A.Attendancemonth) as FirstMonth,
+Last_value(Numberattendance)
+over(partition by E.EmployNumber order by A.Attendancemonth) as LastMonth
+
+
+
+from tblEmployInformation as E join tblAttendance as A
+on E.EmployNumber=A.EmployNumber
+
+In the following code in First_Value we used partition by,order by and rows between inside the over clause.Last_Value we used partition by, order by and rows between inside the over clause.
+
+select A.EmployNumber,A.attendancemonth,A.numberattendance,
+First_value(Numberattendance)
+over(partition by E.EmployNumber order by A.Attendancemonth rows between 2 preceding and 
+		 current row) as FirstMonth,
+Last_value(Numberattendance)
+over(partition by E.EmployNumber order by A.Attendancemonth rows between unbounded preceding and
+		2 following) as LastMonth
+from tblEmployInformation as E join tblAttendance as A
+on E.EmployNumber=A.EmployNumber
+
+ 
+
+
+ LAG function has the ability to fetch data from a previous row, while LEAD fetches data from a subsequent row. Both functions are very similar to each other and you can just replace one by the other by changing the sort order.
+•	The offset. The default is 1, but you can jump back more rows by specifying a bigger offset. You cannot specify a negative value.
+•	A default value. When there is no previous row (in the case of LAG), NULL is returned. You can see this in the screenshot in the first row. You can specify a default value to be returned instead of NULL.
+
+This is default in the following code lag and lead is default i.e. is would look into one row forward in leand and one row backward in lag.
+select A.EmployNumber,A.attendancemonth,A.numberattendance,
+lag(Numberattendance)
+over(partition by E.EmployNumber order by A.Attendancemonth) as TheLag,
+Lead(Numberattendance)
+over(partition by E.EmployNumber order by A.Attendancemonth) as TheLead
+from tblEmployInformation as E join tblAttendance as A
+on E.EmployNumber=A.EmployNumber
+
+Whereas in following code we have specified how many row we could to look into for example in the following code we specified we want to look into 3 row forward in lead condition and 3 row backward in lag condition.
+
+select A.EmployNumber,A.attendancemonth,A.numberattendance,
+lag(Numberattendance,3)
+over(partition by E.EmployNumber order by A.Attendancemonth) as TheLag,
+Lead(Numberattendance,3)
+over(partition by E.EmployNumber order by A.Attendancemonth) as TheLead
+from tblEmployInformation as E join tblAttendance as A
+on E.EmployNumber=A.EmployNumber
+
+Sometimes, you want to make a report that contains the top or bottom x% values from a data set e.g., top 5% sales staffs by net sales. One way to achieve this with SQL Server is to use the CUME_DIST() function.
+The CUME_DIST() function calculates the cumulative distribution of a value within a group of values. Simply put, it calculates the relative position of a value in a group of values.
+The following shows the syntax of the CUME_DIST() function:
+ CUME_DIST() OVER (
+    [PARTITION BY partition_expression, ... ]
+    ORDER BY sort_expression [ASC | DESC], ...
+)
+PARTITION BY clause
+The PARTITION BY clause distributes rows into multiple partitions to which the CUME_DIST() function is applied.
+The PARTITION BY clause is optional. The CUME_DIST() function will treat the whole result set as a single partition if you omit the PARTITION BY clause.
+ORDER BY clause
+The ORDER BY clause specifies the logical order of rows in each partition to which the CUME_DIST() function is applied. The ORDER BY clause considers NULL values as the lowest possible values.
+
+
+
+In the following syntax we used cume_dist() clause we use it to get the top x percent row in each partition. It moves from 0 to 1.
+
+
+select A.EmployNumber,A.attendancemonth,A.numberattendance,
+CUME_DIST()
+over(partition by E.EmployNumber order by A.Attendancemonth) as TheCumeDist,
+from tblEmployInformation as E join tblAttendance as A
+on E.EmployNumber=A.EmployNumber
+
+123	2014-01-01	14	0.0454545454545455
+123	2014-02-01	12	0.0909090909090909
+123	2014-03-01	23	0.136363636363636
+
+The PERCENT_RANK() function is similar to the CUME_DIST() function. The PERCENT_RANK() function evaluates the relative standing of a value within a partition of a result set.
+The following illustrates the syntax of the SQL Server PERCENT_RANK() function:
+PERCENT_RANK() OVER (
+    [PARTITION BY partition_expression, ... ]
+    ORDER BY sort_expression [ASC | DESC], ...
+)
+ 
+
+select A.EmployNumber,A.attendancemonth,A.numberattendance,
+Percent_rank()
+over(partition by E.EmployNumber order by A.Attendancemonth) as The,
+Lead(Numberattendance,3)
+over(partition by E.EmployNumber order by A.Attendancemonth) as TheLead
+from tblEmployInformation as E join tblAttendance as A
+on E.EmployNumber=A.EmployNumber
+In the following syntax we used the cast clause row_number gives row number inside the partition while count(*) count all the row in that partition when we divide and then cast this gives the same result as the goave cume_dist function.
+
+select A.EmployNumber,A.attendancemonth,A.numberattendance,
+Percent_rank() over(partition by E.EmployNumber order by A.Attendancemonth) as The,
+cast(row_number() over(partition by E.EmployNumber order by A.Attendancemonth) as decimal(9,5))/
+count(*) over(partition by E.EmployNumber) 
+from tblEmployInformation as E join tblAttendance as A
+on E.EmployNumber=A.EmployNumber
+
+ 
+	
+Here percentile_cont does it give (
+
+select distinct employnumber,
+percentile_cont(0.5) within group (Order by Numberattendance) over(partition by EmployNumber) as AverageDisc
+from tblattendance
+
+
+percentile gives median of the list 
+select  employnumber,numberattendance,
+percentile_cont(0.2) within group (Order by Numberattendance) over(partition by EmployNumber) as AverageDisc,
+percentile_disc(0.2) within group (Order by Numberattendance) over(partition by EmployNumber) as AverageDisc
+from tblattendance
+
+
+
+
+
+Here what I have done is I want selected column from to table so I have first joined the two tables then I write in select statement which table I want to show. In the following table its Department,EmployNumber and AttendanceMonth.
+
+select E.Department, E.EmployNumber,A.AttendanceMonth,
+A.NumberAttendance 
+from tblEmployInformation as E join tblattendance as A
+on E.EmployNumber=A.EmployNumber
+
+In the following table we manipulated table even further we have joined two table and then we two column from the joined table but I want sum of numberattendance and I want to group in the form of employnumber and department. Here we used sum function to get the number of attendance.
+
+
+select E.Department,E.EmployNumber,sum(A.NumberAttendance) as totalattendance
+from tblEmployInformation as E join tblattendance as A
+on E.EmployNumber=A.EmployNumber
+group by E.Department,E.EmployNumber
+order by Department,EmployNumber
+
+In the following code we add both the code with the help of union statement but according to union statement but the table must have same column and and same datetype for both the table.in following table we wrote null to fulfil the same column criteria.
+
+select E.Department, E.EmployNumber,A.AttendanceMonth,
+A.NumberAttendance 
+from tblEmployInformation as E join tblattendance as A
+on E.EmployNumber=A.EmployNumber
+Union
+select E.Department,E.EmployNumber,null,sum(A.NumberAttendance) as totalattendance
+from tblEmployInformation as E join tblattendance as A
+on E.EmployNumber=A.EmployNumber
+group by E.Department,E.EmployNumber
+order by Department,EmployNumber
+In the following code the combined three table with the help of union statement Here we wanted to add total attendance for each employ and grand total attendance and we added third column in above column with the help of union statement.
+select E.Department, E.EmployNumber,A.AttendanceMonth,
+A.NumberAttendance 
+from tblEmployInformation as E join tblattendance as A
+on E.EmployNumber=A.EmployNumber
+Union
+select E.Department,E.EmployNumber,null,sum(A.NumberAttendance) as totalattendance
+from tblEmployInformation as E join tblattendance as A
+on E.EmployNumber=A.EmployNumber
+group by E.Department,E.EmployNumber
+
+Union
+select E.Department,Null,Null,sum(A.NumberAttendance) as Totalattendance
+from tblEmployInformation as E join tblattendance as A
+on E.EmployNumber=A.EmployNumber
+group by E.Department
+
+
+select E.Department, E.EmployNumber,A.AttendanceMonth, sum(A.NumberAttendance)
+from tblEmployInformation as E join tblattendance as A
+on E.EmployNumber=A.EmployNumber
+Group by e.department,e.employnumber,A.attendancemonth
+Union
+select E.Department,E.EmployNumber,null,sum(A.NumberAttendance) as totalattendance
+from tblEmployInformation as E join tblattendance as A
+on E.EmployNumber=A.EmployNumber
+group by E.Department,E.EmployNumber
+Union
+select E.Department,Null,null,sum(A.NumberAttendance) as totalattendance
+from tblEmployInformation as E join tblattendance as A
+on E.EmployNumber=A.EmployNumber
+group by E.Department
+Union
+select Null,Null,Null,sum(A.NumberAttendance) as Totalattendance
+from tblEmployInformation as E join tblattendance as A
+on E.EmployNumber=A.EmployNumber
+order by department,employnumber,attendancemonth
+Roll Up Function
+In the following code we used the syntax rollup. Basically what roll up does is group the table in order mentioned in the rollup syntax.
+The ROLLUP is an extension of the GROUP BY clause. The ROLLUP option allows you to include extra rows that represent the subtotals, which are commonly referred to as super-aggregate rows, along with the grand total row. By using the ROLLUP option, you can use a single query to generate multiple grouping sets.
+
+select E.Department,E.EmployNumber,A.AttendanceMonth as AttendanceMonth,
+sum(A.NumberAttendance) as NumberAttendance from tblEmployInformation as E
+join tblAttendance as A
+on E.EmployNumber=A.EmployNumber
+Group by rollup(E.Department,E.EmployNumber,A.Attendancemonth)
+order by Department,EmployNumber,AttendanceMonth
+
+
+In the following code we mentioned grouping syntax in this syntax we mentioned EmployNumber as and Grouping_ID and in grouping_id we mentioned all the columns names in order to get the information.
+
+select E.Department,E.EmployNumber,A.AttendanceMonth as AttendanceMonth,
+sum(A.NumberAttendance) as NumberAttendance,
+Grouping (E.EmployNumber) as EmployNumberGroupedby,
+Grouping_ID(E.Department,E.EmployNumber,A.AttendanceMonth)
+from tblEmployInformation as E
+join tblAttendance as A
+on E.EmployNumber=A.EmployNumber
+Group by rollup(E.Department,E.EmployNumber,A.Attendancemonth)
+order by Department,EmployNumber,AttendanceMonth
+
+Cube Function
+Similar to the ROLLUP, CUBE is an extension of the GROUP BY clause. CUBE allows you to generate subtotals like the ROLLUP extension. In addition, the CUBE extension will generate subtotals for all combinations of grouping columns specified in the GROUP BY clause.
+The following illustrates the syntax of CUBE extension:
+
+SELECT 
+    c1, c2, AGGREGATE_FUNCTION(c3)
+FROM
+    table_name
+GROUP BY CUBE(c1 , c2);
+
+ 
+SELECT
+   warehouse,
+   SUM(quantity)
+FROM
+   inventory
+GROUP BY
+   CUBE(warehouse)
+ORDER BY
+   warehouse;  
+ 
+
+
+
+
+
+select E.Department,E.EmployNumber,A.AttendanceMonth as AttendanceMonth,
+sum(A.NumberAttendance) as NumberAttendance,
+Grouping (E.EmployNumber) as EmployNumberGroupedby,
+Grouping_ID(E.Department,E.EmployNumber,A.AttendanceMonth)
+from tblEmployInformation as E
+join tblAttendance as A
+on E.EmployNumber=A.EmployNumber
+Group by cube(E.Department,E.EmployNumber,A.Attendancemonth)
+order by Department,EmployNumber,AttendanceMonth
+Grouping Set
+SELECT
+	YEAR(OrderDate) AS OrderYear,
+	NULL AS OrderMonth, --Dummy Column
+	SUM(SubTotal) AS Incomes
+FROM Sales.SalesOrderHeader
+GROUP BY YEAR(OrderDate)
+UNION ALL
+SELECT
+	YEAR(OrderDate) AS OrderYear,
+	MONTH(OrderDate) AS OrderMonth,
+	SUM(SubTotal) AS Incomes
+FROM Sales.SalesOrderHeader
+GROUP BY YEAR(OrderDate), MONTH(OrderDate)
+ORDER BY OrderYear, OrderMonth;
+GO
+
+
+
+
+
+
+SELECT
+	YEAR(OrderDate) AS OrderYear,
+	MONTH(OrderDate) AS OrderMonth,
+	SUM(SubTotal) AS Incomes
+FROM Sales.SalesOrderHeader
+GROUP BY
+	GROUPING SETS
+	(
+		YEAR(OrderDate), --1st grouping set
+		(YEAR(OrderDate),MONTH(OrderDate)), --2nd grouping set
+		() --3rd grouping set (grand total)
+	);
+GO
+
+
+select * from tblbhavcopy
+where tottrdqty>1000000 and ((ope-prevclose)*100)/prevclose>5
+
+
+
+
+
+
+
+Here I used the clause group set in the group by syntax what grouping sets does is group the column in each sets as the user want to in the following code we grouping the Department,EmployNumber and Attendance and other set is Department and last set it total of all the rows 
+
+
+select E.Department,E.EmployNumber,A.AttendanceMonth as AttendanceMonth,
+sum(A.NumberAttendance) as NumberAttendance,
+Grouping(E.EmployNumber) as EmployNumberGroupby,
+Grouping_ID(E.Department,E.EmployNumber,A.AttendanceMonth) as EmployNumberGroupId
+From tblEmployInformation as E join tblattendance as A
+on E.EmployNumber=A.EmployNumber
+Group by Grouping sets((E.Department,E.EmployNumber,A.AttendanceMonth),(E.Department),())
+order by Department,EmployNumber,AttendanceMonth
+
+
+Different Types of SQL JOINs
+A SQL Join statement is used to combine data or rows from two or more tables based on a common field between them. Different types of Joins are:
+Here are the different types of the JOINs in SQL:
+•	(INNER) JOIN: Returns records that have matching values in both tables
+•	LEFT (OUTER) JOIN: Returns all records from the left table, and the matched records from the right table
+•	RIGHT (OUTER) JOIN: Returns all records from the right table, and the matched records from the left table
+•	FULL (OUTER) JOIN: Returns all records when there is a match in either left or right table
+In the following code where clause is dynamic we have added a select statement in which want retrieve row from the table where employlastname starts with y and if this figure increased our code automatically increased.
+select * 
+from tbltransaction
+where employnumber in
+(select employnumber from tblemployinformation where employlastname like 'y%')
+order by employnumber
+In the following code we used not inside the bracked which gives all the employnumber other than those who has lastname initiated with y
+In the second code we get all the row in which employ number is not same as inside the column it is called left join and the former it called innerjoin
+
+
+select * 
+from tbltransaction
+where employnumber in
+(select employnumber from tblemployinformation where employlastname not like 'y%')
+order by employnumber
+select * 
+from tbltransaction
+where employnumber not in
+(select employnumber from tblemployinformation where employlastname  like 'y%')
+order by employnumber
+In the following code we wrote employnumber<> any means other than which mentioned inside the table.
+select * 
+from tbltransaction
+where employnumber <> all
+(select employnumber from tblemployinformation where employlastname  like 'y%')
+order by employnumber
+
+In the following code we wrote employnumber=any which means those employ whose employnumber is same as the employnumber mentioned inside the select statement.
+
+
+select * 
+from tbltransaction
+where employnumber =any
+(select employnumber from tblemployinformation where employlastname  like 'y%')
+order by employnumber
+
+=some in the following code does same as the above code is gives those employnumber which mentioned inside the bracket.
+select * 
+from tbltransaction
+where employnumber =some
+(select employnumber from tblemployinformation where employlastname  like 'y%')
+order by employnumber
+In the following code instead of where we have mentioned and now its joins the employnumber whose number is 123 now what would happens
+
+
+select *
+from tbltransaction as T
+left join tblemployinformation as E
+on e.EmployNumber=T.EmployNumber
+and  e.employnumber=123
+order by T.EmployNumber
+
+
+
+
+
+
+In the following code I removed the where clause in instead used after inner join now give is alias as E which is synonyms to name now what happens in the following code.we have already discussed inner join mean those rows which are common in both the table so in the following code first select statement give 126 to 129 employnumber and its will join to common employernumber of previous table so it will give use 126 to 129 employnumber data which is same when we used this select statement after the where clause it would join both the table through inner join then only would choose those employnumber which havem mentioned inside the where clause.
+select *
+from tbltransaction as T
+inner join (select employnumber from tblemployinformation where employlastname like 'y%') as E
+on e.EmployNumber=T.EmployNumber
+order by T.EmployNumber
+Now in the following code we used left join in this type of join it would take entire column from the left table and join the right table to those in which metioned row is common so it could give entire table.
+
+select *
+from tbltransaction as T
+left join (select employnumber from tblemployinformation where employlastname like 'y%') as E
+on e.EmployNumber=T.EmployNumber
+order by T.EmployNumber
+ here we joined two table tblEmployInformation and tbltransaction  through inner join then choose column which we need to show and that is EmployNumber, EmployFirstName,EmployLastName and we count EmployNumber in another column which I Named as NumberOfTransaction then I wrote where clause where I want these inner join which I selected employlastname like and then I grouped by employnumber and then order by 
+
+Select E.EmployNumber,E.EmployFirstnme,E.EmployLastName,count(T.EmployNumber) as NumberOfTransaction
+from tblEmployInformation as E
+inner join tbltransaction as T
+on E.EmployNumber=T.EmployNumber
+where E.EmployLastName like 'y%'
+group by E.EmployNumber,E.EmployFirstNme,E.EmployLastName
+order by E.EmployNumber
+
+
+A subquery is a SQL query nested inside a larger query.
+•	A subquery may occur in :
+o	- A SELECT clause
+o	- A FROM clause
+o	- A WHERE clause
+•	The subquery can be nested inside a SELECT, INSERT, UPDATE, or DELETE statement or inside another subquery.
+•	A subquery is usually added within the WHERE Clause of another SQL SELECT statement.
+•	You can use the comparison operators, such as >, <, or =. The comparison operator can also be a multiple-row operator, such as IN, ANY, or ALL.
+•	A subquery is also called an inner query or inner select, while the statement containing a subquery is also called an outer query or outer select.
+•	The inner query executes first before its parent query so that the results of an inner query can be passed to the outer query.
+You can use a subquery in a SELECT, INSERT, DELETE, or UPDATE statement to perform the following tasks:
+•	Compare an expression to the result of the query.
+•	Determine if an expression is included in the results of the query.
+•	Check whether the query selects any rows.
+
+In the following code we write subquery to fetch number of transaction and total amount from the tbltransaction now how to fetch write wrote another select statement to achieve that we after coming both the statement of count and sum from wrote this query
+select *,(select count(T.EmployNumber) from tbltransaction as T
+		 where T.EmployNumber=E.EmployNumber) as NumberOfTransaction,
+		 (select sum(T.Amount) from tbltransaction as T
+		where T.EmployNumber=E.EmployNumber) as TotalAmount
+from tblEmployInformation as E
+where E.EmployLastName like 'y%'
+
+IN the following code we wrote subquery inside the where statement and for that created two condition one employlastname must be end with y and the other was where employnumber in tbltransaction is equal to the employnumber in tblemployinformation.   
+
+select *
+from tbltransaction as T
+where exists
+(select employnumber from tblemployinformation as E where E.EmployLastName like 'y%'
+			and T.EmployNUmber =E.EmployNumber)
+Order by EmployNumber
+
+
+ 
+
+Here in the following code we have joined two table tbldepartment and tblemployinformation based on department column which is common in both the table. I also added a column named ‘TheRank’ and in that column give rank number by rank() clause over() clause and inside the over clause I write partition where I want rank and that is department column then order by at which order I want to get those rank and that in on employnumber. 
+
+select D.Department,EmployNumber,Employfirstnme,EmployLastName,
+rank() over (partition by D.Department order by E.EmployNumber) as TheRank
+from tblDepartment as D
+join tblEmployInformation as E
+on D.Department=E.Department
+order by D.Department,EmployNumber
+
+
+
+In the following code we have wrote a subquery with select statement with which and give it a alias MyTable then I wrote where clause in where clause I added TheRank which is less than equal to 5 and order by Department and EmployNumber in think to note that in order by clause I did not mentioned any alias and that is because I alias did not work outside the bracket and order by clause.
+select * from
+(select D.Department,EmployNumber,Employfirstnme,EmployLastName,
+rank() over (partition by D.Department order by E.EmployNumber) as TheRank
+from tblDepartment as D
+join tblEmployInformation as E
+on D.Department=E.Department) as MyTable
+where TheRank<=5
+order by Department,EmployNumber
+
+
+ The SQL WITH clause allows you to give a sub-query block a name (a process also called sub-query refactoring), which can be referenced in several places within the main SQL query.
+•	The clause is used for defining a temporary relation such that the output of this temporary relation is available and is used by the query that is associated with the WITH clause.
+•	Queries that have an associated WITH clause can also be written using nested sub-queries but doing so add more complexity to read/debug the SQL query.
+•	WITH clause is not supported by all database system.
+•	The name assigned to the sub-query is treated as though it was an inline view or table
+
+In the following code we have used with clause and give a subquery a temporary name called tblwithranking and in other subquery I give temporary name called tbltransaction2014 and then I join both the table with select * statement and joined together both the table. Here I removed orderby clause which used inside the subquery because we can use order by only as the last of any query.
+With tblwithranking as 
+(select D.Department,EmployNumber,Employfirstnme,EmployLastName,
+rank() over (partition by D.Department order by E.EmployNumber) as TheRank
+from tblDepartment as D
+join tblEmployInformation as E
+on D.Department=E.Department) as MyTable
+where TheRank<=5),
+tblTransaction2014 as 
+(select * from tbltransaction where dateoftransaction <'2015-01-01')
+select * from tblwithranking left join
+tbltransaction2014 on tblwithranking.employnumber=tbltransaction2014.employnumber
+where TheRank<=5
+order by Department,tblwithranking.employnumber
+In the following code we wanted to retrieve the employnumber who have not made any transaction to achieve that I selected all from tblemployinformation and then used left join with tbltransaction now we know what left join does is gives all the row from left column and join with the right table so it can gives null value if tbltransaction has less number of employnumber where on which column we wanted to join both the table we wanted to join it on employnumber where T.Employnumber is null.
+
+select * from tblEmployInformation as E
+left join tbltransaction as T
+on T.EmployNumber=E.EmployNumber
+where T.EmployNumber is null
+
+
+
+
+
+With Number as
+(select row_number() over(order by(select null)) as RowNumber
+from tbltransaction as U)
+select U.rownumber from Number as U
+left join tbltransaction as T
+on U.RowNumber=T.EmployNumber
+where T.Employnumber is null
+order by U.RowNumber
+Here I selected year from dateoftransaction month from dateoftransaction and amount
+
+Select year(dateoftransaction) as TheYear,Month(Dateoftransaction) as TheMonth, Amount
+from tbltransaction
+
+The second type of user-defined function, the inline table-valued function, is similar to a view. Both are wrapped for a stored SELECT statement. An inline table-valued user-defined function retains the benefits of a view, and adds parameters. As with a view, if the SELECT statement is updatable, then the function is also updatable.
+REATE FUNCTION FunctionName (InputParameters)
+RETURNS Table
+AS
+RETURN (Select Statement);
+CREATE FUNCTION 
+ dbo.ufnGetOrderTotalByProductCategory(@ProductCategoryID int)
+RETURNS TABLE
+AS 
+RETURN
+  (
+   SELECT p.ProductID, p.Name, sum(sod.OrderQty) as TotalOrders
+   FROM Production.Product p
+    JOIN Sales.SalesOrderDetail sod
+     ON p.ProductID = sod.ProductID
+    JOIN Production.ProductSubcategory s
+     ON p.ProductSubcategoryID = s.ProductSubcategoryID
+    JOIN Production.ProductCategory c
+     ON s.ProductCategoryID = c.ProductCategoryID
+   WHERE c.ProductCategoryID = @ProductCategoryID
+   GROUP BY p.ProductID, p.Name
+   ); 
+GO
+
+In the following synstax we created a function called transaction list and give it a variable name @employnumber with datatype int then inside the return statement I wrote returns table as return and inside that return statement I wrote a select statement which where I wrote which select from want in other words it has created a table with variable and we just need to enter value to the variable to get the table which we have created inside the function. Whatever criteria we have entered in it.
+
+Create function transactionlist(@employnumber int)
+returns table as return
+			(select * from tbltransaction				
+				where employnumber=@employnumber
+			)
+select * from dbo.transactionlist(123)
+
+
+
+
+Pivot in 
+With MyTable as
+(Select year(dateoftransaction) as TheYear,Month(Dateoftransaction) as TheMonth, Amount
+from tbltransaction)
+Select TheYear,[1],[2],[3],[4],[5],[6],[7],[8],[9],[10],[11],[12] from MyTable
+Pivot(sum(amount) for TheMonth in ([1],[2],[3],[4],[5],[6],[7],[8],[9],[10],[11],[12])) as MyPvt 
+Order by TheYear
+
+Introduction to SQL Server PIVOT operator
+SQL Server PIVOT operator rotates a table-valued expression. It turns the unique values in one column into multiple columns in the output and performs aggregations on any remaining column values.
+You follow these steps to make a query a pivot table:
+•	First, select a base dataset for pivoting.
+•	Second, create a temporary result by using a derived table or common table expression (CTE)
+•	Third, apply the PIVOT operator.
+We can also write pivot table in the following way where we
+Following is the syntax for writing pivot table. In the following table we have table name then created new select statement inside that select clause we pivot clause and inside pivot clause we used sum clause for Themonth and then gave it the as MyPvt and then at last we order it by TheYear
+
+With MyTable as
+(Select year(dateoftransaction) as TheYear,Month(Dateoftransaction) as TheMonth, Amount
+from tbltransaction)
+Select * from MyTable
+Pivot(sum(amount) for TheMonth in ([1],[2],[3],[4],[5],[6],[7],[8],[9],[10],[11],[12])) as MyPvt 
+Order by TheYear
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+In the following syntax everything is same just we added isnull clause before every number so that if it would be null then we get zero as value.
+
+With MyTable as
+(Select year(dateoftransaction) as TheYear,Month(Dateoftransaction) as TheMonth, Amount
+from tbltransaction)
+Select TheYear,
+			   isnull([1],0) as [1],
+			   isnull([2],0) as [2],
+			   isnull([3],0) as [3],
+			   isnull([4],0) as [4],
+			   isnull([5],0) as [5],
+			   isnull([6],0) as [6],
+			   isnull([7],0) as [7],
+			   isnull([8],0) as [8],
+			   isnull([9],0) as [9],
+			   isnull([10],0) as [10],
+			   isnull([11],0) as [11],
+			   isnull([12],0) as [12]
+			   from MyTable
+Pivot(sum(amount) for TheMonth in ([1],[2],[3],[4],[5],[6],[7],[8],[9],[10],[11],[12])) as MyPvt 
+Order by TheYear
+
+
+
+
+
+
+
+
+
+
+In the following table we have unpivot the table.
+With MyTable as
+(Select year(dateoftransaction) as TheYear,Month(Dateoftransaction) as TheMonth, Amount
+from tbltransaction)
+Select TheYear,
+			   isnull([1],0) as [1],
+			   isnull([2],0) as [2],
+			   isnull([3],0) as [3],
+			   isnull([4],0) as [4],
+			   isnull([5],0) as [5],
+			   isnull([6],0) as [6],
+			   isnull([7],0) as [7],
+			   isnull([8],0) as [8],
+			   isnull([9],0) as [9],
+			   isnull([10],0) as [10],
+			   isnull([11],0) as [11],
+			   isnull([12],0) as [12]
+			   from MyTable
+Pivot(sum(amount) for TheMonth in ([1],[2],[3],[4],[5],[6],[7],[8],[9],[10],[11],[12])) as MyPvt 
+Order by TheYear
+
+select * from MyPvt
+
+In the following table we self join table with slight modification with just name
+select E.EmployNumber,E.EmployFirstNme,E.EmployLastName,E.Manager,
+		M.EmployNumber,M.Employfirstnme as ManagerFirstname,M.EmployLastName as ManagerLastName
+
+from tblEmployInformation as E
+left join tblEmployInformation as M
+on E.Manager=M.EmployNumber
+
+
+ recursive common table expression (CTE) is a CTE that references itself. By doing so, the CTE repeatedly executes, returns subsets of data, until it returns the complete result set.
+A recursive CTE is useful in querying hierarchical data such as organization charts where one employee reports to a manager or multi-level bill of materials when a product consists of many components, and each component itself also consists of many other components.
+The following shows the syntax of a recursive CTE:
+
+WITH expression_name (column_list)
+AS
+(
+    -- Anchor member
+    initial_query  
+    UNION ALL
+    -- Recursive member that references expression_name.
+    recursive_query  
+)
+-- references expression name
+SELECT *
+FROM   expression_name
+
+recursive CTE has three parts:
+1.	An initial query that returns the base result set of the CTE. The initial query is called an anchor member.
+2.	A recursive query that references the common table expression, therefore, it is called the recursive member. The recursive member is union-ed with the anchor member using the UNION ALL operator.
+3.	A termination condition specified in the recursive member that terminates the execution of the recursive member.
+The execution order of a recursive CTE is as follows:
+•	First, execute the anchor member to form the base result set (R0), use this result for the next iteration.
+•	Second, execute the recursive member with the input result set from the previous iteration (Ri-1) and return a sub-result set (Ri) until the termination condition is met.
+•	Third, combine all result sets R0, R1, … Rn using UNION ALL operator to produce the final result set.
+•	Invocation – You hand the blue card to the last person in line.
+•	Recursive Invocation – Each person is told to pass the direction to the person in front.
+•	Termination Check – You check to see if there is no one in front of you.
+
+
+In the following code we used the cte recursive call and that means I used a select statement and give it a name mytable into the with clause where manage is null then why I gave it a name because just like vba we gave it a variable name now think it as a for loop I union all with original table then gave it bosslevel +1 and join it to E.Manager =mytable.employnumber 
+I union all this table to 
+
+with mytable as 
+--This is called anchor
+(select employnumber,employfirstnme,employlastname,0 as bosslevel
+from tblemployinformation
+where manager is null
+---- This is called recursive CTE
+union all
+select e.employnumber, e.employfirstnme,e.employlastname,
+mytable.bosslevel+1
+from tblemployinformation as E
+join mytable on E.Manager=mytable.employnumber)
+select * from mytable
+
+
+Scalar Function
+
+SQL Server scalar function takes one or more parameters and returns a single value.
+The scalar functions help you simplify your code. For example, you may have a complex calculation that appears in many queries. Instead of including the formula in every query, you can create a scalar function that encapsulates the formula and uses it in each query.
+To create a scalar function, you use the CREATE FUNCTION statement as follows:
+
+CREATE FUNCTION [schema_name.]function_name (parameter_list)
+RETURNS data_type AS
+BEGIN
+    statements
+    RETURN value
+END
+Here the following syntax we have created a function called amountplusone in this function I declared a variable called @amount and give it a datatype smallmoney then I write returns smallmoney as datatype and then as begin return the variable with the data @amount+1 inside the variable @amount means whatever the data inside the variable @amount add the value 1 to it. 
+CREATE FUNCTION amountpluseone(@amount smallmoney)
+RETURNS smallmoney
+AS
+BEGIN
+    RETURN @amount+1
+
+END
+Now in the following syntax and retrieve column dateoftransaction,employnumber,amount,and in the function selection we wrote dbo.functionname and what data we want to stored in that variable we mentioned inside the column. In the following case it is amount column data we want to store inside the function variable @amount 
+select dateoftransaction,employnumber,amount,dbo.amountpluseone(amount) as AmountPlusone
+from tbltransaction
+Now in the following case we changed the data to employnumber now @amount variable hold employnumber data inside it and give +1 as we declared in the function syntax.
+
+select dateoftransaction,employnumber,amount,dbo.amountpluseone(employnumber) as NextEmploy
+from tbltransaction
+
+In the following syntax we declared a variable called @value and give it the datatype smallmoney and we inside exec we stored value function and inside that function we give 345 value to the variable then in the select statement we select variable and it would give values whatever value stored inside the variable.
+
+declare @value as smallmoney
+exec @value=dbo.amountpluseone @amount=345
+select @value
+In the following syntax we created a variable called @emplynumber and give it the integer type int now return int as begin end and inside what we wanted to return in the following case we delared a local variable inside the  begin called @numberoftransaction and give it values count(*) from tbltransaction where employnumber=@employnumer whatever employnumber it given to the variable @employnumber
+
+Create function Numberoftransaction(@employnumber int)
+Returns int as 
+Begin
+		Declare @numberoftransaction as int
+		select @numberoftransaction=count(*) from tbltransaction
+		where employnumber=@employnumber
+		return @numberoftransaction
+
+
+End
+
+Now we used function in the following syntax and we give function numberoftransaction value employnumber  
+
+select *,dbo.numberoftransaction(employnumber) as Numberoftransaction
+from tbltransaction
+
+
+
+
+In the following following syntax where drop the function in it exists
+If we want to see what are the object created and saved then the statement would be
+Select * from sys.objects
+If we want to see some particular function or object then 
+Select * from sys.objects where name=’Nameoffunction’
+if exists (select * from sys.objects where name='numberoftransaction')
+drop function numberoftransaction
+
+We have basicalled combined two same tbltransaction with join statement and join where selected employnumber and counted employnumber from the second table. and after that we group it by employnumber.
+
+select distinct T.EmployNumber, count(E.employnumber) as numberoftransaction
+from tbltransaction as T
+join tbltransaction as E
+on T.Employnumber=E.Employnumber
+Group by T.Employnumber
+Function table
+In the function we created a function name translist and gave it variable named @meploynumber @employnumber having datatype int then I returns @functionname table
+And declare function inside the column then typed insert into that columns which amount I want to select. I want to select from row where employnumber is equal to the employnumber entered by the user.
+
+Create function translist(@employnumber int)
+returns @Translist table
+(Amount Smallmoney,Dateoftransaction smalldatetime,employnumber int)
+As 
+Begin
+Insert into @Translist(amount,dateoftransaction,employnumber)
+			select amount,dateoftransaction,employnumber
+			from tbltransaction
+			where employnumber=@employnumber
+			Return
+
+End
+
+
+In the following systax we created table in the function we here we can directly write the select * and then write that function we don’t need to write join statement for attaching count number for each number of transaction we can directly write the following statement.
+
+select *,(select count(*) from dbo.translist(E.EmployNumber)) as Numoftransaction
+from tblemployinformation as E
+outer apply 
+select * 
+from tblemployinformation as E
+outer apply translist(E.EmployNumber)
+select * 
+from tblemployinformation as E
+cross apply translist(e.employnumber)
+In SQL Server, a synonym is an alias or alternative name for a database object such as a table, view, stored procedure, user-defined function, and sequence.
+
+create synonym employtable
+for tblemployinformation
+select * from employtable
+
+
+GUID is a 16 byte binary SQL Server data type that is globally unique across tables, databases, and servers. The term GUID stands for Globally Unique Identifier and it is used interchangeably with UNIQUEIDENTIFIER.
+To create a GUID in SQL Server, the NEWID() function is used as shown below:
+SELECT NEWID()
+Execute the above line of SQL multiple times and you will see a different value every time. This is because the NEWID() function generates a unique value whenever you execute it.
+To declare a variable of type GUID, the keyword used is UNIQUEIDENTIFIER as mentioned in the script below:
+DECLARE @UNI UNIQUEIDENTIFIER
+SET @UNI = NEWID(
+SELECT @UNI
+i
+
+
+In the following code we created a variable called @newvalue and give it a datatype uniqueidentifier and we give this variable a values newid() which is a default values for random number and in the 3rd line we select that variable as TheNewId
+
+declare @newvalue as uniqueidentifier
+set @newvalue=newid()
+select @newvalue as TheNewID
+
+Now In the following code we created a table called employ4 and then in the next line we created a column called uniqueID and give it a datatype uniqueidentifier and created constraint and give it a name df_tblemploy_uniqueID and then we give it default value NewID() now the question in 3rd line if in the 3rd line we created the same thing created column give it datatype int and then constraint and give constaint a name and then give a value which is unique() which is a default value of 1,2,3
+begin tran
+Create table employ4
+(UniqueID uniqueidentifier Constraint df_tblemploy_UniqueID Default NewID(),
+EmployNumber int constraint uq_tblemploy4_employnumber unique)
+insert into employ4(employnumber)
+values (1),(2),(3)
+select * from employ4
+rollback tran
+In the following code everything is same as the above code just one thing have changed and that it in 2nd column we give column default value now NewID() but NewSequentialID() and difference between NewID() and NewSequentialID() is that seqentialID do the same thing but it created those number in sequence number.
+begin tran
+Create table employ4
+(UniqueID uniqueidentifier Constraint df_tblemploy_UniqueID Default NewsequentialId(),
+EmployNumber int constraint uq_tblemploy4_employnumber unique)
+insert into employ4(employnumber)
+values (1),(2),(3)
+select * from employ4
+rollback tran
+
+
+In the following code we introduced variable called @x and set value @x=xml to it.
+
+declare @x xml
+set @x= 
+		'<Shopping ShopperName= "Vijay" Weather="Nice">
+		<ShoppingTrip ShoppingTripID="L1">
+		<Item Cost="5"> Bananas </Item>
+		<Item Cost="4"> Apples </Item>
+		<Item Cost="3"> Cherries </Item>
+		</ShoppingTrip>
+		<ShoppingTrip ShoppingTripID="L2">
+		<Item>Emeralds</Item>
+		<Item>Diamonds</Item>
+		<Item>furniture</Item>
+		</ShoppingTrip>
+		</Shopping>'
+select @x as xmloutput
+
+
+
+
+
+In the following code we we have added xmloutput named column which has xml datatype and it is nullable.
+
+alter table tblemployinformation
+add XMLOutput xml null
+In the following code we have updated the column which we have created which is xmloutput with @x variable we already declared that variable and gave is to xml values in the above codes
+
+update tblemployinformation 
+set XMLOutput=@x
+where EmployNumber=200
+
+The following column used for droping a column
+alter table tblemployinformation
+drop column xmloutput
+
+In the following code we have joined table employinformatio and table transaction and select employnumber between 200 and 202 only
+select E.Employnumber,E.EmployFirstNme,E.EmployLastname,T.Amount,T.Dateoftransaction
+from tblemployinformation as E
+left join tbltransaction as T
+on E.Employnumber=T.Employnumber
+where E.Employnumber between 200 and 202
+
+In the following code we have changed the output data in the xml form and in terms of elements and each element has name My Row
+select E.Employnumber,E.EmployFirstNme,E.EmployLastname,T.Amount,T.Dateoftransaction
+from tblemployinformation as E
+left join tbltransaction as T
+on E.Employnumber=T.Employnumber
+where E.Employnumber between 200 and 202
+for xml raw('MyRow'),elements
+In the following code we have added xml auto, elements to get the information in xml form.
+select E.Employnumber,E.EmployFirstNme,E.EmployLastname,T.Amount,T.Dateoftransaction
+from tblemployinformation as E
+left join tbltransaction as T
+on E.Employnumber=T.Employnumber
+where E.Employnumber between 200 and 202
+for xml auto, elements
+
+adding column with default date 
+
+ALTER TABLE tblbhavcopy 
+ADD dateofentry2 datetime not null
+CONSTRAINT cn_dateofentry DEFAULT getdate()
+Following code is used to rename column in a table
+EXEC sp_RENAME 'tblbhavcopy.dateofentry2', 'dateofentry', 'COLUMN'
+
+Temporal Table
+ 
+	
+In the following table we created to new columns validto and validfrom in this column we added we gave datatype datetime2 and writer after it generated always as row start and validto datetime2 generated always as row end. Then after that we wrote period for system time(validfrom,validto)
+And then with bracked (system_versioning=on)
+create table tblemploytemporal
+(EmployNumber int NOT NULL primary key clustered,
+EmployFirstName varchar(15) NOT NULL,
+EmployMiddleName varchar(15) NULL,
+EmployLastName varchar(15) NOT NULL,
+EmployGovernmentID char(20) NOT NULL,
+DateOfBirth Date Not null,
+DepartmentID varchar(25) Null,validfrom datetime2 Generated always as Row start,
+validto datetime2 generated always as row end,
+period for system_time(validfrom,validto))
+with (System_versioning=on)
+
+
+update tblemploytemporal
+set employlastname='Smith' where employnumber=124
+In the following table we altered a table called employinformation and then created two column validfrom and give it a datatype datetime and after that write generate always as row start constrain def_validfrom default sysutcdatetime() and in next line of code we created another column called validto and gave it datatype datetime and after tht write generated always as row end, period in 3rd column we write period for system_time and then validfrom and validto.
+alter table tblemployinformation
+add
+validfrom datetime() generated always as row start constraint def_validfrom default sysutcdatetime(),
+validto datetime() generated always as row end,
+period for system_time (validfrom,validto)
+
+Temporal Tables
+Temporal tables, also known as system-versioned tables, provide us with new functionality to track data changes. It allows SQL Server to maintain and manage the history of the data in the table automatically. This feature provides a full history of every change made to the data.
+It was first introduced in ANSI (American National Standards Institute) SQL 2011 standard. Now, it’s available in SQL Server 2016 and later versions.
+
+ 
+The BEGIN TRANSACTION statement increments @@TRANCOUNT by 1. ROLLBACK TRANSACTION decrements @@TRANCOUNT to 0, except for ROLLBACK TRANSACTION savepoint_name, which does not affect @@TRANCOUNT. COMMIT TRANSACTION or COMMIT WORK decrement @@TRANCOUNT by 1.
+
+
+
+ 
+ 
+ 
+
+
+ 
+
+
+
+ Locking is the way that SQL Server manages transaction concurrency. Essentially, locks are in-memory structures which have owners, types, and the hash of the resource that it should protect. A lock as an in-memory structure is 96 bytes in size.
+ACID test consists of 4 requirements that every transaction have to pass successfully:
+•	Atomicity – requires that a transaction that involves two or more discrete parts of information must commit all parts or none
+•	Consistency – requires that a transaction must create a valid state of new data, or it must roll back all data to the state that existed before the transaction was executed
+•	Isolation – requires that a transaction that is still running and did not commit all data yet, must stay isolated from all other transactions
+•	Durability – requires that committed data must be stored using method that will preserve all data in correct state and available to a user, even in case of a failure
+All about locking in SQL Server
+June 16, 2017 by Nikola Dimitrijevic
+ 
+Locking is essential to successful SQL Server transactions processing and it is designed to allow SQL Server to work seamlessly in a multi-user environment. Locking is the way that SQL Server manages transaction concurrency. Essentially, locks are in-memory structures which have owners, types, and the hash of the resource that it should protect. A lock as an in-memory structure is 96 bytes in size.
+To understand better the locking in SQL Server, it is important to understand that locking is designed to ensure the integrity of the data in the database, as it forces every SQL Server transaction to pass the ACID test.
+ACID test consists of 4 requirements that every transaction have to pass successfully:
+•	Atomicity – requires that a transaction that involves two or more discrete parts of information must commit all parts or none
+•	Consistency – requires that a transaction must create a valid state of new data, or it must roll back all data to the state that existed before the transaction was executed
+•	Isolation – requires that a transaction that is still running and did not commit all data yet, must stay isolated from all other transactions
+•	Durability – requires that committed data must be stored using method that will preserve all data in correct state and available to a user, even in case of a failure
+SQL Server locking is the essential part of the isolation requirement and it serves to lock the objects affected by a transaction. While objects are locked, SQL Server will prevent other transactions from making any change of data stored in objects affected by the imposed lock. Once the lock is released by committing the changes or by rolling back changes to initial state, other transactions will be allowed to make required data changes.
+Translated into the SQL Server language, this means that when a transaction imposes the lock on an object, all other transactions that require the access to that object will be forced to wait until the lock is released and that wait will be registered with the adequate wait type
+SQL Server locks can be specified via the lock modes and lock granularity
+Lock modes
+Lock mode considers various lock types that can be applied to a resource that has to be locked:
+•	Exclusive (X)
+•	Shared (S)
+•	Update (U)
+•	Intent (I)
+•	Schema (Sch)
+•	Bulk update (BU)
+Exclusive lock (X) – This lock type, when imposed, will ensure that a page or row will be reserved exclusively for the transaction that imposed the exclusive lock, as long as the transaction holds the lock.
+The exclusive lock will be imposed by the transaction when it wants to modify the page or row data, which is in the case of DML statements DELETE, INSERT and UPDATE. An exclusive lock can be imposed to a page or row only if there is no other shared or exclusive lock imposed already on the target. This practically means that only one exclusive lock can be imposed to a page or row, and once imposed no other lock can be imposed on locked resources
+Shared lock (S) – this lock type, when imposed, will reserve a page or row to be available only for reading, which means that any other transaction will be prevented to modify the locked record as long as the lock is active. However, a shared lock can be imposed by several transactions at the same time over the same page or row and in that way several transactions can share the ability for data reading since the reading process itself will not affect anyhow the actual page or row data. In addition, a shared lock will allow write operations, but no DDL changes will be allowed
+Update lock (U) – this lock is similar to an exclusive lock but is designed to be more flexible in a way. An update lock can be imposed on a record that already has a shared lock. In such a case, the update lock will impose another shared lock on the target row. Once the transaction that holds the update lock is ready to change the data, the update lock (U) will be transformed to an exclusive lock (X). It is important to understand that update lock is asymmetrical in regards of shared locks. While the update lock can be imposed on a record that has the shared lock, the shared lock cannot be imposed on the record that already has the update lock
+Intent locks (I) – this lock is a means used by a transaction to inform another transaction about its intention to acquire a lock. The purpose of such lock is to ensure data modification to be executed properly by preventing another transaction to acquire a lock on the next in hierarchy object. In practice, when a transaction wants to acquire a lock on the row, it will acquire an intent lock on a table, which is a higher hierarchy object. By acquiring the intent lock, the transaction will not allow other transactions to acquire the exclusive lock on that table (otherwise, exclusive lock imposed by some other transaction would cancel the row lock).
+This is an important lock type from the performance aspect as the SQL Server database engine will inspect intent locks only at the table level to check if it is possible for transaction to acquire a lock in a safe manner in that table, and therefore intent lock eliminates need to inspect each row/page lock in a table to make sure that transaction can acquire lock on entire table
+Regular intent locks:
+Intent exclusive (IX) – when an intent exclusive lock (IX) is acquired it indicates to SQL Server that the transaction has the intention to modify some of lower hierarchy resources by acquiring exclusive (X) locks individually on those lower hierarchy resources
+Intent shared (IS) – when an intent shared lock (IS) is acquired it indicates to SQL Server that the transaction has the intention to read some lower hierarchy resources by acquiring shared locks (S) individually on those resources lower in the hierarchy
+Intent update (IU) – when an intent shared lock (IS) is acquired it indicates to SQL Server that the transaction has the intention to read some of lower hierarchy resources by acquiring shared locks (S) individually on those resources lower in the hierarchy. The intent update lock (IU) can be acquired only at the page level and as soon as the update operation takes place, it converts to the intent exclusive lock (IX)
+
+
+In order to prevent a situation where locking is using too many resources, SQL Server has introduced the lock escalation feature.
+Without escalation, locks could require a significant amount of memory resources. Let’s take an example where a lock should be imposed on the 30,000 rows of data, where each row is 500 bytes in size, to perform the delete operation. Without escalation, a shared lock (S) will be imposed on the database, 1 intent exclusive lock (IX) on the table, 1,875 intent exclusive locks (IX) on the pages (8KB page hold 16 rows of 500 bytes, which makes 1,875 pages that hold 30,000 rows) and 30,000 exclusive locks (X) on the rows itself. As each lock is 96 bytes in size, 31,877 locks will take about 3 MB of memory for a single delete operation. Running large number of operations in parallel could require some significant resources just to ensure that locking manager can perform the operation smoothly
+ 
+To prevent such a situation, SQL Server uses lock escalation. This means that in a situation where more than 5,000 locks are acquired on a single level, SQL Server will escalate those locks to a single table level lock. By default, SQL Server will always escalate to the table level directly, which mean that escalation to the page level never occurs. Instead of acquiring numerous rows and pages lock, SQL Server will escalate to the exclusive lock (X) on a table level
+ 
+While this will reduce the need for resources, exclusive locks (X) in a table mean that no other transaction will be able to access locked table and all queries trying to access that table will be blocked. Therefore, this will reduce system overhead but will increase the probability of concurrency contention
+In order to provide control over the escalation, starting with SQL Server 2008 R2, the LOCK_EXCALATION option is introduced as part of the ALTER TABLE statement
+USE AdventureWorks2014
+GO
+ALTER TABLE Table_name
+SET (LOCK_ESCALATION = < TABLE | AUTO | DISABLE > –One of those options)
+GO
+
+Each of these options is defined to allow specific control over the lock escalation process:
+Table – This is the default option for any newly created table, as by default SQL Server will always execute lock escalation to the table level, which also includes partitioned tables
+Auto – This option allows the lock escalation to a partition level when a table is partitioned. When 5,000 locks are acquired in a single partition, lock escalation will acquire an exclusive lock (X) on that partition while the table will acquire intent exclusive lock (IX). In case that table is not partitioned, lock escalation will acquire the lock on the table level (equal to the Table option).
+Although this looks like a very useful option, it has to be used very carefully as it can easily cause a deadlock. In a situation where we have two transactions on two partitions where the exclusive lock (X) is acquired, and transactions tries to access the date from partition used by other transaction, a deadlock will be encountered
+ 
+So, it is very important to carefully control the data access pattern, if this option is enabled, which is not easy to achieve, and this is why this option is not the default settings in SQL Server
+Disable – This option will completely disable lock escalation for a table. Again, this option must be used carefully to avoid the SQL Server lock manager to be forced to use an excessive amount of memory
+As it can be seen, lock escalation could be a challenge for DBAs. If the application design requires deleting or updating more than 5,000 rows at once, a solution to avoid lock escalation, and the resulting effects, is splitting the single transaction into a two or more transaction where each will handle less than 5,000 rows, as in this way the lock escalation could be evaded
+Get info about active SQL Server locks
+SQL Server provides the Dynamics Management View (DMV) sys.dm_tran_locks that returns information about lock manager resources that are currently in use, which means that it will display all “live” locks acquired by transactions. More details about this DMV can be found in the sys.dm_tran_locks (Transact-SQL) article.
+The most important column used for the identification of the lock are resource_type, request_mode, and resource_description. If needed, more columns as additional resource for information info can be included during troubleshooting
+Here is the example of the query
+
+ 
+
+
+
+	
+
+ 
+
+	 
+
+ 
+
+
+
+	 
+
+
+ Heap tables are tables without a Clustered Index. A table in SQL Server can have a Clustered Index, then it’s called a Clustered Table, and without a Clustered Index, it’s called a Heap Table.
+In a heap table, the data is not sorted in any way, it’s just a pile of unordered, unstructured records. When you access a heap table through a SELECT statement, SQL Server will use a Table Scan operator in the Execution Plan, when you have no suitable Non-Clustered Index defined. There is no Table Seek operator available. That’s very important. A heap table will not scale with the amount of data you have. The more data you have, the longer the operation takes.
+Heap tables are very, very, very fast – for inserting data. As we have said earlier it’s just a pile of data. When you– nothing more crack out every page from a traditional phone book and place the individual pages on the desk in front of you, you have created a heap table. Inserting new phone book records into that heap table is very fast: you allocate a new page (of 8kb), write the new records onto that page, and finally put the page with the other ones in front of you. Finished. No sorting order has to be guaranteed.
+
+SQL Server organizes indexes in a structure known as B+Tree. Many think, B+Trees are binary trees. However, that is not correct. A binary tree is a hierarchical structure organizing nodes (table rows) in a manner that allows searches to be executed extremely efficiently. On the flipside, the binary tree structure is very volatile when it comes to updates, often requiring the entire structure to be rebuilt when a single data point was changed. 
+B-Trees are a lot more efficient than binary trees when it comes to updates, but some operations can still turn out expensive, depending on where the node that will hold the new or updated data lives in the tree. Therefore, another optimization was made to B-Trees to help with this problem. Instead of treating all nodes equal, the new structure has two types of nodes. The lowest level nodes, also called leaf nodes, hold the actual data. All other nodes including the root node only hold the key values and pointers to the next nodes. This type of tree is called a B+Tree and you can see an example below: 
+Clustered Index
+A clustered index defines the order in which data is physically stored in a table. Table data can be sorted in only way, therefore, there can be only one clustered index per table. In SQL Server, the primary key constraint automatically creates a clustered index on that particular column.
+create clustered index idx_tblEmploy on [dbo].[tblemployee]([EmployeeNumber])
+We can create clustered index in more than one rows.
+create nonclustered index idx_tblemply_dateofbirth_department on [dbo].[tblEmployee]([DateofBirth],department)
+
+
+ Clustered Index :
+Clustered index is created only when both the following conditions satisfy –
+1.	The data or file, that you are moving into secondary memory should be in sequential or sorted order.
+2.	There should be non key value, means the data should be unique.
+Whenever you apply clustered indexing in a table, it will perform sorting in that table only. You can create only one clustered index in a table like primary key. Clustered index is as same as dictionary where the data is arranged by alphabetical order.
+In clustered index, index contains pointer to block but not direct data.
+ 
+
+
+
+Example of Clustered Index –
+If you apply primary key to any column, then automatically it will become clustered index.
+create table Student
+( Roll_No int primary key, 
+Name varchar(50), 
+Gender varchar(30), 
+Mob_No bigint );
+
+insert into Student
+values (4, 'ankita', 'female', 9876543210 );
+
+insert into Student 
+values (3, 'anita', 'female', 9675432890 );
+
+insert into Student 
+values (5, 'mahima', 'female', 8976453201 ); 
+In this example, Roll no is a primary key, it will automatically act as a clustered index.
+The output of this code will produce in increasing order of roll no.
+ROLL_NO	NAME	GENDER	MOB_NO
+3	anita	female	9675432890
+4	ankita	female	9876543210
+5	mahima	female	8976453201
+You can have only one clustered index in one table, but you can have one clustered index on multiple columns, and that type of index is called composite index.
+2. Non-clustered Index :
+Non-Clustered Index is similar to the index of a book. The index of a book consists of a chapter name and page number, if you want to read any topic or chapter then you can directly go to that page by using index of that book. No need to go through each and every page of a book.
+The data is stored in one place, and index is stored in another place. Since, the data and non-clustered index is stored separately, then you can have multiple non-clustered index in a table.
+In non-clustered index, index contains the pointer to data.
+
+
+
+ 
+ 
+
+
+
+	 
+
+	
+
+
+ 
+
+
+
+
+
+select E.employnumber,E.department,T.amount from tblemployinformation as E
+join tbltransaction as T
+on E.employnumber=T.employnumber
+where e.employnumber between 125 and 150 and amount>500 and department='commercial'
+order by employnumber 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Practice Paper
+
+
+
+
+Create table tblEmployInformation
+(EmpNo int NOT NULL,
+Ename Varchar(50) Not Null,
+Job Varchar(15) Not  Null,
+mgr int  Not Null,
+HireDate  date not Null,
+Sal	int not null,
+Comm int null,
+Deptno int Not Null,
+CONSTRAINT uni_Employ_ID UNIQUE(EmpNo),
+CONSTRAINT for_mgr FOREIGN KEY(mgr) REFERENCES tblEmployInformation(EmpNo),
+Constraint for_dep foreign key(Deptno) REFERENCES tblDepartment(Deptno))
+
+
+
+
+
+
+Create table tblDepartment 
+(Deptno INT NOT NULL,
+Dname Varchar(20) Not Null,
+LOC Varchar(15) Not  Null,
+CONSTRAINT uni_id UNIQUE(DeptNO))
+
+
+
+
+
+SELECT *  from tblEmployInformation
+
+select distinct job from tblEmployInformation
+
+
+
+
+select  * from tblEmployInformation order by Sal ASC
+
+
+select EmpNo,Ename,Sal,Sal/30,
+12*sal as annsal from tblEmployInformation
+order by annsal ASC
+
+
+
+
+
+
+select * from tblEmployInformation
+where Hiredate BETWEEN '1981-01-01' and '1983-01-01'
+
+
+select EmpNo,Ename,Sal from tblEmployInformation
+where mgr=7788
+
+select * from tblEmployInformation
+where Comm>Sal
+
+
+select * from tblEmployInformation
+where (Sal/30)>100
+
+
+select * from tblEmployInformation
+where job='Clerk' or job="Analyst"
+order by job DESC
+
+
+
+select * from tblEmployInformation
+where hiredate in ('1981-05-01',
+'1981-12-03','1981-12-17','1980-01-19')
+order by hiredate ASC
+
+
+
+
+select * from tblEmployInformation
+where Deptno=10 or Deptno=20
+
+select * from tblEmployInformation
+where HireDate BETWEEN '1981-01-01' 
+and '1981-12-31'
+
+
+select * from tblEmployInformation
+where HireDate BETWEEN '1980-08-01'
+and '1980-08-31'
+
+
+select * from tblEmployInformation
+where sal*12 BETWEEN 22000 and 45000
+
+
+
+select Ename from tblEmployInformation
+where length(ename)=5
+
+select Ename from tblEmployInformation
+where Ename like 'S%' and length(ename)=5
+
+
+select * from tblEmployInformation
+where length(ename)=4 and 
+Ename like '__R%'
+
+
+
+select * from tblEmployInformation
+where length(sal)=4 and Sal like '%0'
+
+
+select * from tblEmployInformation
+where job not in ('President','Manager')
+order by sal ASC
+	select * from tblEmployInformation
+where job not like 'President' and 
+job not like 'Manager' order by sal ASC
+
+select * from tblEmployInformation
+where job!='President' and job<>
+'Manager' order by sal ASC
+select strftime('%m', Hiredate) as Month
+from tblEmployInformation
+
+
+select * from tblEmployInformation
+where  strftime('%m', Hiredate) not in ('03')
+
+
+select * from tblEmployInformation
+where  strftime('%m', Hiredate) !='03'
+
+
+select * from tblEmployInformation
+where  strftime('%m', Hiredate) <>'03'
+
+
+select * from tblEmployInformation
+where  strftime('%Y', Hiredate)='1981'
+
+select * from tblEmployInformation
+where job = 'Clerk' and Deptno=20
+
+select * from tblEmployInformation
+where  strftime('%Y', Hiredate)='1981' 
+and (Deptno=30 or Deptno=10)
+
+
+select * from tblEmployInformation e,
+tblDepartment d where (dname='Accounting'
+or dname='Research') and e.Deptno=d.Deptno
+order by e.deptno ASC
+
+	select * from tblEmployInformation e,
+tblDepartment d where d.dname in 
+('Accounting','Research') and e.deptno=d.Deptno
+order by e.deptno ASC
+
+
+select loc from tblEmployInformation e,
+tblDepartment d 
+where e.Ename='Smith' 
+and e.deptno=d.deptno
+
+select * from tblEmployInformation e,
+tblDepartment d 
+where (dname='Accounting' or dname='Research')
+and e.deptno=d.deptno 
+order by e.Deptno ASC
+
+select * from tblEmployInformation e ,
+tblDepartment d 
+where d.dname in ('Accounting','Research')
+and e.deptno=d.deptno 
+order by e.deptno ASC
+
+
+
+
+
+
+select e.EmpNo,e.Ename,e.Sal,
+d.Dname,d.LOC,e.Deptno,e.Job
+from tblEmployInformation e,
+tblDepartment d
+where d.LOC='Chicago' AND
+(d.Dname='Accounting' and e.Sal*12=28000
+and (e.Sal !=3000 and e.Sal!=2800))
+and   
+e.Deptno=d.Deptno
+
+	
+
+
+create table salgrade
+(grade int not null,
+losal int not null,
+hisal int not null)
+
+
+
+
+select e.EmpNo,e.Ename,
+e.Job,e.HireDate,
+e.Sal, e.Comm,e.Deptno,s.grade
+ from tblEmployInformation e,
+salgrade s where e.Sal BETWEEN
+s.losal and s.hisal
+order by grade ASC
+
+
+
+select * from tblEmployInformation e,
+salgrade s WHERE
+e.sal >=s.losal and e.sal<=s.hisal
+order by s.grade ASC
+
+
+
+select * from tblEmployInformation e,
+salgrade s WHERE
+(e.sal >=s.losal and e.sal<=s.hisal)
+and 
+s.grade in (2,3)
+order by s.grade ASC
+
+select * from tblEmployInformation e,
+salgrade s WHERE
+e.sal between s.losal and s.hisal
+and s.grade in (4,5) and 
+e.empno in (select e.empno from tblEmployInformation
+where e.job in ('Manager','Analyst'))
+
+
+
+
+
+select * from tblEmployInformation e,
+salgrade s where e.sal 
+BETWEEN s.losal and s.hisal 
+and s.grade  in (4,5) and 
+e.EmpNo in (select e.EmpNo from 
+tblEmployInformation e where 
+e.job in ('Manager', 'Analyst'))
+
+
+
+select DATE('now')
+
+
+select date('now')- HireDate 
+from tblEmployInformation
+where EmpNo=7369
+
+
+
+select * from tblEmployInformation e,
+salgrade s WHERE
+e.Sal BETWEEN s.losal and s.hisal
+and s.grade in (4,5) AND
+e.empno in (select e.EmpNo FROM
+tblEmployInformation e
+where e.job in ('Manager','Analyst'))
+
+
+
+
+
+
+	
+select * from tblEmployInformation e,
+salgrade s where e.Sal
+BETWEEN s.losal and s.hisal AND
+s.grade in (4,5) AND
+e.EmpNo in (select e.empno FROM
+tblEmployInformation e WHERE
+e.Job in ('Manager','Analyst'))
+
+
+
+
+
+select e.EmpNo,e.Ename,e.Sal,
+s.grade,d.dname, 
+(date('now')-e.hiredate)/12
+'Exp',12*e.Sal "Ann Sal"
+from tblEmployInformation e,
+tblDepartment d, salgrade s
+where e.Deptno in (10,20)
+and e.deptno=d.deptno 
+and e.sal between s.losal and s.hisal
+
+
+
+
+select e.EmpNo,e.Ename,e.HireDate,
+e.job,e.Sal,
+d.LOC,s.grade,d.Dname
+from tblEmployInformation e,
+tblDepartment d, salgrade s
+where e.Deptno=d.Deptno
+and (e.Sal >=s.losal and e.Sal<=s.hisal)
+and s.grade in (2,4) 
+and ((d.Dname not like 'OP%')
+    and (d.Dname not like '%S'))
+and e.Job like '%a%'
+and (strftime('%Y', Hiredate)='1981'
+ and strftime('%m', Hiredate) not in ('03','09'))
+ and e.Sal not like '%00'
+ 
+
+	
+
+
+ select * from tblEmployInformation
+ where sal>
+ (select Sal from tblEmployInformation
+where ename='Blake')
+
+
+ select * from tblEmployInformation
+ where Job=
+ (select Job from tblEmployInformation
+where ename='Allen')
+
+
+
+select * from tblEmployInformation
+ where HireDate>
+ (select HireDate from tblEmployInformation
+where ename='King')
+
+
+select * from tblEmployInformation w,
+tblEmployInformation m
+where w.mgr=m.empno and 
+w.hiredate<m.HireDate 
+
+
+	
+select * from tblEmployInformation e,
+tblDepartment d where 
+d.Deptno=20
+and e.Deptno=d.Deptno and e.job in (
+select e.job from tblEmployInformation e,
+tblDepartment d where 
+e.Deptno=d.Deptno and d.Deptno=10)
+
+select * from tblEmployInformation e,
+tblDepartment d where 
+d.Deptno=20
+and e.Deptno=d.Deptno and e.job in (
+select e.job from tblEmployInformation e,
+tblDepartment d where 
+e.Deptno=d.Deptno and d.Deptno=10)
+
+select * from tblEmployInformation
+where sal in (select sal from tblEmployInformation
+where (ename='Smith' or ename='Ford')) 
+order by sal DESC
+
+
+select * from tblEmployInformation
+where job=(select Job from tblEmployInformation
+where Ename="Miller")
+or Sal=(select Sal from tblEmployInformation
+where Ename="Allen")
+
+
+select * from tblEmployInformation e,
+tblDepartment d
+where e.Deptno=d.Deptno
+and hiredate>(select hiredate from tblEmployInformation
+where Ename="Blake")
+and Loc in ('Chicago','Boston')
+
+
+
+select * from tblEmployInformation e,
+tblDepartment d, salgrade g
+where e.Deptno=d.Deptno
+and 
+(e.sal>g.losal and e.sal<g.hisal)
+and 
+(g.grade in (3,4))
+and (d.Dname in ('Accounting','Research'))
+and (e.sal>
+(select Sal from tblEmployInformation
+where Ename="Allen"))
+and (e.hiredate>(select HireDAte from tblEmployInformation
+where Ename='Smith'))
+
+
+select * from tblEmployInformation e,
+tblDepartment d, salgrade g
+where e.Deptno=d.Deptno
+and 
+(e.sal>g.losal and e.sal<g.hisal)
+and 
+(g.grade in (3,4))
+and (d.Dname in ('Accounting','Research'))
+and (e.sal>
+(select Sal from tblEmployInformation
+where Ename="Allen"))
+and (e.hiredate>(select HireDAte from tblEmployInformation
+where Ename='Smith'))
+order by e.hiredate DESC
+
+
+
+select *  from tblEmployInformation
+where job in (
+select job from tblEmployInformation
+where ename in ('Smith','Allen'))
+
+
+
+
+
+
+
+
+
+select DISTINCT job from tblEmployInformation
+where deptno=20
+and job not in (
+select job from tblEmployInformation
+where Deptno=10)
+
+
+
+select max(sal) from tblEmployInformation
+
+
+
+select * from tblEmployInformation
+where sal= (select max(sal) from 
+tblEmployInformation)
+
+select * from tblEmployInformation
+where sal=(
+select max(Sal) from tblEmployInformation
+where Deptno=(
+select Deptno from tblDepartment
+where dname='Sales')
+)
+
+select * from tblEmployInformation e,
+tblDepartment d, salgrade s
+where e.Deptno=d.Deptno
+and e.sal>s.losal and e.sal< s.hisal
+and 
+s.grade=3
+and d.LOC='Chicago'
+AND
+e.hiredate=(select max(hiredate) FROM
+tblEmployInformation)
+
+
+select * from tblEmployInformation e,
+tblDepartment d,salgrade s
+where e.Deptno=d.Deptno
+and (e.Sal>s.losal and e.Sal<hisal)
+and d.loc='New York'
+and s.grade in (3,5)
+and e.Job!='President'
+and  e.sal>
+(select max(sal) from tblEmployInformation e,
+tblDepartment d
+where e.Deptno=d.Deptno
+and d.LOC='Chicago')
+
+
+
+
+
+	
+select * from tblEmployInformation
+where hiredate=(
+select min(hiredate) from tblEmployInformation
+where strftime('%Y', Hiredate)='1981'
+)
+
+
+	
+select * from tblEmployInformation
+where job=
+(select Job from tblEmployInformation
+where hiredate=(
+select min(hiredate) from tblEmployInformation
+where strftime('%Y', Hiredate)='1981'
+))
+and strftime('%Y', Hiredate)='1981'
+
+
+
+
+
+
+select * from tblEmployInformation e,
+salgrade s
+where e.sal>=losal and e.sal<= hisal
+
+and mgr=(
+select EmpNo from tblEmployInformation
+where ename='King'
+)
+and s.grade>3
+\
+
+
+
+
+
+
+
+
+
+select sum(Sal) from tblEmployInformation
+where EmpNo in (
+select distinct mgr FROM
+tblEmployInformation
+
+)
+
+
+
+
+
+
+
+select Job,sum(sal*12) as annual from tblEmployInformation
+where strftime('%Y',hiredate)='1981'
+group by Job
+
+select sum(e.sal),s.grade from tblEmployInformation e,
+salgrade s
+where e.sal>losal and e.Sal<hisal
+and s.grade =3
+group by s.grade
+
+
+select job, avg(sal) from tblEmployInformation
+where job='Clerk'
+
+select * from tblEmployInformation e,
+tblDepartment d
+where e.Deptno=d.Deptno
+and  d.Deptno=20
+and e.Sal>
+(select avg(Sal) from tblEmployInformation e,
+tblDepartment d
+where 
+e.Deptno=d.Deptno
+and d.Deptno=10
+
+
+
+
+
+
+select d.Deptno,e.job, count(job) from tblEmployInformation e,
+tblDepartment d
+where e.Deptno=d.Deptno
+group by d.Deptno,e.job
+
+ 
+select mgr, count(empno)
+ from tblEmployInformation
+ group by mgr
+
+
+select Deptno,count(empno) from 
+tblEmployInformation
+group by Deptno
+
+select Deptno,count(empno) from 
+tblEmployInformation
+group by Deptno
+having count(empno)>=2
+
+
+
+select d.Dname,e.job, count(job) from tblemployinformation e,
+tbldepartment d, salgrade s
+where e.Deptno=d.Deptno
+and (e.sal>=s.losal and e.sal<=s.hisal)
+and e.job='Clerk'
+group by d.dname,e.Job
+
+having count(job)>=2
+
+
+select * from tblEmployInformation
+where mgr=(
+select EmpNo from tblEmployInformation
+where EmpNo in (
+select distinct mgr from tblEmployInformation
+)
+and ename='Jones'
+
+)
+
+
+select * from tblEmployInformation
+where sal*1.2>3000
+
+
+select e.EmpNo,e.Ename,e.Job,
+e.mgr,e.Hiredate,e.Sal,e.Comm,e.Deptno,d.dname from tblEmployInformation e,
+tblDepartment d
+where e.Deptno=d.Deptno
+
+select * from tblEmployInformation e,
+tblDepartment d
+where e.Deptno=d.Deptno
+and d.dname!='Sales'
+
+select * from tblEmployInformation e,
+tblDepartment d
+where e.deptno=d.Deptno
+and sal BETWEEN 2000 and 5000
+and d.loc!='Chicago'
+
+
+
+
+select * from tblEmployInformation w,
+tblEmployInformation m 
+where w.mgr=m.EmpNo
+and w.sal>m.Sal
+
+select * from tblEmployInformation e,
+salgrade s
+where e.sal between s.losal and s.hisal
+and e.Deptno in (10,30)
+AND s.grade!=4
+and e.hiredate<'1982-12-31'
+
+
+
+
+select e.ename,e.job,d.dname,d.LOC
+from tblEmployInformation e,
+tblDepartment d
+where e.Deptno=d.Deptno
+and 
+e.EmpNo in (
+select mgr from tblEmployInformation
+)
+
+
+select w.Empno,w.Ename,
+w.Job, w.mgr, w.Hiredate,
+w.Sal, w.Comm,w.Deptno,m.Ename as 
+Manager_Name from tblEmployInformation w,
+tblEmployInformation m
+where w.mgr=m.EmpNo
+and m.ename='Jones'
+
+
+
+
+select e.ename,e.sal,s.grade,d.Dname
+from tblEmployInformation e,
+tblDepartment d, salgrade s
+where e.Deptno=d.Deptno
+and e.sal between s.losal and s.hisal
+and e.job<>'Clerk'
+order by e.sal DESC
+
+select * from tblEmployInformation
+where sal in (
+select max(Sal) from tblEmployInformation
+group by Deptno
+
+
+select * from tblEmployInformation e,
+salgrade s
+where (e.sal between s.losal and s.hisal)
+
+and e.sal=s.hisal
+
+
+
+select e.Ename,e.job,e.sal,
+s.grade,d.Dname from tblEmployInformation e,
+tblDepartment d, salgrade s
+where e.Deptno=d.Deptno
+and (e.Sal between s.losal and s.hisal)
+and e.Job<>'Clerk'
+order by e.Sal DESC
+
+
+
+
+
+select e.Deptno,e.EmpNo,e.Ename,e.Job,
+e.mgr,e.Hiredate, e.Sal from (select Deptno,max(sal) as Sal,Ename as Ename from tblEmployInformation
+group by Deptno) as s,tblEmployInformation e
+where s.Deptno=e.Deptno
+and s.Sal=e.Sal
+and s.Ename=e.Ename
+
+order by e.Deptno ASC
+
+
+select * from tblEmployInformation
+where sal=
+(select (max(Sal)+min(Sal))/2 from 
+tblEmployInformation)
+
+
+
+
+
+select deptno,Count(Empno) from 
+tblEmployInformation
+group by deptno
+having count(Empno)
+
+
+
+select * from (select mgr, avg(Sal) as Sal from tblEmployInformation
+group by mgr) as s,tblEmployInformation as e
+where s.mgr=e.mgr
+and e.Sal>s.Sal
+
+
+
+
+select * from tblEmployInformation e,
+(select EmpNo,Sal from tblEmployInformation
+where EmpNo in 
+(select distinct mgr from tblEmployInformation)
+) as v
+where e.mgr=v.EmpNo
+and e.Sal<v.Sal
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
