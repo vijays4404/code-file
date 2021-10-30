@@ -1,0 +1,2455 @@
+Sub UpdateCell()
+    Range("B1").Select
+    Selection.Value = "Pizza"
+
+
+
+
+
+End Sub
+
+
+Sub Right()
+    Range("B1").Value = "Pizza"
+    Range("B1").Font.Bold = True
+    Range("B1").Font.Size = 14
+    
+End Sub
+
+
+
+
+
+Sub findinglastrow()
+Dim lastrow As Long
+
+
+
+Debug.Print Range("E1").End(xlDown).Select
+lastrow = Range("E1").End(xlDown).Row
+
+Debug.Print lastrow
+
+
+
+
+End Sub
+
+
+
+
+
+
+
+
+
+
+Sub Right()
+    'clear the font'
+    
+    Range("B1").Clear
+    Range("B1").Value = "Pizza"
+    Range("B1").Font.Bold = True
+    Range("B1").Font.Size = 14
+    Range("B1").Font.Color = rgbRed
+
+    
+End Sub
+
+
+
+
+
+Sub Right()
+    Range("A1:B4,D1").Value = "Pizza"
+   
+    
+End Sub
+
+
+
+
+Sub Right()
+    Range("A1:B4,D1,F2:F4").Value = "Pizza"
+   
+    
+End Sub
+
+
+
+
+
+
+
+
+Sub Right()
+    Range("A1:B4,D1,F2:F4").Value = "Pizza"
+    Range("D15") = 20
+    Range("D16") = "01/012/2020"
+    Range("D17") = #1/2/2020#
+    
+    
+End Sub
+
+
+
+
+
+
+Sub Right()
+    Range("A1:B4,D1,F2:F4").Value = "Pizza"
+    Range("D15") = 20
+    Range("D16") = "01/012/2020"
+    Range("D17") = #1/2/2020#
+    Range("A1:B4").Font.Underline = True
+    Range("A1:B4").Font.Name = "Arial"
+    
+    
+    
+End Sub
+
+
+
+Sub ReferencingWorksheet()
+
+'Range("A1:A5").Value = "Coffee"
+
+ActiveSheet.Range("A1:A5").Value = "Coffee"
+
+
+End Sub
+
+
+
+
+
+Sub ReferencingSheet()
+Worksheets("Sheet3").Activate
+ActiveSheet.Range("A1:A5").Value = "Coffee"
+
+
+
+End Sub
+
+
+
+
+
+
+
+
+Sub ReferencingSheet()
+'Worksheets("Sheet3").Activate
+'ActiveSheet.Range("A1:A5").Value = "Coffee"
+
+Worksheets("Sheet3").Range("A1:A5").Value = "Cake"
+
+
+End Sub
+
+Sub ReferencingSheet()
+'Worksheets("Sheet3").Activate
+'ActiveSheet.Range("A1:A5").Value = "Coffee"
+
+Worksheets("Sheet3").Range("A1:A5").Value = "Cake"
+ActiveSheet.Range("B1:B5").Value = "Coffee"
+
+
+End Sub
+
+
+
+
+Sub UsingFullyQualified()
+
+MsgBox ActiveWorkbook.Name
+MsgBox ActiveSheet.Name
+
+
+
+End Sub
+
+
+
+
+
+
+
+
+Sub UsingFullyQualified()
+
+MsgBox ActiveWorkbook.Name
+MsgBox ActiveSheet.Name
+
+Application.Workbooks("excel"). _
+Worksheets("Sheet2").Range("A1:D15").Value = _
+"Coffee"
+
+
+End Sub
+
+
+
+
+Sub variable()
+
+Dim ws As Worksheet
+Set ws = Workbooks("Excel").Worksheets("Sheet3")
+ws.Range("A1:A10").Value = "Coffee"
+
+End Sub
+
+
+
+Sub variable()
+
+Dim ws As Worksheet
+Set ws = Workbooks("Excel").Worksheets("Sheet3")
+ws.Range("A1:D15").Value = "Coffee"
+
+End Sub
+
+
+
+
+
+
+
+
+Sub ManipulatingcloseObject()
+Dim dataws As Worksheet
+Workbooks.Open Filename:="C:\New folder\Excel Sheet\notebooks\excel2.xlsx"
+Set dataws = ActiveWorkbook.Worksheets("Sheet1")
+dataws.UsedRange.Font.Color = rgbBlue
+dataws.UsedRange.Interior.Color = rgbFireBrick
+'
+'With dataws.UsedRange
+'    .Font.Color = rgbWhite
+'    .Interior.Color = rgbFiveBrick
+'End With
+ActiveWorkbook.Close savechanges:=True
+
+
+
+End Sub
+
+
+Sub WorksheetFunctionExample()
+    Debug.Print "Hello World"
+    
+
+
+End Sub
+
+
+
+
+Sub WorksheetFunctionExample()
+    Debug.Print "Hello World"
+    Debug.Print ActiveWorkbook.Name
+    Debug.Print ActiveSheet.Name
+    
+    
+
+
+End Sub
+
+
+
+
+Sub WorksheetFunctionExample()
+    Debug.Print "Hello World"
+    Debug.Print ActiveWorkbook.Name
+    Debug.Print ActiveSheet.Name
+    Debug.Print Application.WorksheetFunction.Search(" ", Range("G2").Value, 1)
+    
+    
+
+
+End Sub
+
+
+
+
+
+Sub findinglastrow2()
+Dim lastrow As Long
+
+
+Debug.Print Rows.Count
+Debug.Print "A" & Rows.Count
+lastrow = Range("A" & Rows.Count).End(xlUp).Select
+Debug.Print lastrow
+End Sub
+
+
+
+
+
+Sub findinglastrow2()
+Dim lastrow As Long
+
+
+Debug.Print Rows.Count
+Debug.Print "A" & Rows.Count
+lastrow = Range("A" & Rows.Count).End(xlUp).Row
+Debug.Print lastrow
+End Sub
+
+
+
+Sub fornextloop()
+For x = 1 To 5
+    Debug.Print "Pizza"
+Next x
+
+
+
+End Sub
+
+
+
+
+
+
+Sub fornextloopexample1()
+
+For x = 1 To 5
+    Debug.Print Range("A" & x).Value
+Next x
+End Sub
+
+
+
+
+Sub fornextloopexample2()
+
+For x = 1 To 5
+    Debug.Print Range("A" & x).Value & "-----" & Range("C" & x).Value
+Next x
+End Sub
+
+Sub fornextloopexample3()
+
+For x = 1 To 15 Step 3
+    Debug.Print Range("A" & x).Value & "-----" & Range("C" & x).Value
+Next x
+End Sub
+
+
+
+
+
+Sub goalsandpenalties()
+Dim x As Long
+Dim lastrow As Long
+
+lastrow = Range("G" & Rows.Count).End(xlUp).Row
+On Error Resume Next
+
+For x = 2 To lastrow
+    Range("H" & x).Value = Getgoals(Range("G" & x).Value)
+    Range("I" & x).Value = Getpenalties(Range("G" & x).Value)
+    
+Next x
+
+
+
+End Sub
+
+
+
+
+
+Sub ifthen()
+a = 10
+b = 50
+
+If a > b Then
+    Debug.Print "a is greater than b"
+Else
+    Debug.Print "a is less than b"
+
+
+End If
+
+End Sub
+
+
+
+
+
+
+
+
+
+
+
+Sub ifthen()
+a = 50
+b = 100
+
+If a > b Then
+    Debug.Print "a is greater than b"
+ElseIf a = b Then
+    Debug.Print "a is equal b"
+Else
+    Debug.Print "a is less than b"
+
+
+End If
+
+End Sub
+
+
+
+
+
+
+
+
+
+Sub goalsandpenalties()
+Dim x As Long
+Dim lastrow As Long
+
+lastrow = Range("G" & Rows.Count).End(xlUp).Row
+
+    For x = 2 To lastrow
+    If Range("G" & x).Value <> "" Then
+        Range("H" & x).Value = Getgoals(Range("G" & x).Value)
+        Range("I" & x).Value = Getpenalties(Range("G" & x).Value)
+    End If
+Next x
+
+
+End Sub
+
+
+
+
+
+
+
+
+
+
+
+Sub goalsandpenalties()
+Dim x As Long
+Dim lastrow As Long
+
+lastrow = Range("G" & Rows.Count).End(xlUp).Row
+
+    For x = 2 To lastrow
+    If Not IsEmpty(Range("G" & x).Value) Then
+        Range("H" & x).Value = Getgoals(Range("G" & x).Value)
+        Range("I" & x).Value = Getpenalties(Range("G" & x).Value)
+    End If
+Next x
+
+
+End Sub
+
+
+Sub Creatingdynamicrange()
+Dim lastrow As Long
+lastrow = Range("G" & Rows.Count).End(xlUp).Row
+
+Debug.Print "H2&H" & lastrow
+
+Debug.Print Application.WorksheetFunction.Sum(Range("H2:H" & lastrow))
+Debug.Print Application.WorksheetFunction.Sum(Range("I2:I" & lastrow))
+
+
+
+
+End Sub
+
+
+
+Sub Creatingdynamicrange2()
+Dim lastrow As Long
+Dim goal As Range
+Dim penalties As Range
+lastrow = Range("G" & Rows.Count).End(xlUp).Row
+Set goal = Range("H2:H" & lastrow)
+Set penalties = Range("I2:I" & lastrow)
+Debug.Print Application.WorksheetFunction.Sum(goal)
+Debug.Print Application.WorksheetFunction.Sum(penalties)
+
+End Sub
+
+
+
+
+
+
+
+
+
+
+
+
+
+Sub countingwithcounter()
+Dim x As Long
+Dim lastrow As Long
+Dim counter As Long
+lastrow = Range("H" & Rows.Count).End(xlUp).Row
+For x = 2 To lastrow
+If Range("H" & x).Value >= 15 Then
+    counter = counter + 1
+End If
+N
+Debug.Print counter
+    
+End Sub
+
+
+
+
+
+
+Sub countingwithcountif()
+Dim x As Long
+Dim lastrow As Long
+
+lastrow = Range("H" & Rows.Count).End(xlUp).Row
+
+counter = Application.WorksheetFunction.CountIf(Range("H2:H" & lastrow), ">=15")
+Debug.Print counter
+
+End Sub
+
+
+
+
+
+Sub countingwithmultiplecriteriaAND()
+Dim x As Long
+Dim lastrow As Long
+Dim counter As Long
+lastrow = Range("H" & Rows.Count).End(xlUp).Row
+For x = 2 To lastrow
+If Range("H" & x).Value >= 15 And Range("I" & x).Value >= 3 Then
+    counter = counter + 1
+    
+    
+End If
+Next x
+Debug.Print counter
+    
+End Sub
+
+
+
+Sub countingwithmultiplecriteriaNESTEDIF()
+Dim x As Long
+Dim lastrow As Long
+Dim counter As Long
+lastrow = Range("H" & Rows.Count).End(xlUp).Row
+For x = 2 To lastrow
+If Range("H" & x).Value >= 15 Then
+    If Range("I" & x).Value >= 3 Then
+    
+    counter = counter + 1
+    End If
+    
+    
+    
+End If
+Next x
+Debug.Print counter
+    
+End Sub
+
+
+
+
+
+=COUNTIF(C2:C6659, "England")+COUNTIF(C2:C6659, "Argentina")+COUNTIF(C2:C6659, "Brazil")
+
+
+
+
+
+
+
+
+Sub countingwithmultiplecriteriaOR()
+Dim x As Long
+Dim lastrow As Long
+Dim counter As Long
+lastrow = Range("H" & Rows.Count).End(xlUp).Row
+For x = 2 To lastrow
+    If Range("C" & x).Value = "England" Or _
+    Range("C" & x).Value = "Argentina" Or _
+    Range("C" & x).Value = "Brazil" Then
+    
+    counter = counter + 1
+    End If
+    
+
+Next x
+Debug.Print counter
+    
+End Sub
+
+
+
+
+=SUMIF(C2:C6659,"Brazil",H2:H6659)
+
+
+Sub sumifcountry()
+
+Dim lastrow As Long
+Dim x As Long
+Dim countryrng As Range
+Dim goalrng As Range
+
+lastrow = Range("C" & Rows.Count).End(xlUp).Row
+Debug.Print "C2: C" & lastrow
+Debug.Print "H2: H" & lastrow
+Set countryrng = Range("C2:C" & lastrow)
+Set goalrng = Range("H2:H" & lastrow)
+
+
+suming = Application.WorksheetFunction.sumif(Range("C2:C" & lastrow), "Brazil", Range("H2:H" & lastrow))
+Debug.Print suming
+
+
+End Sub
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Sub sumifcountry2()
+
+Dim lastrow As Long
+Dim x As Long
+Dim summing As Long
+
+
+
+lastrow = Range("C" & Rows.Count).End(xlUp).Row
+
+For x = 2 To lastrow
+    If Range("C" & x).Value = "Brazil" Then
+        summing = summing + Range("H" & x).Value
+    End If
+Next x
+
+Debug.Print summing
+
+End Sub
+
+
+
+
+
+
+
+
+
+
+
+
+Sub sumiffootballer()
+
+Dim lastrow As Long
+Dim x As Long
+Dim summing As Long
+
+footballer = "Harry Kane"
+lastrow = Range("C" & Rows.Count).End(xlUp).Row
+
+For x = 2 To lastrow
+    If Range("A" & x).Value = footballer Then
+        summing = summing + Range("H" & x).Value
+    End If
+Next x
+
+Debug.Print summing
+
+End Sub
+
+
+
+
+
+
+
+
+Sub sumifinputbox()
+
+Dim lastrow As Long
+Dim x As Long
+Dim summing As Long
+
+footballer = InputBox("Please enter the footballer Name...")
+lastrow = Range("C" & Rows.Count).End(xlUp).Row
+
+For x = 2 To lastrow
+    If Range("A" & x).Value = footballer Then
+        summing = summing + Range("H" & x).Value
+    End If
+Next x
+
+MsgBox footballer & " " & "has scored" & " " & summing & " " & "goals..."
+
+
+End Sub
+
+
+
+
+
+
+
+
+
+
+
+Sub sumifbox()
+
+Dim lastrow As Long
+Dim x As Long
+Dim summing As Long
+
+footballer = InputBox("Please enter the footballer Name...")
+lastrow = Range("C" & Rows.Count).End(xlUp).Row
+
+For x = 2 To lastrow
+    If Range("A" & x).Value = footballer Then
+        summing = summing + Range("H" & x).Value
+    End If
+Next x
+If footballer = "" Or summing = 0 Then
+    MsgBox "Please Enter Correct keywords"
+Else
+    MsgBox footballer & " " & "has scored" & " " & summing & " " & "goals..."
+End If
+
+End Sub
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Sub sumifbox()
+
+Dim lastrow As Long
+Dim x As Long
+Dim summing As Long
+
+footballer = InputBox("Please enter the footballer Name...")
+lastrow = Range("C" & Rows.Count).End(xlUp).Row
+
+For x = 2 To lastrow
+    If UCase(Range("A" & x).Value) = UCase(footballer) Then
+        summing = summing + Range("H" & x).Value
+    End If
+Next x
+If footballer = "" Or summing = 0 Then
+    MsgBox "Please Enter Correct keywords"
+Else
+    MsgBox Application.WorksheetFunction.Proper(footballer) _
+    & " " & "has scored" & " " & summing & " " & "goals..."
+End If
+
+End Sub
+
+
+
+
+
+
+
+Sub maxvalues2()
+Dim goalrng As Range
+Dim lastrow As Long
+Dim x As Long
+Dim summer As Long
+
+
+lastrow = Range("A" & Rows.Count).End(xlUp).Row
+
+Set goalrng = Range("A2:A" & lastrow)
+For x = 2 To lastrow
+    If Range("H" & x).Value > summer Then
+    summer = Range("H" & x).Value
+    End If
+Next x
+Debug.Print summer
+
+End Sub
+
+
+
+
+
+
+Sub maxvalues2()
+Dim goalrng As Range
+Dim lastrow As Long
+Dim x As Long
+Dim summer As Long
+
+
+lastrow = Range("A" & Rows.Count).End(xlUp).Row
+
+Set goalrng = Range("A2:A" & lastrow)
+For x = 2 To lastrow
+    If Range("B" & x).Value >= #1/1/1995# Then
+    
+        If Range("H" & x).Value > summer Then
+        summer = Range("H" & x).Value
+        End If
+    End If
+    
+Next x
+Debug.Print summer
+
+End Sub
+
+
+
+
+
+
+
+
+
+
+
+
+
+Sub maxvalues3()
+Dim goalrng As Range
+Dim lastrow As Long
+Dim x As Long
+Dim summer As Long
+
+
+lastrow = Range("A" & Rows.Count).End(xlUp).Row
+
+Set goalrng = Range("A2:A" & lastrow)
+For x = 2 To lastrow
+    If Range("B" & x).Value >= #1/1/1995# Then
+    
+        If Range("H" & x).Value > summer Then
+        summer = Range("H" & x).Value
+        End If
+    End If
+    
+Next x
+
+For x = 2 To lastrow
+    If Range("H" & x).Value = summer Then
+        With Range("A" & x & ":" & "H" & x)
+        .Select
+        .Font.Color = rbgblue
+        .Interior.Color = rgbRed
+        
+        End With
+        
+    End If
+    
+Next x
+
+End Sub
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Sub emptyrow()
+Dim Lastrow As Long, x As Long
+
+Lastrow = Range("A" & Rows.Count).End(xlUp).Row
+
+For x = Lastrow To 2 Step -1
+
+    If Range("A" & x).Value = "" Then
+        Rows(x).EntireRow.Delete
+    End If
+Next x
+
+End Sub
+
+
+
+
+
+
+Dim goallastrw As Long
+Dim birthlastrw As Long
+Dim datarng As Range
+Dim x As Long
+Set goalws = ThisWorkbook.Worksheets("Goalscorer")
+Set birthws = ThisWorkbook.Worksheets("PlaceOfBirth")
+goallastrw = goalws.Range("A" & Rows.Count).End(xlUp).Row
+birthlastrw = birthws.Range("A" & Rows.Count).End(xlUp).Row
+Set datarng = birthws.Range("A2:B" & birthlastrw)
+For x = 2 To goallastrw
+On Error Resume Next
+goalws.Range("C" & x).Value = goalws.Application.WorksheetFunction.VLookup(goalws.Range("A" & x).Value, _
+                            datarng, 2, 0)                   
+Next x
+End Sub
+
+
+
+
+
+Sub UsingIndexMatch()
+
+Dim goallastrw As Long
+Dim birthlastrw As Long
+Dim datarng As Range
+Dim x As Long
+Set goalws = ThisWorkbook.Worksheets("Goalscorer")
+Set birthws = ThisWorkbook.Worksheets("PlaceOfBirth")
+goallastrw = goalws.Range("A" & Rows.Count).End(xlUp).Row
+birthlastrw = birthws.Range("A" & Rows.Count).End(xlUp).Row
+Set birthrng = birthws.Range("A2:A" & birthlastrw)
+Set namerng = birthws.Range("B2:B" & birthlastrw)
+For x = 2 To goallastrw
+On Error Resume Next
+
+goalws.Range("C" & x).Value = goalws.Application.WorksheetFunction.Index(birthrng, _
+Application.WorksheetFunction.Match(goalws.Range("A" & x).Value, namerng, 0))
+                                
+Next x
+End Sub
+
+
+
+
+Sub foreachloopexample()
+Dim ws As Worksheet
+Dim c As Range
+
+For Each ws In Worksheets
+    If ws.Name <> "Goalscorer" Then
+        For Each c In ws.UsedRange.Cells
+            Debug.Print c.Value
+        Next c
+    End If
+Next ws
+
+        
+
+
+
+
+
+
+
+
+
+Sub foreachloopexample2()
+Dim ws As Worksheet
+Dim emptyrng As Range
+Dim c As Range
+
+Dim lastrow As Long
+Set ws = ThisWorkbook.Worksheets("Goalscorer")
+lastrow = ws.Range("A" & Rows.Count).End(xlUp).Row
+Set emptyrng = ws.Range("B2:C" & lastrow)
+
+
+For Each c In emptyrng
+    If c = "" Then
+        c.Value = "n / a"
+    End If
+Next c
+End Sub
+
+
+
+
+
+
+
+
+
+Sub Macro1()
+Dim rng As Range
+Dim ws As Worksheet
+Set ws = ThisWorkbook.Worksheets("Goalscorer")
+ With ws.UsedRange
+
+ .Borders(xlEdgeLeft).LineStyle = xlContinuous
+ 
+ .Borders(xlEdgeTop).LineStyle = xlContinuous
+ 
+.Borders(xlEdgeBottom).LineStyle = xlContinuous
+
+.Borders(xlEdgeRight).LineStyle = xlContinuous
+
+.Borders(xlInsideVertical).LineStyle = xlContinuous
+
+ .Borders(xlInsideHorizontal).LineStyle = xlContinuous
+
+ 
+ 
+ End With
+ 
+
+End Sub
+
+
+
+
+
+
+
+
+
+
+
+
+Sub removingduplicates()
+Dim name As Worksheet
+Dim report As Worksheet
+Dim footballerrng As Range
+Dim goalrng As Range
+Dim penaltiesrng As Range
+Dim goallastrow As Long
+Dim reportlastrow As Long
+Dim x As Long
+
+Set name = ThisWorkbook.Worksheets("Goalscorer")
+Set report = ThisWorkbook.Worksheets("report")
+
+goallastrow = name.Range("A" & Rows.Count).End(xlUp).Row
+reportlastrow = report.Range("A" & Rows.Count).End(xlUp).Row
+
+
+Set footballerrng = name.Range("A2:A" & goallastrow)
+Set goalrng = name.Range("I2:I" & goallastrow)
+Set penaltiesrng = name.Range("J2:J" & goallastrow)
+
+
+
+
+
+
+name.Columns("A").Copy Destination:=report.Columns("A")
+report.Columns.RemoveDuplicates Columns:=1, Header:=xlYes
+
+
+
+
+report.Range("B1").Value = "Total Goals"
+report.Range("C1").Value = "Total Penalties"
+report.Columns.AutoFit
+For x = 2 To reportlastrow
+report.Range("B" & x).Value = Application.WorksheetFunction.sumif(footballerrng, _
+                        report.Range("A" & x).Value, goalrng)
+report.Range("C" & x).Value = Application.WorksheetFunction.sumif(footballerrng, _
+                        report.Range("A" & x).Value, penaltiesrng)
+                        
+Next x
+report.Activate
+
+
+
+End Sub
+
+
+
+
+
+
+
+
+
+
+
+
+
+Sub Runningcodefromdifferentsubroutine()
+
+MsgBox "I love Pizza"
+
+
+End Sub
+
+Sub running()
+
+'Call message
+Run "message"
+
+
+
+End Sub
+
+
+
+
+
+
+
+Sub addedingnewsheet()
+Dim sales As Worksheet
+Dim usd As Worksheet
+
+Set sales = ThisWorkbook.Worksheets("Sales")
+
+sales.Activate
+Worksheets.Add after:=sales, Count:=1
+
+ActiveSheet.Name = "USD Sheet"
+
+Set usd = ActiveWorkbook.Worksheets("USD Sheet")
+usd.Range("A1").Value = "Test"
+
+End Sub
+
+
+
+
+
+
+
+
+
+
+
+Sub addedingnewsheet()
+Dim sales As Worksheet
+Dim usd As Worksheet
+
+Set sales = ThisWorkbook.Worksheets("Sales")
+
+sales.Activate
+Worksheets.Add after:=sales, Count:=1
+
+ActiveSheet.Name = "USD Sheet"
+
+Set usd = ActiveWorkbook.Worksheets("USD Sheet")
+sales.UsedRange.Copy Destination:=usd.Range("A1")
+End Sub
+
+
+
+
+
+
+
+
+
+
+___________________________________________________________________________________
+
+
+
+
+
+
+
+Sub addedingnewsheet()
+Dim sales As Worksheet
+Dim usd As Worksheet
+
+Set sales = ThisWorkbook.Worksheets("Sales")
+For Each Worksheet In ThisWorkbook.Worksheets
+    If Worksheet.Name = "USD Sheet" Then
+    Worksheet.Delete
+    End If
+
+    
+    
+
+sales.Activate
+Worksheets.Add after:=sales, Count:=1
+
+ActiveSheet.Name = "USD Sheet"
+
+Set usd = ActiveWorkbook.Worksheets("USD Sheet")
+sales.UsedRange.Copy Destination:=usd.Range("A1")
+End Sub
+
+
+
+
+
+
+
+________________________________________________________________________________________
+Sub addedingnewsheet()
+Dim sales As Worksheet
+Dim usd As Worksheet
+
+Set sales = ThisWorkbook.Worksheets("Sales")
+For Each Worksheet In ThisWorkbook.Worksheets
+    If Worksheet.Name = "USD Sheet" Then
+    Worksheet.Delete
+    End If
+
+Next Worksheet
+    
+
+sales.Activate
+Worksheets.Add after:=sales, Count:=1
+
+ActiveSheet.Name = "USD Sheet"
+
+Set usd = ActiveWorkbook.Worksheets("USD Sheet")
+sales.UsedRange.Copy Destination:=usd.Range("A1")
+usd.Range("K1").Value = "Txn Amount in USD"
+usd.Range("L1").Value = "Txn cost in USD"
+
+With usd.Range("K1:L1")
+.Font.Bold = True
+.WrapText = True
+.Interior.Color = rgbLightGreen
+
+usd.UsedRange.ColumnWidth = 10.18
+
+End With
+End Sub
+
+
+___________________________________________________________________________________
+
+
+
+
+
+H2*VLOOKUP(LEFT(J2,3),Sheet12!A1:C47,3,0)
+
+
+
+
+
+
+
+Function ConverttoUSD(amt As Double, ccy As String) As Double
+
+Dim cr As Worksheet
+Dim currencyrng As Range
+Dim lastrow As Long
+Set cr = ThisWorkbook.Worksheets("currency")
+lastrow = cr.Range("A" & Rows.Count).End(xlUp).Row
+Set currencyrng = cr.Range("A2:C" & lastrow)
+ConverttoUSD = amt * Application.WorksheetFunction.VLookup(ccy, currencyrng, 3, 0)
+
+
+End Function
+
+
+
+
+
+
+
+
+
+
+___________________________________________________________________________________________________________
+
+
+
+Sub convertingtoUSD()
+Dim usd As Worksheet
+Dim lastrow As Long
+Dim x As Long
+Set usd = ThisWorkbook.Worksheets("USD Sheet")
+
+lastrow = usd.Range("A" & Rows.Count).End(xlUp).Row
+For x = 2 To lastrow
+
+usd.Range("K" & x).Value = converttoUSD(usd.Range("H" & x).Value, Left(usd.Range("J" & x).Value, 3))
+usd.Range("L" & x).Value = converttoUSD(usd.Range("I" & x).Value, Left(usd.Range("J" & x).Value, 3))
+
+Next x
+
+
+'convertingnumber format
+usd.Range("K2:L" & lastrow).NumberFormat = "0.00"
+
+
+
+
+
+
+
+End Sub
+
+
+________________________________________________________________________________________________________________________________
+
+
+
+Sub CreatingtheReport()
+Dim usd As Worksheet
+Dim rep As Worksheet
+
+Set usd = ThisWorkbook.Worksheets("USD Sheet")
+
+
+Workbooks.Add
+ActiveWorkbook.ActiveSheet.Name = "Report"
+
+Set rep = ActiveWorkbook.ActiveSheet
+usd.Range("A2:A10").Copy Destination:=rep.Range("A1")
+
+End Sub
+
+
+
+____________________________________________________________________________________________________________________
+
+
+Sub CreatingtheReport()
+Dim usd As Worksheet
+Dim rep As Worksheet
+Dim lastrow As Long
+Set usd = ThisWorkbook.Worksheets("USD Sheet")
+lastrow = usd.Range("A" & Rows.Count).End(xlUp).Row
+
+
+Workbooks.Add
+ActiveWorkbook.ActiveSheet.Name = "Report"
+
+Set rep = ActiveWorkbook.ActiveSheet
+usd.Range("E1:E" & lastrow).Copy Destination:=rep.Range("A1")
+rep.Columns.RemoveDuplicates Columns:=1, Header:=xlYes
+End Sub
+
+
+
+
+
+
+
+
+
+=COUNTIFS(E2:E2759,"Australia",F2:F2759,"Successful")
+
+
+=SUMIFS(K2:K2759,E2:E2759,"Australia",F2:F2759,"Successful")
+
+
+
+
+
+
+
+
+________________________________________________________________________________________________
+
+
+
+
+
+
+
+Sub Reportformating()
+Dim rep As Worksheet
+
+Set rep = ActiveWorkbook.ActiveSheet
+
+With rep.Range("A1:D1")
+.Font.Bold = True
+.WrapText = True
+.VerticalAlignment = xlCenter
+.Interior.Color = rgbLightGreen
+
+
+rep.UsedRange.Columns.Sort Key1:=rep.Range("B1"), order1:=xlDescending
+
+
+
+End With
+
+End Sub
+
+
+
+
+
+
+
+
+=SUM(C2:C36)
+
+
+
+
+________________________________________________________________________________________________________
+
+
+
+
+Sub Reportformating()
+Dim rep As Worksheet
+Dim lastrow As Long
+
+Set rep = ActiveWorkbook.ActiveSheet
+lastrow = rep.Range("A" & Rows.Count).End(xlUp).Row
+
+With rep.Range("A1:D1")
+.Font.Bold = True
+.WrapText = True
+.VerticalAlignment = xlCenter
+.Interior.Color = rgbLightGreen
+
+
+rep.UsedRange.Columns.Sort Key1:=rep.Range("B1"), order1:=xlDescending
+
+rep.Range("A" & lastrow + 1).Value = "Grand Total"
+
+rep.Range("B" & lastrow + 1).Value = Application.WorksheetFunction.Sum(rep.Range("B2:B" & lastrow))
+
+rep.Range("C" & lastrow + 1).Value = Application.WorksheetFunction.Sum(rep.Range("C2:C" & lastrow))
+
+rep.Range("D" & lastrow + 1).Value = Application.WorksheetFunction.Sum(rep.Range("D2:D" & lastrow))
+
+rep.Range("B2:D" & lastrow + 1).NumberFormat = "0.00"
+
+
+With rep.Range("A1:D" & lastrow)
+    .Columns.AutoFit
+    .Borders(xlEdgeLeft).LineStyle = xlContinuous
+    .Borders(xlEdgeTop).LineStyle = xlContinuous
+    .Borders(xlEdgeBottom).LineStyle = xlContinuous
+    .Borders(xlEdgeRight).LineStyle = xlContinuous
+    .Borders(xlInsideHorizontal).LineStyle = xlContinuous
+    .Borders(xlInsideVertical).LineStyle = xlContinuous
+    
+End With
+Application.ActiveWindow.Split = 1
+Application.ActiveWindow.FreezePanes = 1
+
+
+
+End Sub
+_________________________________________________________________________________________________________________
+
+Sub report1()
+Dim dataws As Worksheet, repws As Worksheet
+Dim lastrow As Long
+Dim x As Long
+Set dataws = ThisWorkbook.Worksheets("Deposit")
+dataws.Activate
+Workbooks.Add
+ActiveWorkbook.ActiveSheet.Name = "Report"
+Set repws = ActiveWorkbook.Worksheets("Report")
+dataws.UsedRange.Copy Destination:=repws.Range("A1")
+lastrow = repws.Range("A" & Rows.Count).End(xlUp).Row
+For x = 2 To lastrow
+repws.Range("I" & x).Value = repws.Range("F" & x).Value & repws.Range("E" & x).Value & _
+                            repws.Range("G" & x).Value & repws.Range("H" & x).Value
+                            
+
+Next x
+End Sub
+
+
+
+
+=F2&E2&G2&H2
+
+
+
+
+
+
+=RIGHT(D2,LEN(D2)-SEARCH("-",D2,1))
+
+
+=LEFT(F2,3)
+
+
+=M2&C2&E2&N2
+______________________________________________________________________________________________
+
+
+
+Sub report1()
+Dim dataws As Worksheet, repws As Worksheet, bankws As Worksheet
+
+Dim lastrow As Long, banklastrow As Long
+Dim x As Long
+Set dataws = ThisWorkbook.Worksheets("Deposit")
+dataws.Activate
+'Adding new worksheet
+
+Workbooks.Add
+ActiveWorkbook.ActiveSheet.Name = "Report"
+'assigning a variable to a worksheet
+
+Set repws = ActiveWorkbook.Worksheets("Report")
+'copying data from original workbook to new workbook
+dataws.UsedRange.Copy Destination:=repws.Range("A1")
+'calculating last row
+lastrow = repws.Range("A" & Rows.Count).End(xlUp).Row
+'looping through table with for next loop
+For x = 2 To lastrow
+repws.Range("I" & x).Value = repws.Range("F" & x).Value & repws.Range("E" & x).Value & _
+                            repws.Range("G" & x).Value & repws.Range("H" & x).Value
+'assigning a variable to a worksheet bank
+
+Next x
+Set bankws = ThisWorkbook.Worksheets("Bank")
+
+
+
+
+
+banklastrow = bankws.Range("A" & Rows.Count).End(xlUp).Row
+'copying column from c to l
+
+bankws.Range("C1:C" & banklastrow).Copy Destination:=bankws.Range("L1")
+'replaying approved with successful
+
+bankws.Range("L1:L" & banklastrow).Replace what:="approved", replacement:="Successful"
+
+
+Debug.Print banklastrow
+For x = 2 To banklastrow
+bankws.Range("I" & x).Value = VBA.Right(bankws.Range("D" & x).Value, VBA.Len( _
+                        bankws.Range("D" & x).Value) - Application.WorksheetFunction.Search("-", _
+                        bankws.Range("D" & x).Value, 1))
+bankws.Range("J" & x).Value = VBA.Left(bankws.Range("F" & x).Value, 3)
+bankws.Range("K" & x).Value = bankws.Range("I" & x).Value & _
+                bankws.Range("L" & x).Value & bankws.Range("E" & x).Value & _
+                bankws.Range("J" & x).Value
+                
+                
+Next x
+
+
+End Sub
+
+
+
+
+=VLOOKUP(I2,Bank!K2:K4096,1,0)
+
+
+__________________________________________________________________________________________________________________
+
+
+
+
+
+Sub report1()
+Dim dataws As Worksheet, repws As Worksheet, bankws As Worksheet
+
+Dim lastrow As Long, banklastrow As Long
+Dim x As Long
+Set dataws = ThisWorkbook.Worksheets("Deposit")
+dataws.Activate
+
+'Adding new worksheet
+Workbooks.Add
+
+ActiveWorkbook.ActiveSheet.Name = "Report"
+
+'assigning a variable to a worksheet
+Set repws = ActiveWorkbook.Worksheets("Report")
+
+'copying data from original workbook to new workbook
+dataws.UsedRange.Copy Destination:=repws.Range("A1")
+
+'calculating last row
+lastrow = repws.Range("A" & Rows.Count).End(xlUp).Row
+
+'looping through table with for next loop
+For x = 2 To lastrow
+repws.Range("I" & x).Value = repws.Range("F" & x).Value & repws.Range("E" & x).Value & _
+                            repws.Range("G" & x).Value & repws.Range("H" & x).Value
+
+
+Next x
+'assigning a variable to a worksheet bank
+Set bankws = ThisWorkbook.Worksheets("Bank")
+
+
+banklastrow = bankws.Range("A" & Rows.Count).End(xlUp).Row
+
+'copying column from c to l
+bankws.Range("C1:C" & banklastrow).Copy Destination:=bankws.Range("L1")
+
+'replaying approved with successful
+bankws.Range("L1:L" & banklastrow).Replace what:="approved", replacement:="Successful"
+
+
+
+For x = 2 To banklastrow
+bankws.Range("I" & x).Value = VBA.Right(bankws.Range("D" & x).Value, VBA.Len( _
+                        bankws.Range("D" & x).Value) - Application.WorksheetFunction.Search("-", _
+                        bankws.Range("D" & x).Value, 1))
+bankws.Range("J" & x).Value = VBA.Left(bankws.Range("F" & x).Value, 3)
+bankws.Range("K" & x).Value = bankws.Range("I" & x).Value & _
+                bankws.Range("L" & x).Value & bankws.Range("E" & x).Value & _
+                bankws.Range("J" & x).Value
+                
+                
+Next x
+
+For x = 2 To banklastrow
+v = Application. _
+        VLookup(repws.Range("I" & x).Value, bankws. _
+        Range("K2:K" & banklastrow), 1, 0)
+If IsError(v) Then
+    repws.Range("M" & x).Value = "Mismatch"
+Else
+    repws.Range("M" & x).Value = "ok"
+End If
+        
+Next x
+
+
+repws.UsedRange.Columns.Sort key1:=repws.Range("M1"), Order1:=xlAscending, Header:=xlYes
+
+For x = 2 To lastrow
+If repws.Range("M" & x).Value = "ok" Then
+    repws.Range("A" & x & ":" & "M" & lastrow).Delete
+    
+End If
+Next x
+bankws.Range("K1:L" & banklastrow).Clear
+
+End Sub
+
+
+______________________________________________________________________________________________________________________
+
+
+Sub checkingworksheet()
+Dim dataws As Worksheet, bankws As Worksheet
+
+Dim depositlr As Long, banklastrow As Long
+Set dataws = ThisWorkbook.Worksheets("Deposit")
+Set bankws = ThisWorkbook.Worksheets("Bank")
+
+depositlr = dataws.Range("A" & Rows.Count).End(xlUp).Row
+banklastrow = bankws.Range("A" & Rows.Count).End(xlUp).Row
+If depositlr = 1 Or banklastrow = 1 Then
+MsgBox "One of the sheet is empty"
+Else
+Run "report1"
+End If
+
+
+End Sub
+
+_______________________________________________________________________________________________
+
+
+
+Sub creatingreportfolder()
+Dim fpath As String
+Dim fso As Object
+Set fso = CreateObject("Scripting.filesystemobject")
+
+fpath = Environ("UserProfile") & "\Desktop\Report2020"
+
+Debug.Print fpath
+
+
+If fso.Folderexists(fpath) Then
+    MsgBox "File Exist"
+Else
+    fso.createfolder (fpath)
+    
+    
+
+
+End If
+
+
+End Sub
+_____________________________________________________________________________________________________
+
+
+
+
+
+Sub creatingreportfolder()
+Dim fpath As String
+Dim fso As Object
+Set fso = CreateObject("Scripting.filesystemobject")
+
+fpath = Environ("UserProfile") & "\Desktop\Report2020"
+
+Debug.Print fpath
+
+
+If fso.Folderexists(fpath) Then
+    MsgBox "File Exist"
+Else
+    fso.createfolder (fpath)
+    
+    
+End If
+
+ActiveWorkbook.SaveAs Filename:=fpath & "\" & "Daily Report" & Format(Date, "dd - mmm - yyyy")
+
+
+
+
+End Sub
+_____________________________________________________________________________________________________________________
+
+
+Userform
+
+Naming convention
+
+lbl-suffix		for label
+txt-suffix		for text box
+cbo-suffix		for combo box
+chk_suffix		for check box
+
+cmd-suffix		for commandbutton
+
+
+
+'complaints is the name of userform and this module show the user form and we assigned it to a button to load the userform
+
+
+Sub showcomplaint()
+
+
+Load complaints
+
+complaints.Show
+
+End Sub
+
+
+
+
+
+
+
+________________________________________________________________________________________________________
+
+
+
+
+Function getfirstname(empyname As String) As String
+    Dim p As Integer
+
+    p = InStr(1, empyname, " ")
+getfirstname = Left(empyname, p - 1)
+
+End Function
+
+
+Function getfirstname(empyname As String) As String
+    Dim p As Integer
+
+    p = InStr(1, empyname, " ")
+If p > 0 Then
+    getfirstname = Left(empyname, p - 1)
+Else
+    getfirstname = empyname
+End If
+
+
+End Function
+________________________________________________________________________________________________________
+
+
+
+Private Sub UserForm_Initialize()
+Dim drp As Worksheet, c As Range
+Dim casepriority As Range
+
+Dim lastrow As Long
+Set drp = ThisWorkbook.Worksheets("DropdownValue")
+lastrow = drp.Range("A" & Rows.Count).End(xlUp).Row
+Set casepriority = drp.Range("A1:A" & lastrow)
+
+
+Me.txtdate.Value = Date
+Me.txtdate.Enabled = False
+Me.txtemploy.Value = getfirstname(Application.UserName)
+Me.cbocasepriority.SetFocus
+'Me.cbocasepriority.AddItem "High"
+'Me.cbocasepriority.AddItem "Medium"
+'Me.cbocasepriority.AddItem "Low"
+For Each c In casepriority
+Me.cbocasepriority.AddItem c.Value
+
+Next c
+
+End Sub
+________________________________________________________________________________________________________
+
+Private Sub cbocasepriority_Change()
+If Me.cbocasepriority.Value = "" Then
+Me.cbocasepriority.ListIndex = 0
+
+End If
+
+
+
+End Sub
+
+
+
+_____________________________________________________________________________________________________
+
+
+
+
+
+
+Private Sub UserForm_Initialize()
+Dim drp As Worksheet, c As Range
+Dim casepriority As Range
+Dim countryname As Range
+Dim complaints As Range
+
+Dim lastrow As Long
+Dim countrylr As Long
+Dim complaintslr As Long
+
+Set drp = ThisWorkbook.Worksheets("DropdownValue")
+lastrow = drp.Range("A" & Rows.Count).End(xlUp).Row
+countrylr = drp.Range("B" & Rows.Count).End(xlUp).Row
+complaintslr = drp.Range("C" & Rows.Count).End(xlUp).Row
+
+Set casepriority = drp.Range("A1:A" & lastrow)
+Set countryname = drp.Range("B1:B" & countrylr)
+Set complaints = drp.Range("C1:C" & complaintslr)
+
+
+Me.txtdate.Value = Date
+Me.txtdate.Enabled = False
+Me.txtemploy.Value = getfirstname(Application.UserName)
+Me.cbocasepriority.SetFocus
+'Me.cbocasepriority.AddItem "High"
+'Me.cbocasepriority.AddItem "Medium"
+'Me.cbocasepriority.AddItem "Low"
+For Each c In casepriority
+Me.cbocasepriority.AddItem c.Value
+
+Next c
+
+For Each c In countryname
+
+Me.cbocountry.AddItem c.Value
+
+
+Next c
+
+For Each c In complaints
+
+Me.cbocomplaints.AddItem c.Value
+
+
+Next c
+
+
+
+End Sub
+
+
+__________________________________________________________________________________________________
+
+Private Sub Txtcustemail_BeforeUpdate(ByVal Cancel As MSForms.ReturnBoolean)
+Dim Atpos As Integer
+Atpos = InStr(1, Me.Txtcustemail.Value, "@")
+If Atmos <= 1 Then
+    MsgBox "This doesn't seem to be a valid email", Title:="Invalid Email"
+       
+End If
+
+End Sub
+
+
+______________________________________________________________________________________________
+
+
+Private Sub Txtcustemail_BeforeUpdate(ByVal Cancel As MSForms.ReturnBoolean)
+Dim Atpos As Integer
+If Me.Txtcustemail.Value <> 0 Then
+
+Atpos = InStr(1, Me.Txtcustemail.Value, "@")
+If Atmos <= 1 Then
+    MsgBox "This doesn't seem to be a valid email", Title:="Invalid Email"
+       
+End If
+End If
+
+
+End Sub
+
+
+____________________________________________________________________________________________
+
+Private Sub cmdsubmit_Click()
+Dim ctrl As Control
+For Each ctrl In Me.Controls
+    If TypeName(ctrl) = "TextBox" Or _
+     TypeName(ctrl) = "ComboBox" Then
+    If ctrl.Value = "" Then
+    ctrl.BackColor = rgbRed
+    End If
+    End If
+Next ctrl
+
+
+End Sub
+
+__________________________________________________________________________________________
+
+
+
+
+Private Sub Txtcustname_Change()
+If Me.Txtcustname.BackColor = rgbRed Then
+    Me.Txtcustname.BackColor = rgbWhite
+End If
+
+End Sub
+
+Private Sub txtemploy_Change()
+If Me.txtemploy.BackColor = rgbRed Then
+    Me.txtemploy.BackColor = rgbWhite
+End If
+End Sub
+
+
+Private Sub txtdescription_Change()
+
+If Me.txtdescription.BackColor = rgbRed Then
+    Me.txtdescription.BackColor = rgbWhite
+End If
+
+End Sub
+
+
+
+________________________________________________________________________________________
+
+
+
+Private Sub cbocasepriority_DropButtonClick()
+If Me.cbocasepriority.BackColor = rgbRed Then
+    Me.cbocasepriority.BackColor = rgbWhite
+End If
+
+End Sub
+
+
+
+Private Sub cbocomplaints_DropButtonClick()
+If Me.cbocomplaints.BackColor = rgbRed Then
+    Me.cbocomplaints.BackColor = rgbWhite
+End If
+End Sub
+
+
+
+
+
+Private Sub cbocountry_DropButtonClick()
+If Me.cbocountry.BackColor = rgbRed Then
+    Me.cbocountry.BackColor = rgbWhite
+End If
+End Sub
+
+
+_______________________________________________________________________________________________
+
+
+b cmdsubmit_Click()
+Dim ctrl As Control
+Dim ws As Worksheet
+Dim lastrow As Long
+Set ws = ThisWorkbook.Worksheets("Pending Complaints")
+lastrow = ws.Range("A" & Rows.Count).End(xlUp).Row
+
+For Each ctrl In Me.Controls
+    If TypeName(ctrl) = "TextBox" Or _
+     TypeName(ctrl) = "ComboBox" Then
+    If ctrl.Value = "" Then
+    ctrl.BackColor = rgbRed
+    End If
+    End If
+Next ctrl
+ws.Range("A" & lastrow + 1).Value = Me.txtdate.Value
+ws.Range("B" & lastrow + 1).Value = Me.txtemploy.Value
+ws.Range("C" & lastrow + 1).Value = Me.Txtcustname.Value
+ws.Range("D" & lastrow + 1).Value = Me.cbocomplaints.Value
+ws.Range("E" & lastrow + 1).Value = Me.txtdescription.Value
+
+ws.Range("F" & lastrow + 1).Value = Me.cbocasepriority.Value
+ws.Range("G" & lastrow + 1).Value = Me.Txtcustemail.Value
+ws.Range("H" & lastrow + 1).Value = Me.cbocountry.Value
+If Me.chkvipclients = True Then
+
+ws.Range("I" & lastrow + 1).Value = Yes
+Else
+ws.Range("I" & lastrow + 1).Value = False
+End If
+Me.Hide
+
+Set complaints = Nothing
+
+
+
+End Sub
+___________________________________________________________________________________________
+
+
+
+Private Sub txtresolution_Change()
+If Me.txtresolution.Value <> "" Then
+Me.cmdresolved.Enabled = True
+Else
+Me.cmdresolved.Enabled = False
+
+
+End If
+
+End Sub
+
+_________________________________________________________________________________________
+
+Private Sub UserForm_Initialize()
+
+Me.txtdateresolved.Value = Date
+Me.txtdateresolved.Enabled = False
+
+Me.txtempresolved.Value = getfirstname(Application.UserName)
+Me.txtempresolved.Enabled = False
+
+Me.lblresolution.Caption = _
+        "Customer Detail" & vbNewLine & _
+        "Name=" & Range("C" & Selection.Row).Value & vbNewLine & _
+        "Email=" & Range("G" & Selection.Row).Value
+Me.cmdresolved.Enabled = False
+
+End Sub
+________________________________________________________________________________________
+
+
+
+
+
+Private Sub cmdresolved_Click()
+Dim ws As Worksheet
+Dim lastrow As Long
+Set ws = ThisWorkbook.Worksheets("Resolved Complaint")
+lastrow = ws.Range("A" & Rows.Count).End(xlUp).Row
+Selection.Copy Destination:=ws.Range("A" & lastrow + 1)
+ws.Range("J" & lastrow + 1).Value = Me.txtdateresolved.Value
+ws.Range("K" & lastrow + 1).Value = Me.txtempresolved.Value
+ws.Range("L" & lastrow + 1).Value = Me.txtresolution.Value
+Rows(Selection.Row).EntireRow.Delete
+ws.Activate
+With ws.Range(Range("A" & lastrow + 1), Range("L" & lastrow + 1))
+.WrapText = True
+.VerticalAlignment = xlCenter
+.Borders(xlEdgeLeft).LineStyle = xlContinuous
+    .Borders(xlEdgeTop).LineStyle = xlContinuous
+    .Borders(xlEdgeBottom).LineStyle = xlContinuous
+    .Borders(xlEdgeRight).LineStyle = xlContinuous
+    .Borders(xlInsideHorizontal).LineStyle = xlContinuous
+    .Borders(xlInsideVertical).LineStyle = xlContinuous
+End With
+
+ws.Range(Range("A" & lastrow + 1), Range("L" & lastrow + 1)).Select
+Me.Hide
+Set resolved = Nothing
+
+
+
+End Sub
+
+Private Sub txtresolution_Change()
+If Me.txtresolution.Value <> "" Then
+Me.cmdresolved.Enabled = True
+Else
+Me.cmdresolved.Enabled = False
+
+
+End If
+
+End Sub
+
+Private Sub UserForm_Initialize()
+
+Me.txtdateresolved.Value = Date
+Me.txtdateresolved.Enabled = False
+
+Me.txtempresolved.Value = getfirstname(Application.UserName)
+Me.txtempresolved.Enabled = False
+
+Me.lblresolution.Caption = _
+        "Customer Detail" & vbNewLine & _
+        "Name=" & Range("C" & Selection.Row).Value & vbNewLine & _
+        "Email=" & Range("G" & Selection.Row).Value
+Me.cmdresolved.Enabled = False
+
+End Sub
+
+=COUNTIF('Pending Complaints'!F:F,"High")
+
+=COUNTIF('Resolved Complaints'!F:F,"High")
+______________________________________________________________________________________________________________
+
+
+
+
+Private Sub Worksheet_Activate()
+ Dim pc As Worksheet
+ Dim rc As Worksheet
+ Dim lastrowpc As Long
+ Dim latrowrc As Long
+ Set pc = ThisWorkbook.Worksheets("Pending Complaints")
+ Set rc = ThisWorkbook.Worksheets("Resolved Complaints")
+ 
+ lastrowpc = pc.Range("A" & Rows.Count).End(xlUp).Row
+ lastrowrc = rc.Range("A" & Rows.Count).End(xlUp).Row
+ 
+ 
+ 
+ Range("M2").Value = "Pending"
+Range("N2").Value = "Resolved"
+Range("L3").Value = "High"
+Range("L4").Value = "Medium"
+Range("L5").Value = "Low"
+Range("M3").Value = Application.WorksheetFunction.CountIf(pc.Range("F:f"), "High")
+Range("M4").Value = Application.WorksheetFunction.CountIf(pc.Range("F:f"), "Medium")
+Range("M5").Value = Application.WorksheetFunction.CountIf(pc.Range("F:f"), "Low")
+Range("N3").Value = Application.WorksheetFunction.CountIf(rc.Range("F:f"), "High")
+Range("N4").Value = Application.WorksheetFunction.CountIf(rc.Range("F:f"), "Medium")
+Range("N5").Value = Application.WorksheetFunction.CountIf(rc.Range("F:f"), "Low")
+
+
+End Sub
+
+
+
+
+
+
+
+Private Sub Worksheet_Activate()
+ Dim pc As Worksheet
+ Dim rc As Worksheet
+ Dim lastrowpc As Long
+ Dim latrowrc As Long
+ Set pc = ThisWorkbook.Worksheets("Pending Complaints")
+ Set rc = ThisWorkbook.Worksheets("Resolved Complaints")
+ 
+ lastrowpc = pc.Range("A" & Rows.Count).End(xlUp).Row
+ lastrowrc = rc.Range("A" & Rows.Count).End(xlUp).Row
+ 
+ ______________________________________________________________________________________________________________________________
+ 
+ Range("M2").Value = "Pending"
+Range("N2").Value = "Resolved"
+Range("L3").Value = "High"
+Range("L4").Value = "Medium"
+Range("L5").Value = "Low"
+Range("L6").Value = "Total"
+
+Range("M3").Value = Application.WorksheetFunction.CountIf(pc.Range("F:f"), "High")
+Range("M4").Value = Application.WorksheetFunction.CountIf(pc.Range("F:f"), "Medium")
+Range("M5").Value = Application.WorksheetFunction.CountIf(pc.Range("F:f"), "Low")
+Range("N3").Value = Application.WorksheetFunction.CountIf(rc.Range("F:f"), "High")
+Range("N4").Value = Application.WorksheetFunction.CountIf(rc.Range("F:f"), "Medium")
+Range("N5").Value = Application.WorksheetFunction.CountIf(rc.Range("F:f"), "Low")
+
+Range("M6").Value = Application.WorksheetFunction.Sum(Range("M3:M5"))
+
+
+Range("N6").Value = Application.WorksheetFunction.Sum(Range("N3:N5"))
+
+Range("L3:N3").Font.Color = rgbRed
+Range("L6:N6").Font.Bold = True
+
+
+
+End Sub
+
+
+
+______________________________________________________________________________________________________________________________________________
+
+Sub Promoter()
+Dim Promoter As Worksheet, Trdata As Worksheet
+Dim ShareHolding As Worksheet, Pledging As Worksheet
+Dim Bhavcopy As Worksheet
+Dim Mode As Range
+Dim LastRow As Long, PromoterLR As Long, finalLR As Long, PledgingLR As Long, Hldlr As Long
+Dim BhavcopyLR As Long
+
+
+Dim x As Long, y As Long, z As Long
+Dim a As Long, b As Long, c As Long
+
+
+Set Tradata = ActiveWorkbook.Worksheets("Sheet4")
+Set Promoter = ActiveWorkbook.Worksheets("Sheet5")
+Set ShareHolding = ActiveWorkbook.Worksheets("ShareHolding")
+Set Pledging = ActiveWorkbook.Worksheets("Pledging")
+Set Bhavcopy = ActiveWorkbook.Worksheets("BhavCopy")
+Tradata.Activate
+
+
+LastRow = Tradata.Range("A" & Rows.Count).End(xlUp).Row
+PledgingLR = Pledging.Range("A" & Rows.Count).End(xlUp).Row
+Hldlr = ShareHolding.Range("A" & Rows.Count).End(xlUp).Row
+BhavcopyLR = Bhavcopy.Range("A" & Rows.Count).End(xlUp).Row
+
+
+
+
+For x = 2 To LastRow
+If Tradata.Range("E" & x).Value = "Promoters" Or _
+    Tradata.Range("E" & x).Value = "Promoter Group" Then
+If Tradata.Range("S" & x).Value = "Market Purchase" Then
+
+
+
+ With Tradata.Range("A" & x & ":" & "AC" & x).Select
+        Selection.Copy Destination:=Promoter.Range("A" & x)
+
+End With
+End If
+End If
+Next x
+
+Promoter.Activate
+
+Promoter.Range("A2:A" & LastRow).Select
+         Selection.SpecialCells(xlCellTypeBlanks).EntireRow.Delete
+Tradata.Activate
+Tradata.Range("A1:AC1").Copy Destination:=Promoter.Range("A1")
+Tradata.Activate
+
+Promoter.Range("B1:I" & LastRow).Delete
+Promoter.Range("D1:AC" & LastRow).Delete
+PromoterLR = Promoter.Range("A" & Rows.Count).End(xlUp).Row
+
+Promoter.Range("A2:A" & PromoterLR).Copy Destination:=Promoter.Range("D2")
+Promoter.Range("D2:D" & PromoterLR).RemoveDuplicates Columns:=1, Header:=xlYes
+finalLR = Promoter.Range("D" & Rows.Count).End(xlUp).Row
+
+For y = 2 To finalLR
+
+Promoter.Range("E" & y).Value = Application.WorksheetFunction.SumIf( _
+    Promoter.Range("A2:A" & PromoterLR), Promoter.Range("D" & y).Value, Promoter.Range("B2:B" & PromoterLR))
+ Promoter.Range("F" & y).Value = Application.WorksheetFunction.SumIf( _
+    Promoter.Range("A2:A" & PromoterLR), Promoter.Range("D" & y).Value, Promoter.Range("C2:C" & PromoterLR))
+Next y
+Promoter.Range("D1:F" & finalLR).Sort Key1:=Promoter.Range("F2"), order1:=xlDescending, Header:=xlYes
+
+For z = 2 To finalLR
+Promoter.Range("G" & z).Value = Promoter.Range("F" & z).Value / Promoter.Range("E" & z).Value
+
+Next z
+For a = 2 To finalLR
+On Error Resume Next
+
+Promoter.Range("H" & a).Value = Application.WorksheetFunction.VLookup _
+       (Promoter.Range("D" & a).Value, Tradata.Range("A2:B" & LastRow), 2, 0)
+Promoter.Range("I" & a).Value = Application.WorksheetFunction.VLookup _
+        (Promoter.Range("H" & a).Value, Pledging.Range("A2:L" & PledgingLR), 12, 0)
+Promoter.Range("J" & a).Value = Application.WorksheetFunction.VLookup _
+        (Promoter.Range("H" & a).Value, ShareHolding.Range("A2:B" & Hldlr), 2, 0)
+Promoter.Range("K" & a).Value = Application.WorksheetFunction.VLookup _
+        (Promoter.Range("D" & a).Value, Bhavcopy.Range("A1:I" & BhavcopyLR), 6, 0)
+Promoter.Range("L" & a).Value = Application.WorksheetFunction.VLookup _
+        (Promoter.Range("D" & a).Value, Bhavcopy.Range("A1:I" & BhavcopyLR), 9, 0)
+
+        
+        
+Next a
+Promoter.Columns("A:C").Delete
+Promoter.Columns("E").Delete
+Promoter.Range("A1").Value = "Stock"
+Promoter.Range("B1").Value = "Stocks No."
+Promoter.Range("C1").Value = "Value"
+Promoter.Range("D1").Value = "Average Buy"
+Promoter.Range("E1").Value = "Pledging"
+Promoter.Range("F1").Value = "Promo Holding"
+Promoter.Range("G1").Value = "CurrentPrice"
+Promoter.Range("H1").Value = "Volume"
+
+'For a = 2 To FinalLR
+'For z = 2 To LastRow
+'On Error Resume Next
+'If Tradata.Range("E" & z).Value = "Promoter" Or Tradata.Range("E" & z).Value = "Promoter Group" Then
+'If Tradata.Range("S" & z).Value = "Market Sale " Then
+'
+'Promoter.Range("J"&a).Value=Application.WorksheetFunction.SumIfs( _
+'        (Tradata.Range(
+'no of stock
+
+'=IF(OR(Sheet4!$E$2:$E$10000="promoter", Sheet4!$E$2:$E$10000="Promoter Group"),SUMIFS(Sheet4!$K$2:$K$10000,Sheet4!$A$2:$A$10000,Sheet5!A2,Sheet4!$S$2:$S$10000,"Market Sale"),0)
+
+Run "MarketSale"
+
+End Sub
+
+
+Sub MarketSale()
+Dim Tradata As Worksheet
+Dim Promoter As Worksheet
+Dim Sale As Worksheet
+Dim LastRow As Long
+Dim PromoterLR As Long
+Dim x As Long
+Dim finalLR As Long
+Set Tradata = ThisWorkbook.Worksheets("Sheet4")
+Set Promoter = ActiveWorkbook.Worksheets("Sheet5")
+Set Sale = ActiveWorkbook.Worksheets("MarketSale")
+LastRow = Tradata.Range("A" & Rows.Count).End(xlUp).Row
+PromoterLR = Promoter.Range("A" & Rows.Count).End(xlUp).Row
+Tradata.Activate
+For x = 2 To LastRow
+If Tradata.Range("E" & x).Value = "Promoters" Or _
+    Tradata.Range("E" & x).Value = "Promoter Group" Then
+If Tradata.Range("S" & x).Value = "Market Sale" Then
+
+
+ With Tradata.Range("A" & x & ":" & "AC" & x).Select
+        Selection.Copy Destination:=Sale.Range("A" & x)
+
+End With
+End If
+End If
+Next x
+Sale.Activate
+
+Sale.Range("A2:A" & LastRow).Select
+         Selection.SpecialCells(xlCellTypeBlanks).EntireRow.Delete
+
+Sale.Range("B1:J" & LastRow).Delete
+Sale.Range("C1:AC" & LastRow).Delete
+SaleLR = Sale.Range("A" & Rows.Count).End(xlUp).Row
+Sale.Range("A2:A" & SaleLR).Copy Destination:=Sale.Range("D2")
+Sale.Range("D2:D" & SaleLR).RemoveDuplicates Columns:=1, Header:=xlYes
+finalLR = Sale.Range("D" & Rows.Count).End(xlUp).Row
+For x = 2 To finalLR
+
+Sale.Range("E" & x).Value = Application.WorksheetFunction.SumIf( _
+    Sale.Range("A2:A" & SaleLR), Sale.Range("D" & x).Value, Sale.Range("B2:B" & SaleLR))
+ 
+Next x
+Sale.Columns("A:C").Delete
+Promoter.Activate
+
+For x = 2 To PromoterLR
+On Error Resume Next
+
+Promoter.Range("I" & x).Value = Application.WorksheetFunction.VLookup _
+       (Promoter.Range("A" & x).Value, Sale.Range("A2:B" & finalLR), 2, 0)
+Next x
+
+For x = 2 To PromoterLR
+If Promoter.Range("C" & x).Value < 10000000 Or _
+ Promoter.Range("E" & x).Value <> " " Or _
+ Promoter.Range("I" & x).Value <> " " Or _
+ Promoter.Range("F" & x).Value < 50 Then
+  Promoter.Rows(x).EntireRow.Delete
+    
+End If
+Next x
+Promoter.Range("I1").Value = "Market Sale"
+Run "filter"
+
+End Sub
+
+
+
+
+Sub filter()
+Dim Promoter As Worksheet
+Dim LastRow As Long
+Dim x As Long
+Set Promoter = ActiveWorkbook.Worksheets("Sheet5")
+LastRow = Promoter.Range("A" & Rows.Count).End(xlUp).Row
+For x = 2 To LastRow
+If Promoter.Range("I" & x).Value > 1 Then
+Promoter.Rows(x).EntireRow.Delete
+End If
+Next x
+For x = 2 To LastRow
+If Promoter.Range("E" & x).Value > 0 Then
+Promoter.Rows(x).EntireRow.Delete
+End If
+Next x
+For x = 2 To LastRow
+If Promoter.Range("F" & x).Value < 50 Then
+Promoter.Rows(x).EntireRow.Delete
+End If
+Next x
+For x = 2 To LastRow
+If Promoter.Range("C" & x).Value < 10000000 Then
+Promoter.Rows(x).EntireRow.Delete
+End If
+Next x
+
+
+
+
+
+End Sub
+________________________________________________________________________________________________________________________________________
+
+
+
+
+
+
+
+
+
+
+
+
+
+
