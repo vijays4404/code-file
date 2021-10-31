@@ -1,0 +1,1861 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+Line breaks
+
+	<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Hi there</h1>
+    <p>I want more space in between elements</p>
+    <br>
+    <br>
+    <br>
+    <br>
+    
+    <p>Second paragraph</p>
+
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.smallbox{
+    background-color: purple;
+    height: 70px;
+    width: 100px;
+    position: relative;
+    left: 350px;
+    }
+.mediumbox{
+    background-color: orange;
+    height: 70px;
+    width: 100px;
+    position: relative;
+    left: 190px;
+    }
+.largebox{
+    background-color: green;
+    height: 70px;
+    width: 100px;
+    position: relative;
+    left: 10px;
+    top: 10px;
+}
+	
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="heightandwidth.css">
+</head>
+<body>
+<h1>Height and width</h1>
+<div class="largebox"> </div>
+<div class="mediumbox"></div>
+<div class="smallbox"></div>
+</body>
+</html>
+
+
+
+
+
+Table Code
+
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <table>
+      <tr>
+        <th>First Name</th>
+        <th>Surname</th>
+        <th>Email</th>
+        <tr>
+          <td>Vijay
+          <td>Singh</td>
+          <td>vijays.4404@gmail.com</td>
+        </tr>
+        <tr>
+          <td>Robert</td>
+          <td>Robert</td>
+          <td>Robert@</td>
+        </tr>
+
+      </tr>
+    </table>
+  </body>
+</html>
+	
+
+
+
+
+
+
+
+
+
+<!-- 1) Create a basic html file that is working (TEST)
+2) Add a title in the tabb
+3) Create a title in the content
+4) Add a header
+5) Add a paragraph that includes bold, italic and underlined
+6) Add subheaders  and more textt
+-->
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Portfolio websites</title>
+    <link rel="stylesheet" href="portfolio.css">
+  </head>
+  <body>
+    <h1>Portfolio website</h1>
+
+    <p>This is <b>Vijay Singh</b> <i>Portfolio site</i>.<u>Enjoy</u></p>
+<h3>Skills</h3>
+<p>My current skills in web development include html</p>
+    <h3>Previous work</h3>
+    <p>This is my <b>first </b>piece of work</p>
+    <h3>Rates</h3>
+    <p>Negotiable. For more details get in touch</p>
+  </body>
+</html>
+
+
+
+
+	<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>bold and italic</title>
+  </head>
+  <body>
+    <p> <del>This text is deletedWelcome to the</del>  <b>bold</b>old and <i>italic</i>talic class</p>
+  </body>
+</html>
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Contact forms</h1>
+    <p>Please enter detail below and we will get back to you</p>
+    <br>
+
+<form class="" action="index.html" method="post">
+    <p>First Name</p>
+<input type="text">
+<p>Last Name</p>
+<input type="text" name="" value="">
+<p>Reason for contact</p>
+<input type="radio" checked>Enquiry<br>
+<input type="radio">Comment<br>
+<input type="radio">Other<br>
+
+<textarea name="name" rows="8" cols="80">Enter your messsasge here...</textarea>
+<input type="submit" name="" value="Click Here">
+
+</form>
+
+  </body>
+</html>
+
+
+
+
+
+body {background-color: aqua;
+font-family: cursive;}
+table th,td{
+    border: 2px solid #facefa;
+}
+a{
+    border: 1px solid fuchsia;
+}
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="alignment.css">
+</head>
+<body>
+    <img src="hen.jfif" alt="">
+    <img class="left" src="rabbit.jfif" alt="">
+    <img class="left" src="book.jfif" alt="">
+</body>
+</html>
+
+
+
+
+	<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+  <div>
+    <h1>website</h1>
+    <p>Hi there</p>
+    <p>This <span> is  a great</span>website</p>
+
+  </div>
+  </body>
+</html>
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="vijaypainting.css">
+</head>
+<body>
+    <h1>Vijay art</h1>
+    <div class="welcomeMsg">
+        <h3>Welcome to my painting</h3>
+        <p>This is my lovely painting</p>
+    </div>
+<div class="painting">
+    <img src="book.jfif" alt="">
+    <img src="rabbit.jfif" alt="">
+    <img src="hen.jfif" alt="">
+ </div>
+
+ <div id="description">
+     <p id="descriptionText">All painting were created with the power of creativity</p>
+
+ </div>
+ <div class="copyright">
+     <p>Copyright me 2019</p>
+ </div>
+<div class="shop">
+<a href="a">Click to Shop</a>
+</div>
+</body>
+</html>
+
+	
+
+
+body {
+    background-color: sandybrown;
+}
+h1{text-align: center;
+    border: 9px solid rgb(16, 16, 90);
+    border-radius: 10px;}
+.welcomeMsg{
+    text-align: center;
+    font-family: sans-serif;
+    background-color: #7FB44D;
+    padding-top: 5px;
+    padding-bottom: 20px;
+}
+img{
+    width:18%;
+
+}
+.painting{
+    margin: 30px;
+    border: 3px solid  orange;
+}
+#description{
+    background-color: blue;
+    position: relative;
+    left: 25 px;    
+    height: 100px;
+    width: 500px;
+
+}
+#descriptionText{
+    padding-top: 60px;
+}
+.copyright{
+    position: relative;
+    bottom: 5px;
+    background-color: yellow;
+    width: 100px;
+}
+.shop{
+    background-color: red;
+    position: fixed;
+    bottom: 10px;
+    right: 20px;
+    
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="linkdecorator.css">
+</head>
+<body>
+    <h1>Link Decorator</h1>
+    <a href="http://www.google.com">one</a>
+    <a href="http//www.facebook.com">two</a>
+    <a href="http://www.wikipedia.org">three</a>
+
+    
+</body>
+</html>
+
+
+a: visited{
+background-color: pink;
+}
+a:active{
+    background-color: orange;
+}
+a:link{
+    background-color: yellow;
+    text-decoration: none;
+}
+a:hover{
+    background-color: green;
+    text-decoration: underline;
+}
+
+         Home  About   More   Contact
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="navbar.css">
+</head>
+<body>
+    <ul>
+        <li><a href="">Home</a>
+            </li>
+        <li><a href="">About</a>
+            </li>
+        <li><a href="">More</a>
+            </li>
+        <li><a href="">Contact</a>
+           </li>
+    </ul>
+
+    
+</body>
+</html>
+
+
+
+ul{list-style-type: none;
+    background-color: blue;
+    overflow: hidden;}
+li{float: left;}
+
+a{text-decoration: none;
+    padding: 20px;
+
+    color: white}
+a:hover{
+    background-color: black;
+}
+
+
+Name	Age	City
+Jack	24	London
+Janeet	65	New York
+Phil	32	Barcelona
+
+
+
+table,th,td{
+    border: 2px solid black;
+    border-collapse: collapse;
+}
+th{
+    padding:20px;
+    background-color: white;
+}
+tr{
+    background-color: blanchedalmond;
+}
+tr:hover{
+    background-color: blue;
+}
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="table2.css">
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>City</th>
+        </tr>
+        <tr>
+              <td>Jack</td>
+              <td>24</td>
+              <td>London</td>
+            </tr>
+            <tr>
+              <td>Janeet</td>
+              <td>65</td>
+              <td>New York</td>
+            </tr>
+    
+          </tr>
+          <td>Phil</td>
+          <td>32</td>
+          <td>Barcelona</td>
+        </tr>
+    </table>
+</head>
+<body>
+    
+</body>
+</html>
+
+
+	
+
+
+
+
+Parent child elements
+This line ha a h2 and it is the child element o the div
+This has no parent element
+I am the child element of the div
+I am the child of the span
+I don't have parent div
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="parentchild.css">
+</head>
+<body>
+    <h1>Parent child elements</h1>
+    <div>
+    <h2>This line ha a h2 and it is the child element o the div</h2>
+    </div>
+    <h2>This has no parent element</h2>
+    <div>
+        <p>I am the child element of the div</p>
+    </div>
+    <div>
+        <span>
+            <p>I am the child of the span</p>
+        </span>
+    </div>
+<p>I don't have  parent div</p>
+</body>
+</html>
+
+
+div> p{
+    background-color: yellow;
+}
+div > h2{
+    background-color: pink;
+}
+span>p{
+    background-color: blue;
+}
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="display.css">
+</head>
+<body>
+    <h1>Display!</h1>
+    <h3>inline,inline-block,block,none</h3>
+   
+    <p>
+  
+    The Eshwarappa camp alleges that Yediyurappa has been directly providing special grants to MLAs for road works in their constituencies instead of making these allocations under the scheme and channelling the funds through the rural development and panchayat raj (RDPR) department. With MLAs unilaterally undertaking road works in their areas, Eshwarappa, the RDPR minister, has no say in which stretches should be developed first.
+    Recent speculation <span>that Yediyurappa planned to</span>  reassign the RDPR portfolio further angered Eshwarappa, who on Wednesday decided to formally question Yediyurappa’s alleged interference in his ministry.
+    
+    </p>
+   
+</body>
+</html>
+
+	
+
+
+span{
+    background-color: yellow;
+    display: block;
+    height: 100px;
+
+}
+
+
+
+
+
+
+
+
+
+
+var correctName="vijay.4404";
+var correctPassword="iamconfident@1";
+
+function returnInfo(){
+    var nameVar=document.getElementById("nameForm").value;
+    var namePass=document.getElementById("passForm").value;
+if(nameVar==correctName && namePass==correctPassword) {
+    alert ("Access granted!!!Welcome");
+    document.body.style.backgroundColor="green";
+} else {
+    document.body.style.backgroundColor="grey";
+    alert("Access Denied!!!");
+}
+}
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="vijaypainting.css">
+</head>
+<body>
+    <h1>Assets For High Return</h1>
+    <div class="welcomeMsg">
+        <h3>Welcome to this page</h3>
+        <p>If you want to  buy following assets click on the image</p>
+    </div>
+<div class="painting">
+    <img src="coding.jfif" alt="">
+    <img src="bitcoin.jpg" alt="">
+    <img src="forex.jfif" alt="">
+ </div>
+ <div class="titles">
+    <a href="https://www.udemy.com">To learn coding click here</a>
+    <a href="https://phemex.com/">To buy bitcoin click here</a>
+    <a href="https://upstox.com/">To invest in stock click here</a>
+
+    </div>
+<br>
+<br>
+
+ </div>
+ <div class="copyright">
+     <p>Copyright me 2021</p>
+ </div>
+<div class="shop">
+<a href="a">Click to Shop</a>
+</div>
+</body>
+</html>
+
+
+body {
+    background-color: sandybrown;
+}
+h1{text-align: center;
+    border: 9px solid rgb(16, 16, 90);
+    border-radius: 10px;}
+.welcomeMsg{
+    text-align: center;
+    font-family: sans-serif;
+    background-color: #7FB44D;
+    padding-top: 5px;
+    padding-bottom: 20px;
+}
+img{
+    width: 30%;
+    filter:grayscale(100%)
+
+}
+img:hover{filter:grayscale(0%)}
+.painting{
+    margin: 30px;
+    border: 3px solid  orange;
+}
+#description{
+    background-color: blue;
+    position: relative;
+    left: 25 px;    
+    height: 100px;
+    width: 500px;
+
+}
+#descriptionText{
+    padding-top: 50px;
+}
+.copyright{
+    position: relative;
+    bottom: 5px;
+    background-color: yellow;
+    width: 100px;
+}
+.shop{
+    background-color: red;
+    position: fixed;
+    bottom: 10px;
+    right: 20px;
+    
+}
+.titles > a {
+  float: left;
+  padding-right: 200px;
+}
+.titles{
+    position:relative;
+    left:150px;
+   
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+JavaScript
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<h1>Click me!!!</h1>
+<button type="button" onclick="buttonclick()">Click</button>
+<script type="text/javascript" src="onclick.js"></script>
+</body>
+</html>
+
+
+
+function buttonclick() {
+    alert("This is workine!!!!");
+    alert("This is second instruction");
+    alert("This is third one.");
+}
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Date Time generator!!!</h1>
+    <button type="button" onclick="dateTime()">Click for date/time</button>
+    <script type="text/javascript" src="datetime.js"></script>
+</body>
+</html>
+function dateTime() {
+    alert(Date())
+}
+
+
+
+
+
+
+
+
+function dateTime() {
+    alert(Date())
+}
+
+
+
+
+
+
+
+
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+ </head>
+ <body>
+     <h1>Innerhtml!!!</h1>
+     <p id="changeText">This is the original text</p>
+     <button type="button" onClick="pchange()">Click as to change text</button>
+     <script type="text/javascript" src="innerhtml.js"></script>
+ </body>
+ </html>
+
+
+function pchange() {
+    document.getElementById("changeText").innerHTML="new TEXT";
+}
+	
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Style--Changing CSS for the better</h1>
+    <p id="Boring"> This is the boring paragraph</p>
+    <button type="button" onclick="changecss()">Click to change everything...</button>
+    <script type="text/javascript" src="styleCss.js"></script>
+</body>
+</html>
+
+function changecss() {
+    document.getElementById('Boring').innerHTML="This is the nun paragraph!!!!"
+    document.getElementById('Boring').style.backgroundColor="red";
+    document.getElementById("Boring").style.border="3px solid green";
+    document.body.style.backgroundColor="pink";
+}
+
+
+
+
+
+
+
+	<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="onMouseOver.css">
+</head>
+<body>
+    <h1>Events!</h1>
+    <p>Put text on here to explain the events</p>
+    <div id="divOne" onmouseout="changeDivOne()">
+
+    </div>
+    <p>Click in here, When you lift the mouse, things will change.</p>
+    <div id="divTwo" onmouseup="changeDivTwo()">
+
+    </div>
+    <p id="para">Please Start typin to make a change.</p>
+    <input type="text" id="inputOne" onkeydown="changeText()">
+    <script type="text/javascript" src="onMouseOver.js"></script>
+</body>
+</html>
+
+
+
+function changeDivOne() {
+document.getElementById('divOne').style.backgroundColor="orange";
+}
+function changeDivTwo() {
+    document.getElementById('divTwo').style.backgroundColor="green";
+    document.body.style.backgroundColor="pink";
+}
+function changeText() {
+    document.getElementById('para').innerHTML="!0...you have changed all the text";
+}
+
+
+
+
+#divOne {
+    margin: 100px;
+    background-color: red;
+    height: 80px;
+    width: 150px;
+}
+
+#divTwo {
+    background-color: orange;
+    height: 100px;
+    width: 100px;
+}
+
+
+
+
+	<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Variables</h1>
+    <p id="para" onmouseover="myFunction(myVariables)">This is a para</p>
+    
+    <script type="text/javascript" src="variable.js"></script>
+</body>
+</html>
+
+
+
+var myVariables="This is a variable coming from webpage";
+
+function myFunction(value){
+    document.getElementById("para").innerHTML=value;
+}
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Data Types</h1>
+    <h3>Numbers</h3>
+    <p>400005834343434</p>
+    <h3>Strings</h3>
+    <P>Hi, there "I like strings"</P>
+    <h3>Arrays</h3>
+    <p>["banana","carrots","pasta",["hi","There"],"soya milk"]</p>
+    <h3>Booleans</h3>
+    <p>True False</p>
+    <h3>Objects</h3>
+    <p>{"Jan":31,"Feb":12,"Mar":11}</p>
+        <button type="button" onclick="doAlert(thisIsArray)">Click Me</button>
+    <script type="text/javascript" src="datatype.css"></script>
+</body>
+</html>
+
+
+var awesome=50;
+var myString="Hi there";
+var mySecondString=".How are you!";
+var thisIsArray=["hi",300,"hdfd"];
+var myBoolean=False;
+var iLikeObjects={"Jane":33,"Tifany":"23","Phil":27};
+
+function  doAlert(input){
+    alert(input);
+}
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>String and Numbers</h1>
+    <button type="button" onclick="onAlert()">Click Me</button>
+    <script type="text/javascript" src="stringandnumber.js"></script>
+</body>
+</html>
+
+
+var num1=1500;
+var num2="This is a string";
+var num3=num1+num2
+
+function onAlert() { 
+    alert(num3);
+}
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Operator</h1>
+    <p>plus +</p>
+    <p id="plus"></p>
+    
+    <p>Minus-</p>
+    <p id="minus"></p>
+    <p>Multiply *</p>
+    <p id="multiply"></p>
+    <p>Divide /</p>
+    <p id="divide"></p>
+    <p>increment ++</p>
+    <p id="increment"></p>
+    <p>plus equals +=</p>
+    <p id="equal"></p>
+    <button type="button" onclick="calculate(3,2)">Calculate</button>
+    <script type="text/javascript" src="operator.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+function calculate(x,y){
+    var z=x*y;
+    alert(z);
+}
+
+
+
+Operators
+And
+
+var a=(1<9 && 23==23);
+document.getElementById('output').innerHTML=a;
+document.body.style.backgroundColor="blue";
+
+
+OR
+var a=(1<9 || 23==23);
+document.getElementById('output').innerHTML=a;
+document.body.style.backgroundColor="blue";
+
+
+
+
+var a=(1!=9 || 23!=23);
+document.getElementById('output').innerHTML=a;
+document.body.style.backgroundColor="blue";
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Logical Operator</h1>
+    <h2>And &&</h2>
+    <h3>Or ||</h3>
+    <h3>Not !</h3>
+    <br>
+    <h4 id='output'></h4>
+    <script type="text/javascript" src="logicaloperator.js"></script>
+</body>
+</html>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>User interaction changing a variable.</h1>
+    <p>The value is currently</p>
+    <p id="number">0</p>
+    <button type="button" onclick=" onAdd()">Click to +1</button>
+    <script type="text/javascript" src="userinteraction.js"></script>
+</body>
+</html>
+
+
+
+var value=0;
+
+function onAdd() {
+    value+=1;
+    document.getElementById("number").innerHTML=value;
+
+}
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button type="button" onClick="plusbutton()">Click +1</button>
+    <p id="valuepara">Count: 0</p>
+    <button type="button" onClick="minusbutton()">Click -1</button>
+
+    <script type="text/javascript" src="counter.js"></script>
+</body>
+</html>
+
+
+
+var value=0;
+function plusbutton(){
+    value+=14291;
+    document.getElementById("valuepara").innerHTML=('Count: '+value);
+}
+
+function minusbutton(){
+    value-=14291;
+    document.getElementById("valuepara").innerHTML=('Count: '+value);
+}
+
+function show(){
+    var myArray=["England","Spain",["one","two","three"],"France","Germany"]
+    var arrvalue=myArray[2][0]
+    document.getElementById('show').innerHTML=arrvalue;
+}
+
+
+
+	<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Arrays in more detail</h1>
+    <p>Original Array ["England","Spain","France","German"]</p>
+    <p id="show">Show</p>
+    <button onclick="show()">Show!</button>
+    <script type="text/javascript" src="arrayinmoredetail.js"></script>
+</body>
+</html>
+
+
+function show(){
+    var myArray=["England","Spain",["one","two","three"],"France","Germany"]
+    var arrvalue=myArray.length
+    document.getElementById('show').innerHTML=arrvalue;
+}
+
+
+
+
+function show(){
+    var myArray=["England","Spain",["one","two","three"],"France","Germany"]
+    var arrvalue=myArray.push("Last Item")
+    document.getElementById('show').innerHTML=arrvalue;
+}
+
+
+
+
+var userCount=0;
+var colorArr=['red','green','orange','brown','blue','Navy','Fuchsia','Purple','Teal','Aqua','Lime','Olive','Yellow','Maroon'];
+function plusButton() {
+    userCount=userCount+1;
+    document.getElementById('valuePara').innerHTML=('Count: '+ userCount);
+    document.body.style.backgroundColor=colorArr[userCount-1];
+}
+function minusButton(){
+    userCount=userCount-1;
+    document.getElementById('valuePara').innerHTML=('Count: '+ userCount);
+    document.body.style.backgroundColor=colorArr[userCount-1];
+}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Counter</h1>
+    <button type="button" onClick="plusButton()">Click me +1</button>
+    <p id="valuePara">show</p>
+    <button type="button" onClick="minusButton()">Click me -1</button>
+    <script type="text/javascript" src="counterColor.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>If/Else</h1>
+    <p>E.g.(1) if age is more than 16 they are alllowed to drive.</p>
+    <p>Else they aren't allowed</p>
+    <p>E.g.(2) if the password is the same as the correct password allow access</p>
+    <p>else don't allow access</p>
+    <button type="button" onclick="ifElse()" >Click Me</button>
+    <script type="text/javascript" src="ifelse.js"></script>
+</body>
+</html>
+
+
+
+function ifElse(){
+    var personage=12;
+    if (personage>16){
+        alert("You are allowed to drive!");
+    } else {
+        alert ("You are too young!!!");
+    }
+}
+
+
+function ifElse(){
+    var correctPassword="myPassword123";
+    var attemptedPassword="myPassword23";
+    if (correctPassword==attemptedPassword) {
+        alert("Password correct-access granted");
+    } else {
+        alert ("Incorrect password-Access denied");
+    }
+}
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>If Else.... elseif!!!</h1>
+    <script type="text/javascript" src="elseif.js"></script>
+</body>
+</html>
+
+
+if (1==3){
+    document.body.style.backgroundColor="red";
+
+} else if (1==5) {
+    document.body.style.backgroundColor="green";
+} else if (1==1){
+    document.body.style.backgroundColor="pink";
+} else {
+    document.body.style.backgroundColor="yellow";
+}
+
+
+
+
+
+var hour=new Date().getHours();
+if (hour>=8 && hour<=11){
+    document.body.style.backgroundColor="green";
+    document.getElementById("day").innerHTML="Good Morning";
+    document.getElementById("welcomeimg").src="goodmorning.jfif";
+} else if (hour>=11 && hour<=15){
+    document.body.style.backgroundColor="red";
+    document.getElementById("day").innerHTML="Good Afternoon";
+    document.getElementById("welcomeimg").src="goodafternoon.jfif";
+} else if (hour>=15 && hour<=21){
+    document.body.style.backgroundColor="blue";
+    document.getElementById("day").innerHTML="Good Evening";
+    document.getElementById("welcomeimg").src="goodevening.jfif";
+} else  {
+    document.body.style.backgroundColor="black";
+    document.getElementById("day").innerHTML="Good Night";
+    document.getElementById("welcomeimg").src="goodnight.jfif";
+}
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="welcome.css">
+</head>
+<body>
+    <h1>Welcome!</h1>
+    <h2 id="day">Good..........</h2>
+    <img id="welcomeimg" src="goodmorning.jfif" alt="">
+    <script type="text/javascript" src="welcome.js"></script>
+</body>
+</html>
+
+h1,h2{
+    text-align: center;
+}
+
+img{
+    border: 3px solid white;
+    position: relative;
+    left: 40%;
+}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Values from html forms</h1>
+    <h2>Step1-create and id</h2>
+    <h2>useu.value</h2>
+    <p>Name</p>
+    <input type="text" id=""> 
+    <p>password</p>
+    <input type="text" id="">
+    <br>
+    <br>
+    <button type="button">submit</button>
+    <script type="text/javascript" src="form.js"></script>
+</body>
+</html>
+
+
+
+var correctName="vijay.4404";
+var correctPassword="iamconfident@1";
+
+function returnInfo(){
+    var nameVar=document.getElementById("nameForm").value;
+    var namePass=document.getElementById("passForm").value;
+if(nameVar==correctName && namePass==correctPassword) {
+    alert ("Access granted!!!Welcome");
+    document.body.style.backgroundColor="green";
+} else {
+    document.body.style.backgroundColor="grey";
+    alert("Access Denied!!!");
+}
+}
+function calculate(){
+    var one=document.getElementById("numOne").value;
+    var two=document.getElementsById("numTwo").value;
+    var three=one*two;
+    alert("The number is"+three);
+}
+
+
+
+	<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Values from html forms</h1>
+    <h2>Step1-create and id</h2>
+    <h2>useu.value</h2>
+    <p>Name</p>
+    <input id="nameForm" type="text"> 
+    <p>password</p>
+    <input id="passForm" type="text">
+    <br>
+    <br>
+    <button type="button" onclick="returnInfo()">submit</button>
+    <h1>Calculate the two number</h1>
+    <form>
+    <p>Number One</p>
+    <input id="numOne"   type="text">
+    <p>Number Two</p>
+    <input id="numTwo" type="text">
+    <br>
+    <br>
+</form>
+    <button type="button" onclick="calculate()">Calculate</button>
+
+    <script type="text/javascript" src="form.js"></script>
+</body>
+</html>
+
+
+
+
+	var correctName="Vijay Singh";
+var correctPassword="iamconfident";
+var balance=500;
+
+function withdraw() {
+var inputName=document.getElementById("nameForm").value;
+var inputPass=document.getElementById("passForm").value;
+var inputAmount=document.getElementById("amountForm").value;
+var newBalance=balance-inputAmount;
+if(inputName!=correctName) {
+    document.getElementById("output").innerHTML="Incorrect Name";
+
+}else if(inputPass!=correctPassword){
+    document.getElementById("output").innerHTML="Incorrect Password";
+}else if(inputAmount>balance){
+    document.getElementById("output").innerHTML="Insufficient Balance, Please enter lower amount";
+
+} else {
+    document.getElementById("output").innerHTML="Withdraw Successful,New Balance is "+newBalance;
+    
+}
+
+}
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Welcome to Johns bank. Have some money!</h1>
+
+    <h3>Please enter your name,password and how much you would like to withdraw</h3>
+        <form action="">
+
+            <p>Name</p>
+            <input id="nameForm" type="text">
+            <p>Password</p>
+            <input id="passForm" type="text">
+            <p>Amount</p>
+            <input id="amountForm" type="text">
+            <br>
+            <br>
+        </form>
+        <p id="balance"></p>
+        <button type="button" onclick="withdraw()">withdrawal</button>
+        <br>
+        <h1 id="output"></h1>
+    <script type="text/javascript" src="bank.js"></script>
+</body>
+</html>
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>For Loop.....</h1>
+    <p>for(i=0,i<10,i++)</p>
+    <button type="button" onclick="forLoop()">Run</button>
+    <script type="text/javascript" src="forloop.js"></script>
+</body>
+</html>
+
+
+
+function forLoop(){
+var fruits=["apple","banana","graphs","pomogranates"]
+for (i=0;i<fruits.length;i++){
+alert(fruits[i])
+}
+}
+
+
+var cars=["BMW","Volvo","Saab","Ford","Fiat","Audi"];
+var text='';
+function listofcars(){
+for(i=0;i<cars.length;i++){
+    document.getElementById("car"+i).innerHTML=cars[i]
+}
+
+}
+
+
+	
+
+
+
+var cars=["BMW","Volvo","Saab","Ford","Fiat","Audi"];
+var text='';
+function listofcars(){
+for(i=0;i<cars.length;i++){
+    text+=cars[i]+'<br>';
+    alert(text)
+    document.getElementById("car").innerHTML=text;
+}
+
+}
+
+
+
+
+	<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Welcome to Harrys car dealership</h1>
+    <p id="car"></p>
+   
+    <button type="button" onclick="listofcars()">Run</button>
+    <script type="text/javascript" src="car_dealership.js"></script>
+</body>
+</html>
+
+
+
+var count=1;
+while(count<3){
+    alert(count);
+    count++;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>While Loop</h1>
+    <script type="text/javascript" src="whileLoop.js"></script>
+</body>
+</html>
+
+
+
+	C:\Users\ASUS>cd django-practise
+The system cannot find the path specified.
+
+C:\Users\ASUS>cd desktop
+
+C:\Users\ASUS\Desktop>cd django-practise
+
+C:\Users\ASUS\Desktop\django-practise>cd multi-page
+The system cannot find the path specified.
+
+C:\Users\ASUS\Desktop\django-practise>cd multi_page
+The system cannot find the path specified.
+
+C:\Users\ASUS\Desktop\django-practise>cd django-practise
+The system cannot find the path specified.
+
+C:\Users\ASUS\Desktop\django-practise>cd django-practical
+
+C:\Users\ASUS\Desktop\django-practise\django-practical>django-admin startproject my_project
+CommandError: 'C:\Users\ASUS\Desktop\django-practise\django-practical\my_project' already exists
+
+C:\Users\ASUS\Desktop\django-practise\django-practical>django-admin startproject my_project2
+
+C:\Users\ASUS\Desktop\django-practise\django-practical>cd my_project2
+
+C:\Users\ASUS\Desktop\django-practise\django-practical>django-admin startproject my_project
+CommandError: 'C:\Users\ASUS\Desktop\django-practise\django-practical\my_project' already exists
+
+C:\Users\ASUS\Desktop\django-practise\django-practical>django-admin startproject my_project2
+
+C:\Users\ASUS\Desktop\django-practise\django-practical>cd my_project2
+
+C:\Users\ASUS\Desktop\django-practise\django-practical\my_project2>python manage.py runserver
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+
+
+C:\Users\ASUS\Desktop\django-practise>cd django-practical
+
+C:\Users\ASUS\Desktop\django-practise\django-practical>mkdir input_form
+
+C:\Users\ASUS\Desktop\django-practise\django-practical>cd input_form
+
+C:\Users\ASUS\Desktop\django-practise\django-practical\input_form>cd ..\
+
+C:\Users\ASUS\Desktop\django-practise\django-practical>rmdir input_form
+
+C:\Users\ASUS\Desktop\django-practise\django-practical>cd input_form
+The system cannot find the path specified.
+
+
+
+
+
+
+
+
+
+
+
+
+from django.shortcuts import render
+
+def home(request):
+    return render(request, 'index.html')
+
+
+
+"""
+from django.contrib import admin
+from django.urls import path
+from . import views
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('',views.home),
+    path('about/',views.about)
+]
+
+
+
+
+	from django.contrib import admin
+from django.urls import path
+from . import views
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('',views.home,name='home'),
+    path('about/',views.about,name='about'),
+]
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+</head>
+<body>
+   <p>This is about page</p>
+   <a href="{% url 'home' %}">Click here to go to home page</a>
+</body>
+</html>
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<body>
+    <P>This site is working!</P>
+    <a href="{% url 'about' %}">click here to go to about page</a>
+</body>
+</html>
+
+
+
+
+
+import os.path
+STATICFILES_DIRS=(os.path.join('static'),)
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'main.css' %}">
+</head>
+<body>
+    <P>This site is working!</P>
+    <a href="{% url 'about' %}">click here to go to about page</a>
+</body>
+</html>
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'main.css' %}">
+</head>
+<body>
+    <P>This site is working!</P>
+    <a href="{% url 'about' %}">click here to go to about page</a>
+    <button onclick="buttonfunc()">click me</button>
+    <script type="text/javascript" src="{% static 'main.js' %}"></script>
+    <img src="{% static 'elephant.jfif' %}" alt="">
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+C:\Users\ASUS>cd Desktop
+
+C:\Users\ASUS\Desktop>mkdir my-git-project
+
+C:\Users\ASUS\Desktop>cd my-git-project
+
+C:\Users\ASUS\Desktop\my-git-project>git init
+Initialized empty Git repository in C:/Users/ASUS/Desktop/my-git-project/.git/
+
+C:\Users\ASUS\Desktop\my-git-project>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ad_budget=[1,10,50,100,1000]
+sales=[50,100,500,1000,5000]
+plt.xlabel("Amount spent on fb ads($)")
+plt.ylabel("Amount of sales($)")
+plt.title("Graph to show the effects of ad budgeting on sales")
+plt.plot(ad_budget,sales)
+plt.show()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ssh -i unicorn-key.pem ubuntu@ec2-3-16-113-23.us-east-2.compute.amazonaws.com
