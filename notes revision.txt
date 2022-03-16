@@ -1,0 +1,1135 @@
+=MAX(C27:C33)
+
+=MIN(C27:C33)
+
+
+=AVERAGE(C27:C33)
+
+=SUM(C27:C33)
+
+=COUNT(C27:C33)
+
+
+# round function round the number multiple of 5
+=MROUND(C48,0.001)
+
+#to get the position of essential in particular sentence 
+=FIND("essentials",C52)
+
+#today function return the today date 
+=TODAY()
+
+Understanding Relative and Absolute References
+
+Aggreate rows of information into single data point
+count
+counta
+sum
+max 
+min
+average
+
+Aggregate rows of informaton that meet certain criteria
+countif
+sumif
+averageif
+countifs
+sumifs
+averageifs
+
+Aggregate rows from structured data
+dcount
+dcounta
+dmax
+dmin
+dsum
+daverage
+
+
+
+Excel update range when we delete and insert cell inside the range
+
+#
+count(value1,[value2]....)
+
+count function count number
+counta function count number,strings
+=MAX($F$21:$F$26)
+=MIN($F$21:$F$26)
+=AVERAGE(F21:F26)
+#count function counts only numerical values
+=COUNT(F21:F26)
+#counta function counts string and numberical values
+=COUNTA(B21:B26)
+
+
+
+=COUNT(B47:B63)
+=COUNTA(B47:B63)
+=SUM(B47:B63)
+=MIN(B47:B63)
+=MAX(B47:B63)
+=AVERAGE(B47:B63)
+
+#aggregate function ignore string rows
+
+Condition Aggregation Function
+Countif
+countif(range,criteria)
+sumif
+sumif(range,criteia,[sum_range])
+averageif
+averageif(range,criteria,[average_range])
+
+
+=SUMIF(B17:B25,"GoldenRise",D17:D25)
+
+
+=AVERAGEIF(B17:B25,"SlowMotion",D17:D25)
+
+
+=COUNTIF(B17:B25,"MoonBeam")
+
+
+#aggregate function is case sensitive
+=COUNTIF(F17:F25,"B")
+
+=COUNTIF(F17:F25,"")
+=COUNTIF(F17:F25,1)
+
+=AVERAGEIF('CA-Daily Car Sales'!$B$3:$B$8,'Conditional Aggregations - 1'!$B34,'CA-Daily Car Sales'!$E$3:$E$8)
+=SUMIF('CA-Daily Car Sales'!$B$3:$B$8,'Conditional Aggregations - 1'!$B34,'CA-Daily Car Sales'!$E$3:$E$8)
+
+=COUNTIF('CA-Daily Car Sales'!$B$3:$B$8,'Conditional Aggregations - 1'!$B34)
+
+
+Aggregation with Other Types of Criteria: <>, >, <, >=, <=
+=COUNTIF('CA-Tax Revenue'!D6:BA6,">"&C48)
+
+=COUNTIF('CA-Tax Revenue'!D6:BA6,"<"&C54)
+=SUMIF('CA-Tax Revenue'!D4:BA4,"<>"&'Conditional Aggregations - 1'!C59,'CA-Tax Revenue'!D5:BA5)
+
+Multiple condition aggregation
+countifs(criteria,range1,criteria1.....)
+sumifs (criteria,range1,criteria1....)
+averageifs(criteria,range1,criteria1...)
+
+=COUNTIFS('CA-FDIC Failed Bank List'!$I$4:$I$545,'Conditional Aggregations - 2'!$B25,'CA-FDIC Failed Bank List'!$D$4:$D$545,'Conditional Aggregations - 2'!$C$7)
+
+
+=AVERAGEIFS('CA-Nuclear Power Reactors'!$S$4:$S$103,'CA-Nuclear Power Reactors'!$F$4:$F$103,'Conditional Aggregations - 2'!B35,'CA-Nuclear Power Reactors'!$Q$4:$Q$103,"<="&2500)
+
+
+Array formula
+
+
+=SUM(SUMIF('CA-Tax Revenue'!D4:BA4,{"GA","CA"},'CA-Tax Revenue'!D29:BA29))
+
+=SUM(SUMIF('CA-Nuclear Power Reactors'!F21:F103,{1,2},'CA-Nuclear Power Reactors'!Q4:Q103))
+
+Database aggregation function
+dcount
+dcounta
+dmin
+dsum
+dmax
+dmin
+daverage
+
+Logical Operations & Conditional function
+logical operators test a condition and return True or False
+And 
+Or
+Conditional functions test a condition and  return a specified
+value  based on the result
+if 
+iferror
+
+Functions for logical values and inversing them
+True
+False 
+Not
+
+
+And Operator
+AND(1=2,1=1,2=3)
+Or Operator
+Or(1=2,1=1,2=3)
+
+
+
+=AND(1=2,1=1,1<3,6>5)
+
+=AND(1=2,1=1,1<3,6>5)
+
+
+
+
+if operator
+if(logical_test,value_if_true,value_if_false)
+iferror
+if(expression,value_if_error)
+
+
+
+
+
+
+=IF(C30<$C$22,$E$23,$E$22)
+
+nested if function
+=IF($C54<$C$50,$C$54*$D$49,IF($C54<$C$51,$C54*$D$50,C54*$D$51))
+32
+iferror
+=IFERROR(C67/D67,"")
+
+=MAX(E67:E72)
+
+=MIN(E67:E72)
+=IF(NOT(B12="happy"),"sad","happy")
+
+Choose Function
+Choose(2,"dog","cat")
+purpose choose a value or action to perform from a list of values
+value contained at the index provided
+The choose function can  be used to select (lookup) more than just values
+It can be  used to select numbers, text,cell,references,
+defined names, formulas, and functions
+
+
+
+=CHOOSE(C5,"dog","cat",8,12,15,"hat")
+
+Dynamically sum the range
+
+combobox work with choose function and return and index number
+based on list selected
+
+
+=SUM(CHOOSE($F$23,C14:C16,C17:C19,C20:C22,C23:C25,C14:C19,C20:C25,C14:C25))
+
+=AVERAGE(CHOOSE($F$23,C14:C16,C17:C19,C20:C22,C23:C25,C14:C19,C20:C25,C14:C25))
+
+Choose function to get the salary
+=CHOOSE(C44,13.2*C46,12*C46,10*C46)
+
+
+
+Using choose function to get the requisite value
+=CHOOSE(C68,MIN(C72:C83),MAX(C72:C83),AVERAGE(C72:C83),SUM(C72:C83))
+
+Exact vs Approximate Match
+Approximate match is useful when checking for income tax slab
+=VLOOKUP(C44,$C$37:$D$41,2,TRUE)
+
+
+#Combining vlookup with choose function
+=VLOOKUP(D76,CHOOSE(D77,C82:D84,F82:G84,I82:J84),2,0)
+
+
+form control 
+if you want to get the index number use the form control 
+
+data validation
+when you want to get the actual item name the 
+use data validation
+
+Match 
+Match(lookup_value,lookup_array,[match_type])
+get the relative position of an item in an arry
+Returns an index for the location of an item in an array.
+Match("bus",{"car","fly","bus","walk"),false
+return 3 since "bus"s is the 3rd item in the list.
+
+Index
+Index(array,row_num_[column_num])
+Index(reference,row_num,[column_num],[area_num])
+
+Get a specific value at the intersection of a particular
+row and column or an array of values given a row of column
+Specific value of array of values
+Index({1,2,3,4,5,6},2,3)
+Return 6,since it is the item from the 3rd column
+of the 2nd row
+String are not case sensitive in match function
+0 for exact match
+=MATCH(C8,{"Ana","Lokesh","Charles","Sofia","Mark","Hannah","Alexis","Zach"},0)
+match function return the position number of the item
+in the list
+in match function to get the lower bound we need
+to make the list in ascending order
+to get the uppter bound we need to convert 
+list to descending order and use -1 in relative and exact
+position
+=MATCH(C35,B41:B46,1)
+=MATCH(C35,C41:C46,-1)
+
+=INDEX({"Ana","Lokesh","Charles","Sofia";100,200,300,400},1,2)
+
+=INDEX(E21:L21,1,2)
+
+#combining choose and index function to get the value
+from different table
+=INDEX(CHOOSE(C53,C58:C60,D58:D62,E58:E61),C54,1)
+
+Dynamic Ranges
+
+index function can be used to get the address 
+of the cell
+=INDEX(C72:C83,F69,1)
+=INDEX(C72:C83,F69-2,1)
+=SUM(INDEX(C72:C83,F69,1):INDEX(C72:C83,F69-2,1))
+
+
+Primary Lookups: Combining index and match
+Stable when columns are inserted into lookup
+Easily offset row or column from found record
+faster than vlook and hlookup
+upper bound match type
+Able to perform left lookup
+Combining index and match to the the relative value
+=INDEX(C11:C18,MATCH(C7,B11:B18,0))
+#index and match function work vertically and horizonally
+=INDEX(G28:N28,MATCH(C25,B29:B37))
+
+#Using index match to get the particular row and column 
+from the table
+
+=IF(B67<>"",INDEX($I$67:$J$71,MATCH($B67,$H$67:$H$71,0),MATCH($C$61,$I$66:$J$66,0)),"")
+60
+
+
+
+Index match function
+=INDEX($I$104:$L$110,MATCH($B104,$G$104:$G$110,FALSE),MATCH($C104,$I$103:$L$103,1))
+
+=C104*VLOOKUP($B104,$G$104:$H$110,2,0)*(1-$D104)
+
+
+=IFERROR(INDEX($C$118:$C$122,MATCH(C126,$C$118:$C$122,1)+1)-$C126,"") 
+
+
+#choosing discount from different table with different customer
+=INDEX(CHOOSE(VLOOKUP($B140,$H$140:$I$143,2,0),$I$149:$L$155,$I$160:$L$166,$I$171:$L$177),MATCH($C140,$G$149:$G$155,0),MATCH($D140,$I$148:$L$148,1))
+=D140*VLOOKUP(C140,$G$149:$H$155,2,0)*(1-$E140)
+
+
+=MATCH(TRUE,B$191:B$202>30,0)
+=MATCH(TRUE,B$191:B$202>30,0)
+#in match function if we enter 0 than we select all the column
+
+#in following function we created a if conduction where if all 
+is selected then we sum the entire row or column in that table.
+=SUM(INDEX(C217:F221,      IF(C209="All",0,MATCH(C209,B217:B221,0)),    IF(C211="All",0,MATCH(C211,C216:F216,0))       ))
+
+Reference Tools: Defined Names
+Defined Names represent a cell, range of cells,formula,
+or constant value
+Why define names in Excel?
+Make formula easier to understand and maintain
+What's the Scope of Names?
+Local Level:
+Requires qualitication when used in other worksheet
+Workbook Level: No qualification needed
+*Names have to  be unique
+*Have to begin with a letter or underscore
+Names are not case sensitive
+
+Name manager work like a variable in python
+where we can store some information into a variable
+we can choose scope of the variable 
+to local worksheet or workbook level
+
+
+giving variable names to a table or array 
+giving sales2014 to sales list
+=AVERAGE((Sales2014))
+
+=(D42-D41)/D41
+
+
+Offset function
+signature
+Offset(reference,rows,columns,[height],[width])
+Purpose Find a new position relative to specified one.
+Referene or value contained at the specified number
+of rows and columns away from the reference
+Example
+Offset(A1,1,3)
+Return the values reference to the cell that is 1 row 
+below and 3 columns to the right of cell A1
+(i.e. cell D2)
+negtaive number in offset goes in opposite direction
+
+
+=SUM(OFFSET(B15,C10,C11,3,1))
+
+
+
+#Using offset function to get the dynamic range
+=SUM(OFFSET(E58,0,C58,1,(C59-C58)+1))
+
+#Using offset and match function to create the 
+dynamic chart.
+#here we created a offset function to 
+=OFFSET(B133,0,MATCH($C$116,$C$132:$F$132,0),1,1)
+
+#Reference Tools
+
+Row and Column
+Row([reference])
+Get a number for the row of a given reference
+Return Row Number
+Row(D7)
+Returns 7 since the reference D7 is on the 7th row.
+Column(D7)
+Get  a number for the column of a given reference
+Return Column Number
+Column(D7)
+Return 4 since the reference D7 is on the 4th column.
+row() with no reference return the row number of that cell
+column() with no reference return the column number of that cell
+
+indirect function 
+return the row number inside the reference address
+#return the row number of b15
+=ROW(B15)
+#Return the column number of B15
+=Column(b15)
+
+#indirect function with row function return the row number
+inside the cell C22
+=ROW(INDIRECT(C22))
+#Indirect function inside the column functio nreturn the 
+column number inside the cell C22
+=COLUMN(INDIRECT(C22))
+
+
+
+#We can get last row with the help with offset function
+
+
+
+#getting the last row data
+=OFFSET(B33,COUNTA(B34:B40),0)
+#when we wrap the function inside row function
+we get the row number of that cell
+=ROW(OFFSET(B33,COUNTA(B34:B40),0))
+
+By selecting the array and then
+using row() we fill the row number of each
+respected row.
+=IFERROR(INDEX($C$10:$C$14,SMALL(IF($B$10:$B$14=$C$7,ROW($B$10:$B$14)-ROW($B$10)+1),B20)),"")
+
+#in first index function we we the array the part particular row
+#then in second index we add criteria to count.
+=COUNTIF(INDEX(D42:M48,MATCH(B51,B42:B48,0),0),"<"&INDEX(C42:C48,MATCH(B51,B42:B48,0)))
+
+
+=IFERROR(INDEX($D$39:$M$39,SMALL(IF(INDEX($D$42:$M$48,MATCH($B$51,$B$42:$B$48,0),0)<INDEX($C$42:$C$48,MATCH($B$51,$B$42:$B$48,0)),COLUMN(INDEX($D$42:$M$48,MATCH($B$51,$B$42:$B$48,0),0))-COLUMN($D$44)+1),$B54)),"")
+
+=COUNTIFS(C74:C79,"<="&C71,D74:D79,C70)
+
+
+Address Function
+Address(row_num,column_num,[abs num],[a1],[sheet_text])
+Create a cell reference from row and column numbers
+Cell reference corresponding to the inputs provided
+Address(2,1)
+Returns $A$2 since the addres for the cell contained 
+on the 2nd row and 1st column is A2. The reference
+is absolute by default.
+
+=ADDRESS(C8,C9,C10,C11,C12)
+
+
+=ADDRESS(ROW(OFFSET(B21,COUNTA(B22:B26),0)),COLUMN(OFFSET(B21,COUNTA(B22:B26),0)))
+
+
+
+Transpose
+Transpose(array)
+Convert a vertical range of data
+to a horzontal one and vice versa
+A horizontal or vertical array
+Transpose({1,2,3})
+Return (1;2;3)
+Difference between paste special transpose and transpose
+function is that in later value change in transposed column
+if original column has been changed.
+=TRANSPOSE(B8:B20)
+
+
+
+
+Hyperlink
+HyperLink(link_location,[friendly_name])
+Create hyperlinks for workbooks and file nagivation
+Hyperlink to location provided
+Hyperlinke("#Sheet2!A1",'Open')
+Would create a blue underlined link title
+"Open" that would take the user to 
+Cell A1 of Sheet2 when it was clicked.
+It take the user to the google home page
+=HYPERLINK("http://www.google.co.in","Google")
+
+
+
+Working with informationals
+Perform Logical Value Test on the Contents of
+a cell or range
+istext
+isnontext
+isnumber
+isblank
+
+Perform Logical Error Test on the Results of a 
+formula
+Isna
+Iserr
+Iserror
+Provide information about a cell,range, or Excel
+Cell
+Info
+Type
+Istext
+istext(value)
+Checks whether a value is text.
+True if value is text
+Istext(A1)
+Returns true when cell a1 contains a text value
+Isnontext
+Isnontext(value)
+Checks whether a value is not text
+True is value if anything other than text
+IsNOnText(a1)
+Return True when cell A1 contains a number or is blank.
+
+
+Isnumber
+Isnumber(value)
+Checks ifa value is a numeric
+True if value if numeric
+isnumber(a1)
+Returns true when cell A1 contains a numeric value.
+isblank
+Isblank(value)
+Check if a value is blank
+True if value if blank
+Isblank(A1)
+Returns true when cell A1 is blank.
+
+=IF(ISNUMBER(C40),COUNTIF(C45:C55,">="&C40),COUNTIF(D45:D55,C40))
+
+Iserror
+Iserror(value)
+Checks if a cells formula returns any error
+True if the provided cell any Excel error.
+iserror(A1)
+Returns true if the formula in cell A1 return any error.
+
+
+iserr
+iserro(value)
+Checks if a cells formula returns any error other than #N/A
+True if the provided cell contain any Excel error other than
+#N/A
+iserr(a1)
+Returns True if the formula in cell A1 return any error (
+except the #N/A)
+
+isna
+isna(value)
+Checks if a cells' formula return a #N/A error
+True if the provided cell contains a #N/A error 
+isna(a1)
+Return True if the formula in cell
+A1 returns a #n/a error.
+
+=ISERROR(C$7)
+=ISERR(C$7)
+=ISNA(C$7)
+
+
+#converting error messages to empty row.
+=AVERAGE(IF(ISERROR(B36:B52),"",B36:B52))
+
+=MAX(IF(ISERROR($B$36:$B$52),"",$B$36:$B$52))
+
+=MIN(IF(ISERROR($B$36:$B$52),"",$B$36:$B$52))
+
+=SUM(IF(ISERROR($B$36:$B$52),"",$B$36:$B$52))
+
+
+
+Cell
+Cell(info_type,[reference])
+Obtain information about the formating,
+location, or contents of a cell
+Requested information about the first cell
+in a range.
+Cell('width',A1)
+Returns the width of Column A
+Rounded down to the neared
+
+
+Return information from a date
+Day 
+Month
+Year
+Hour
+Minute
+Second
+Weekday
+Weeknum
+Perform common calculations on dates
+EDate
+EOMonth
+Datedif
+Workday
+Workday.intl
+Networkdays
+Networkdays.intl
+days360
+yearfrac
+Create or convert data info date and time data type
+Now
+today
+Date 
+Time 
+Datevalue
+Timevalue
+
+Day
+Day(serial_number)
+Extract the numerical day of the month 
+from a date
+The day of the month, a number 1 to 31.
+Day("5/2/2015")
+Returns 2, since theday of the date is 2
+
+Month
+Month(serial_number)
+Extract the numerical month of the year
+from a date.
+The month a number from 1 to 12
+Month ("5/2/2015")
+Return 5, since the month of the date is 5
+
+Year
+Year(serial_number)
+Extract the numerical year from a date
+The year, a number between 1900-9999
+Year("5/2/2015")
+Returns 2015, since year of the date is 2015.
+
+Hour
+Hour(serial_number)
+Extract the numerical hour from a time.
+The hour as a number
+from 0(12:00AM) to 23 (11:00 PM)
+Hour("1:37:15")
+Return 1, since the hour of the time is 1.
+Minute
+Minute(serial_number)
+Extract the numerical minute from a time
+The minute, a number from 0 to 59
+Minute("1:37:15")
+Returns 37, since the minute of the time is 37
+Second
+Second(serial_number)
+Extract the numieral second from a time
+The second a number from 0 to 59
+Second("1:37:15")
+Returns 15, since the second of the time is 15.
+
+Weekday
+Weekday(serial_number,[return_type])
+Determine the weekday that a date falls on
+A number between 1 to 7 identifying the day of the week.
+Weekday("1/27/2016")
+Return 4, since the date falls on a wednesday(4'th day week)
+
+weeknum
+Weeknum(serial_number,[return_type])
+Determine the week number that a date falls on
+A number identifying the week of the year.
+Weeknum("1/27/2016")
+Return 5, since the date falls on the 5th week of the year.
+
+=DAY(C7)
+=MONTH(C7)
+=YEAR(C7)
+=HOUR(C7)
+=MINUTE(C7)
+=SECOND(C7)
+
+
+
+=AVERAGEIF('Monthly Sales'!$C$2:$C$61,'Date Information Functions'!B23,'Monthly Sales'!$A$2:$A$61)
+=AVERAGEIF('Monthly Sales'!$D$2:$D$61,B38,'Monthly Sales'!$A$2:$A$61)
+=AVERAGEIF('Monthly Sales'!$E$2:$E$61,'Date Information Functions'!B46,'Monthly Sales'!$A$2:$A$61)
+=MONTH(B2)
+=YEAR(B2)
+=CHOOSE(C2,"Q1","Q1","Q1","Q2","Q2","Q2","Q3","Q3","Q3","Q4","Q4","Q4")
+=COUNTIFS('Inbound Emails'!$G$5:$G$7658,'Date Information Functions'!C$56,'Inbound Emails'!$H$5:$H$7658,'Date Information Functions'!$B57)
+=WEEKDAY(C7642)
+
+=HOUR(D7642)
+=CHOOSE(E7642,"Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday")
+=F7642/24
+
+=COUNTIFS('Inbound Emails'!$G$5:$G$7658,'Date Information Functions'!C$56,'Inbound Emails'!$H$5:$H$7658,'Date Information Functions'!$B57)/VLOOKUP(C$56,$K$57:$L$63,2,FALSE)
+=COUNTIF($M$54:$AQ$54,1)
+
+
+EDate
+Edate(start_date,months)
+Add or subract a given number of months to a date
+Serial number of the date that is the indicated
+of months before or after the start date.
+Edate('1/27/2016',11)
+Returns the serial number 42365 
+(12/27/2016 which is 11 months ahead of the 
+provided date
+Eomonth
+Eomonth(start_date,months)
+add or subract a given number of months to a date
+Serial number of the last day of the month
+before or after a specified number of months
+Eomonth('1/27/2016,11)
+Returns 42735 (12/31/2016) which is the last
+ day of the month that is 11 months 
+ahead of the provided date.
+=EDATE(C7,C8)
+
+=EOMONTH(C7,C8)
+
+=EDATE(D33,VLOOKUP(C33,$J$33:$L$35,3,FALSE))
+
+=MONTH(E33)
+
+=YEAR(E33)
+=VLOOKUP(C33,$J$33:$M$35,4,FALSE)
+=SUMIFS($H$33:$H$48,$F$33:$F$48,MONTH($B20),$G$33:$G$48,YEAR($B20))
+
+#Getting due date with EOmonth function
+=EOMONTH(C70,1)+15
+
+
+
+=DATEDIF($B$78,$C$78,B81)
+
+Workday
+Workday (start_date,days,[holiday])
+Find date that is a given of days into the future
+or past 
+Serial number for the date that is the defined of working 
+days away fro mthe stat date
+Workday("1/27/2016",5)
+Return 42403(2/3/2016),since 5 working days
+(not counting Saturday and Sunday) ahead of Wednesday
+the 27th is Wednesday the 3rd
+
+NetworkDays
+Networkdays(start_date,end-date,[holiday])
+Determine the # of working days
+between two dates (excludes weekends)
+An integer for the  # of woking 
+days between two dates.(The first and last days count)
+
+NetworkDays(
+'1/27/2016','2/28/2016')
+Returns 23, since there are 23 working
+days between 1/27/2016 and 2/28/2016(excluding
+the weekends)
+
+
+Work day sum the total day the the particular date
+
+=WORKDAY(C7,SUM(E11:E28),H11:H13)
+=AVERAGEIF(Projects!$C$4:$C$306,'Date Math Functions (Cont)'!$B62,Projects!$F$4:$F$306)
+=NETWORKDAYS(D8,E8)
+
+Day360
+Days360(start_date,end_date,[method])
+Find the # of days between 2
+dates using a 360 day calender
+(12 months x 30 days)
+The number of days betwen 2 
+dates using a 360 day calendar
+Days360(
+"1/30/2016","2/9/2016")
+Returns 9,since the 31st is ignored
+Yearfrac
+YearFrac(start_date,end_date,[basic])
+Determine teh faction of the year
+represented by the of days  between
+two dates
+The fraction of a year that
+the # of days between 2 dates 
+makes up
+YearFrac(
+"1/31/2016","2/9/2016")
+Returns 0.025 which is the fraction
+that 9 days maks up of a 360 day 
+year(9/360=0.025)
+=DAYS360(C7,C8)
+=YEARFRAC(C7,C8,0)
+
+
+
+=YEARFRAC(C7,C8,0)
+=YEARFRAC(C23,C18,0)*C27
+=DAYS360(C23,C18,FALSE)/360*C27
+
+Now
+Now()
+get the current date and time
+The current date and time
+To reivew in excel
+Today()
+Get the current date
+The current date
+To review in excel
+Date 
+Date(year,month,day)
+Convert separate year,month
+& day values into an Exce date
+(Serial number)
+Serial number formatted as a date
+Date(2025,12,22)
+Returns serial number 46013
+formatted as a date 12/22/2025
+Time
+Time(hour,minute,second)
+Convert separate hour,minute,
+&second values into an Excel time
+Value(serial number)
+Serial number formatted at a time value
+Time(23,3,0)
+Returns 0.9604 formatted as atime:
+11:03 pm
+Datevalue
+Datevalue(date_text)
+Convert a text date into an Excel
+date serial number
+Date serial number for the date provided
+Datevalue("12/25/2016")
+Return 42729,since the date
+12/25/2016 is 42.728 days after
+1/1/1900(Excel's Serial number 1)
+Timevalue
+TimeValue(time_text)
+Convert a text time value into an Excel time
+serial number
+Time serial number for the date provided
+TimeValue("1:38pm")
+Returns 0.5581,since 1.38 is 13.6333 hour past midnight
+(13.6333/24=0.5681)
+to get the timestamp
+just add date and time
+=DATEVALUE(C85)
+
+
+Date value convert text date and date value
+
+
+
+=TIMEVALUE(D85)
+time value convert text time into time value
+
+
+
+Return information about a string
+Len 
+Exact
+Find
+Search
+
+String Manipulation and transform strings
+Concatenate
+left
+Right
+Mid
+Trim
+Lower
+Upper
+Proper
+Replace
+Substitute
+Text
+Fixed
+Dollar
+Value
+
+
+String Basic
+Strings are justa collection
+of characters stored as text.
+They can contain any type of character(e.g.
+numbers,special characters, letters, blank spaces, etc)
+
+Data Entry
+Strings can be entered into Excel
+in different ways:
+Surrounding by double quotes
+Preceding with single quote
+Hard typed
+123 as "123"
+When usinga numeric values in functions that require
+strings.
+Excel automatically converts the numbers 
+into strings
+Beware this can cause unexpected results.
+Len
+Len(text)
+Get the number of characters in a text string
+integer represending the number of characters
+contained in the string provided
+Len("How are you?")
+Return 12,12 characters (note the 2 spaces count)
+Exact
+Exact(text1,text2)
+Test whether two text strings are exactly the same
+True if the strings ae identical. False otherwise
+(case sensitive)
+Exact("Abc","abc")
+returns false, since "Abc" is not identical is "abc".
+=IF(EXACT(C75,D75),"Yes","No")
+
+
+Find
+Find(find_text,within_text,[start_num])
+Locate the starting position ofa string 
+within another string using a case sensitive search
+Integer representing the starting position of the string
+(value error if not found)
+
+Find("aBc","zaBc")
+Returns 2,since "aBc" is contained
+within "zaBc" and the match starts at the 2nd position
+
+Search
+Search(find_text,within_stex,[start_num])
+Locate the starting position of a string 
+within another string ignoring case.
+Integer representing the starting 
+positin of the string.
+(value error if not found)
+Search("ABC",'xyzabc")
+Return 4, since "ABC" is combined
+within "xyzabc" and the match starts at the 
+4th position
+find function is case sensitive
+search ignore case sensitive
+
+=FIND($C$7,C12)
+=SEARCH($C$7,C12)
+
+
+
+=FIND(C54,$C$48)
+=AVERAGEIF(C53:C72,C48,D53:D72)
+=AVERAGEIF(E53:E72,1,D53:D72)
+
+
+Concatenate
+Concatenate(text1,text2...)
+Join several strings together 
+into a single string
+A single string made up of the 
+individual strings provided
+Concatenate("a","dog","barks")
+Returns "adogbarks".
+#Concatenate and & function join together
+=CONCATENATE(B8," ",C8)
+=B8&" "&C8
+#Random function return the random number between
+two number and & function join to string and formula 
+together or string and string together
+="The winner number is:"&RANDBETWEEN(1,250)
+#using concatenate function with
+vlookup function
+=VLOOKUP(B27&C27,$B$33:$C$35,2,0)
+
+Left
+Left(text,[num_char])
+Get a substring starting with the first
+character of the provided text
+A string containig the specified number
+of characters from the start of th string
+provided
+Left("Jarrod",3)
+Returns "Jar", the first
+3 characters of the string provided
+Right
+Right(text,[num_chars])
+Get a substring starting at the 
+last character of the provided text
+A string containing the 
+specified number of characters from the end
+of the string provided
+Right("Jarrod",3)
+Returns "rod",the last 3
+characters of the string provided
+Mid
+Mid(text,start_num,num_chars)
+Get a substring from the middle
+of the provided text.
+A string containing the specified number of
+characters starting from the position provided
+Mid("Jarrod",3,2)
+Returns "rr, the first 2 characterrs starting
+from the 3rd position.
+Trim
+Trim("A BC ")
+Return "A B C" which is the string provided
+with the extra spaces 
+=RIGHT(B8,4)
+=LEFT(RIGHT(B9,6),2)
+=IF(LEN(B8)=8,LEFT(B8,2),LEFT(B8,1))
+=DATE(C8,D8,E8)
+
+
+=FIND("-",C51)
+=LEFT(C51,D51-1)
+=MID(C51,D51+2,LEN(C51)-D51+2)
+=VLOOKUP(TRIM(C66),'Bond Credit Ratings'!$B$3:$E$20,4,0)
+
+
+
+Lower
+Lower(Text)
+Convert all letters ofa string to lowercase
+The provided text in lowercaser
+Lower("Jarrod Tanton")
+Returns "jarrod tantom", the provided text with all 
+characters in lowercase
+Upper
+Upper(text)
+Converts all letters of a string to uppercase
+The provided text in uppercase
+Upper ("Jarrod Tanton")
+Returns "Jarrod Tandtom", the provided text with all characters
+Proper
+Proper(text)
+Converts the first letters of each word to uppercase.
+The provided string in proper case
+Proper("jarrod tanton")
+Return "Jarrod Tanton",
+the provided text with the fist letter of word in uppercase.
+=LOWER(C7)
+=UPPER(C9)
+=PROPER(C7)
+=PROPER(B19)
+Replace
+Replace(old_text,start_num,num_chars,new_text)
+Replace part of a text string with a different string.
+A string that has  been modified to contain
+the new text in place of the delted text
+Replace("Excel,3,2,"a")
+Return "Excal", since the string "ce" (3rd and 4th 
+characters ) was removed & replaced with the string "a"
+Substitute
+Substitute(text,old_text,new_text,[instance_num])
+Replace existing text with new text in a string
+A string that has been modified to swap the old text with
+the new text
+Substitue("run dog run","run","jump")
+Returns "jump dog jump", since the string "jump" is 
+substituted for each occurrence of the string "run".
+=FIND("-",B8)
+=FIND("-",B8,D8+1)
+=REPLACE(B8,D8,E8-D8+1,"")
+
+
+=SUMIF($F$8:$F$48,I8,$C$8:$C$48)
+=TRIM(SUBSTITUTE(C77,"productivity","",2))
+=SUBSTITUTE(C96,"Gold","Gold Plus")
+=SUBSTITUTE(C103," ",",")
+
+Text
+Text(value,format_text)
+Convert a numerica value to text in a specified format
+A text value displayed in the format specified
+
+Text(123.45, "$0.00")
+Returns the text value "$123.45" which
+is the number provided formatted as dollars
+with 2 decimals.
+
+Fixed
+Fixed(number,[decimals],[no_commas])
+Rounds a number to the specified number of decimals and 
+converts the result to text
+A text value of the number provided rounded to the 
+number of decimals provided
+Fixed(1.2345456,3)
+Return the text value "1.125 since, 12354545 round 
+to the 3rd decimal is 1.235
+Dollar 
+Dollar(number,
+
+=TEXT(C7,"dd mmmm yyyy")
+=TEXT(C7, "h:m am/pm")
+
+What is an array?
+An array is a collection of values surround by curly
+brackets ({1,2,3} or {"a","b","c"} 
+Array can be 1 or 2 dimensional 
+You can think of Arrays tables with rows and columns
+Rows are denoted by ";"
+Column are denoted by ","
+
+Example
+{1,2,3;4,5,6;7,8,9}
+
+Why are Array important
+Arrays can be used to formula and provided as inputs
+to may of Excel's built in functions, which
+allows us to expand our capabilities to perform powerful
+calculations
+
+A few rules about Array formulas
+Must use CSE when editing or entering array formula
+For multi-cell formulas you must select the 
+range you want you results to go in prior 
+to writing the formula
+You cannot change the contents of an individual cell
+in an array formula
+You cannot insert or delete rows or columns 
+into the range of a multi-cell array formula.
+#Multi cell array
+=C8:C18*D8:D18
+#Singl cell array
+=SUM(C8:C18*D8:D18)
+=SUM(LEN(B7:B9))
+=ADDRESS(MAX(IF(LEN(B18:B20)=MIN(LEN(B18:B20)),ROW(B18:B20),"")),2)
+=INDIRECT(C22)
+=INDEX(C34:C43,(MAX(IF(B34:B43=MAX(B34:B43),ROW(B34:B43),""))-ROW(C34)+1))
+
+=C8:C19/D8:D19*100
+=E8:E19/D8:D19
+Position does not matter in array formulas but size matters 
+=B27:B30+D30:D33
+
+
+
+=LARGE('GA County Populations'!B3:B161,{1;2;3;4;5;6;7;8;9;10})
+=INDEX('GA County Populations'!$A$3:$A$161,MATCH('Multi-Cell Formulas'!C41,'GA County Populations'!$B$3:$B$161,0))
+
+
+
+=SMALL('GA County Populations'!B3:B161,{1;2;3;4;5;6;7;8;9;10})
+=INDEX('GA County Populations'!$A$3:$A$161,MATCH('Multi-Cell Formulas'!C61,'GA County Populations'!$B$3:$B$161,0))
+
+
+=INDEX('GA County Populations'!$A$3:$A$161,MATCH('Multi-Cell Formulas'!C120,'GA County Populations'!$B$3:$B$161,0))
+=SMALL('GA County Populations'!B3:B161,ROW(1:40))
+
+
+
+={1;2;3;4;5;6;7;8;9;10;11}
+={"a";"b";"c";"d";"e";"f";"g";"h";"I";"j";"k"}
+=ROW(1:10)
