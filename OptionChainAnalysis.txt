@@ -1,0 +1,42 @@
+
+Condition 1
+
+If PutOption Open Interest Near at the money increased 
+while callOption Open Interest out of the money increased While after at that Strike Price its decreasing 
+that means big movement in upper direction
+
+
+Condition 2
+
+If PutOption Open Interest Near at the money increased but not that much
+while calloption Open Interest out of the money increased while after that Strike Price its also increasing
+it means Option Seller is selling Call Option and hedging it with outer  strike price call option buying
+In this scenario price will increase and  reverse from that point because option seller has bought that position
+
+
+
+Condition 3
+
+If CallOption Open Interest Near at the moncey increased substantially
+While PutOption Open Interest out of the money increased while after that Strike Price its decreasing
+
+that mean big movement in downward direction
+
+
+
+Condition 4
+
+If CallOption Open Interest Near at the money increased but not that much
+while PutOption Open Interest out of the money increased while after that Strike Price is also increasing
+it means Open Selling is selling Put Option at out of the money and hedging it with outer strike price put option buying
+In this scenarior price will decrease and reverse from that point because option seller has bought that position
+
+
+
+
+Also Check most active Option Strike Price
+
+
+
+
+ 
